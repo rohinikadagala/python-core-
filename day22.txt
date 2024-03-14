@@ -1,0 +1,380 @@
+assignment-1:
+------------
+wap to check wheather given number is either Even or Odd?
+
+	input			output
+	----			------
+	5			Odd
+	8			Even
+
+
+sol:
+----
+num=int(input("enter your number: "))
+if num%2==0:
+    print("Even number")
+else:
+    print("Odd number")
+
+	(or)
+
+num=int(input("enter your number: "))
+print("Even number" if num%2==0 else "Odd number")
+
+	
+assignment-2:
+------------
+wap to check wheather given string is palindrom string or not,without ignore the case?
+
+	input		Reverse_order		output
+	------		------------		-------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	LevEl		lEveL			not a palindrom
+
+sol:
+---
+x=input("enter your string: ")
+if x==x[::-1]:
+    print("given string is a palindrom string")
+else:
+    print("given string is not a palindrom string")
+
+	(or)
+
+x=input("enter your string: ")
+print("given string is a palindrom string" if x==x[::-1] else
+      "given string is not a palindrom string")
+
+
+
+
+assignment-3:
+------------
+wap to check wheather given string is palindrom string or not,with ignore the case?
+
+	input		Reverse_order		output
+	------		------------		-------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	LevEl		lEveL			palindrom
+
+sol:
+----
+x=input("enter your string: ").casefold()
+print("given string is a palindrom string" if x==x[::-1] else
+      "given string is not a palindrom string")
+
+	(or)
+
+x=input("enter your string: ").lower()
+print("given string is a palindrom string" if x==x[::-1] else
+      "given string is not a palindrom string")
+
+	(or)
+
+x=input("enter your string: ").upper()
+print("given string is a palindrom string" if x==x[::-1] else
+      "given string is not a palindrom string")
+
+
+	
+assignment-4:
+------------
+wap take the string as a input and to return the first,middle and last charecters from the given string?
+
+	--> if string length is even,it return only first and last charecters.
+
+	--> if string length is odd,it returns first,middle and last 	    charecters
+
+
+	input		no_of_char		output
+	-----		---------		-------
+	siva		   4			sa
+
+	krishna		   7			ksa
+
+sol:
+----
+x=input("enter your string: ")
+if len(x)%2==0:
+    print(x[0]+x[-1])
+else:
+    print(x[0]+x[len(x)//2]+x[-1])
+
+
+if elif else:
+-------------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    .....
+	    stmt_n
+
+flowchart:
+----------
+	ref fig: if elif else flowchart
+
+ex1:
+----
+wap to check wheather given integer is either positive or negative or zero?
+
+num=int(input("enter your number: "))
+if num>0:
+    print("Positive Integer")
+elif num<0:
+    print("Negative Integer")
+else:
+    print("Zero Integer")
+
+output1:
+-------
+enter your number: 5
+Positive Integer
+
+output2:
+--------
+enter your number: -4
+Negative Integer
+
+output3:
+-------
+enter your number: 0
+Zero Integer
+
+ex2:
+----
+wap to check wheather given integer is either positive or negative or zero by using if else?
+
+num=int(input("enter your number: "))
+if num>0:
+    print("Positive Integer")
+else:
+    if num<0:
+        print("Negative Integer")
+    else:
+        print("Zero Integer")
+
+	(or)
+
+num=int(input("enter your number: "))
+print("Positive integer" if num>0 else
+      "Negative integer" if num<0 else "Zero Integer")
+
+
+output1:
+--------
+enter your number: 12
+Positive integer
+
+output2:
+--------
+enter your number: -345
+Negative integer
+
+output3:
+--------
+enter your number: 0
+Zero Integer
+
+assignment-1:
+------------
+wap to check wheather given charecter is either alphabet or digit or special charecter, dont use any builtin methods like isalpha(),isdigit() ?
+
+	input			output
+	-----			-------
+	t			alphabet
+	R			alphabet
+	6			digit
+	@			special charecter
+
+
+assignment-2:
+-------------
+wap to check wheather given triangle is either right-angle triangle or accute trianle or obtuse triangle based on angles?
+
+	input			output
+	-----			-------
+	a1=90,a2=45,a3=45	right-angle triangle
+	a1=60,a2=20,a3=100	obtuse triangle
+	a1=60,a2=50,a3=70	accute triangle
+
+elif ladder:
+------------
+elif ladder means we can define a single if with multiple elif blocks.
+
+	syntax
+	------
+	if condition:
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	--------
+	--------
+	--------
+
+ex:
+---
+wap take the student 6 subjects marks as a input,to calcualate average and based avaerage to return Grade of the student?
+
+s1=int(input("enter subject_1 marks: "))
+s2=int(input("enter subject_2 marks: "))
+s3=int(input("enter subject_3 marks: "))
+s4=int(input("enter subject_4 marks: "))
+s5=int(input("enter subject_5 marks: "))
+s6=int(input("enter subject_6 marks: "))
+avg=(s1+s2+s3+s4+s5+s6)/6
+if avg>=75:
+    print("A+ Grade")
+elif avg>=65 and avg<75:
+    print("A Grade")
+elif avg>=55 and avg<65:
+    print("B Grade")
+elif avg>=45 and avg<55:
+    print("C Grade")
+elif avg>=35 and avg<45:
+    print("Pass")
+else:
+    print("Fail")
+
+output1:
+--------
+enter subject_1 marks: 45
+enter subject_2 marks: 34
+enter subject_3 marks: 78
+enter subject_4 marks: 78
+enter subject_5 marks: 67
+enter subject_6 marks: 90
+A Grade
+
+output2:
+--------
+enter subject_1 marks: 34
+enter subject_2 marks: 23
+enter subject_3 marks: 12
+enter subject_4 marks: 3
+enter subject_5 marks: 12
+enter subject_6 marks: 23
+Fail
+
+eval()
+------
+the eval() is used to read the one or more input values with homogenious and hetrogenious from the user input at a time.
+
+in eval(),our input values must be seperated by "," only.
+
+ex:
+---
+s1,s2,s3,s4,s5,s6=eval(input("enter your marks: "))
+avg=(s1+s2+s3+s4+s5+s6)/6
+if avg>=75:
+    print("A+ Grade")
+elif avg>=65 and avg<75:
+    print("A Grade")
+elif avg>=55 and avg<65:
+    print("B Grade")
+elif avg>=45 and avg<55:
+    print("C Grade")
+elif avg>=35 and avg<45:
+    print("Pass")
+else:
+    print("Fail")
+
+output1:
+--------
+enter your marks: 45,34,78,45,90,78
+B Grade
+
+output2:
+-------
+enter your marks: 23,12,45,34,23,12
+Fail
+
+ex:
+---
+marks=eval(input("enter your marks: "))
+avg=sum(marks)/len(marks)
+if avg>=75:
+    print("A+ Grade")
+elif avg>=65 and avg<75:
+    print("A Grade")
+elif avg>=55 and avg<65:
+    print("B Grade")
+elif avg>=45 and avg<55:
+    print("C Grade")
+elif avg>=35 and avg<45:
+    print("Pass")
+else:
+    print("Fail")
+
+output:
+-------
+enter your marks: 34,23,56,67,34,89
+C Grade
+
+assignment-3:
+------------
+wap to find the maximum number among from given 3-numbers?
+
+	input			output
+	-----			-------
+	a,b,c=3,5,4		b is a maximum number
+
+	a,b,c=5,3,4		a is a maximum number
+
+	a,b,c=4,3,5		c is a maximum number
+
+	a,b,c=5,5,5		all are equal numbers
+
+	a,b,c=5,3,5		a and c are maximum numbers
+
+	a,b,c=5,5,3		a and b are maximum numbers
+
+	a,b,c=3,5,5		b and c are maximum numbers
+
+assignment-4:
+-------------
+wap take the customer N-products rates,to calculate total ammount and to display net ammount after discount based on following discount rates?
+
+	total ammount>=10000		--> 30% discount
+
+	7000<=total ammount<10000	--> 20% discount
+
+	5000<=total ammount<7000	--> 15% discount
+
+	3000<=total ammount<5000	--> 10% discount
+
+	total ammount<3000		--> 5% discount
+
+
+ 

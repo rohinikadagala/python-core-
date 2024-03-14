@@ -1,0 +1,318 @@
+ex3:
+----
+>>> x={1,2,3,4,5}
+>>> y={6,7,8}
+>>> z={0,4,9}
+>>> x.isdisjoint(y)
+True
+>>> x.isdisjoint(z)
+False
+>>> y.isdisjoint(z)
+True
+
+ex4: intersection_update()
+----
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.intersection(y)
+{3, 4}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.intersection_update(y)
+>>> x
+{3, 4}
+>>> y
+{3, 4, 5, 6}
+
+ex5: difference_update
+----
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.difference(y)
+{1, 2}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.difference_update(y)
+>>> x
+{1, 2}
+>>> y
+{3, 4, 5, 6}
+
+ex6: symmetric_difference_update
+----
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.symmetric_difference(y)
+{1, 2, 5, 6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.symmetric_difference_update(y)
+>>> x
+{1, 2, 5, 6}
+>>> y
+{3, 4, 5, 6}
+
+set comprihension:
+------------------
+	to generate the elements into the set object dynamically by writeing some logic in that set object, is known as a set comprihension.
+
+	we can implement the set comprihension to required minimum one for loop and one set object.
+
+ex1:
+----
+write a program 1-N natural numbers into set object?
+
+n=int(input("enter your number: "))
+x=set()
+for i in range(1,n+1):
+    x.add(i)
+print(x)
+
+output:
+------
+enter your number: 10
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+write a program 1-N natural numbers into set object by using set comprihension?
+
+n=int(input("enter your number: "))
+print({i for i in range(1,n+1)})
+
+output:
+------
+enter your number: 10
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+
+ex2:
+----
+write a program to generate the odd numbers from 1-N natural numbers into set object?
+
+n=int(input("enter your number: "))
+x=set()
+for i in range(1,n+1):
+    if i%2!=0:
+        x.add(i)
+print(x)
+
+output
+------
+enter your number: 10
+{1, 3, 5, 7, 9}
+
+write a program to generate the odd numbers from 1-N natural numbers into set object by using set comprihension?
+
+n=int(input("enter your number: "))
+print({i for i in range(1,n+1) if i%2!=0})
+
+output:
+------
+enter your number: 10
+{1, 3, 5, 7, 9}
+
+ex3:
+---
+write a program to remove the duplicate elements from the list object?
+
+x=eval(input("enter your list: "))
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+print(y)
+
+	(or)
+
+x=eval(input("enter your list: "))
+print(list(set(x)))
+
+output:
+-------
+enter your list: [10,20,40,20,10,30,20,10,40,20,30,50]
+[40, 10, 50, 20, 30]
+
+
+day41 assignments
+-----------------
+assignment-1:
+--------------
+wap to find the most common occurence of element in a given list?
+
+	input				output
+	-----				-------
+[10,20,30,10,20,30,40,20,30,10,20]	20
+
+sol1:
+----
+x=eval(input("enter your list: "))
+i=0
+c,ele=0,x[i]
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)        
+for i in range(len(y)):
+    if x.count(y[i])>c:
+        c,ele=x.count(y[i]),x[i]
+print(ele)
+
+sol2:
+-----
+x=eval(input("enter your list: "))
+i=0
+c,ele=0,x[i]    
+for i in range(len(x)):
+    if x.count(x[i])>c:
+        c,ele=x.count(x[i]),x[i]
+print(ele)
+    
+
+sol3:
+----
+x=eval(input("enter your list: "))
+c=0    
+for i in range(len(x)):
+    if x.count(x[i])>c:
+        c,ele=x.count(x[i]),x[i]
+print(ele)
+
+sol4:
+-----
+x=eval(input("enter your list: "))
+print(max(x,key=x.count))
+
+
+assignment-2:
+------------
+wap to find the maximum string based on their length?
+
+	input				output
+	-----				---------
+hai siva krishna good bye		krishna
+
+sol1:
+-----
+x=input("enter your string: ").split()
+length=0
+for w in x:
+    if len(w)>length:
+        length,word=len(w),w
+print(word)
+
+
+sol2:
+-----
+x=input("enter your string: ").split()
+print(max(x,key=len))
+
+
+day43 assignments
+-----------------
+assignment-1:
+--------------
+write a python program,to find the GCD/HCF of given two numbers?
+
+	input			output
+	-----			-------
+	6,12			6
+
+	8,12			4
+
+sol1:
+-----
+num_1,num_2=eval(input("enter your numbers: "))
+div_num_1=set()
+div_num_2=set()
+i=1
+while i<=num_1:
+    if num_1%i==0:
+        div_num_1.add(i)
+    i+=1
+j=1
+while j<=num_2:
+    if num_2%j==0:
+        div_num_2.add(j)
+    j+=1
+print(f"The divisibles of {num_1}:",div_num_1)
+print(f"The divisibles of {num_2}:",div_num_2)
+common_div=div_num_1&div_num_2
+print(f"The common divisibles of {num_1} and {num_2}:",common_div)
+print(max(common_div))
+
+sol2:
+----
+num_1,num_2=eval(input("enter your numbers: "))
+from math import gcd
+print(gcd(num_1,num_2))
+
+
+assignment-2:
+-------------
+write a python program,to find the LCM of given two numbers?
+
+	input			output
+	-----			-------
+	3,5			15
+
+	2,4			4
+
+assignment-3:
+--------------
+write a python program to find the no.of permutations of given N and R values?
+
+	input			output
+	-----			-------
+	5,2			20
+
+sol1:
+----
+N,R=eval(input("enter your N and R values: "))
+f=1
+i=1
+while i<=N:
+    f*=i
+    i+=1
+n_f=f
+
+f2=1
+i2=1
+while i2<=(N-R):
+    f2*=i2
+    i2+=1
+n_r_f=f2
+print(n_f//n_r_f)
+
+sol2:
+-----
+N,R=eval(input("enter your N and R values: "))
+from math import perm
+print(perm(N,R))
+
+
+assignment-4:
+--------------
+write a python program to find the no.of combinations of given N and R values?
+
+	input			output
+	-----			-------
+	5,2			10
+
+

@@ -1,0 +1,277 @@
+infinite while loop:
+-------------------
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+---------
+	ref fig: infinite while loopflowchart
+
+
+
+infinite while loop means the while condition is always True.
+
+note:
+-----
+	0,0.0,0j,0+0j,0.0+0.0j,0+0.0j,0.0+0j	--> False
+
+	except zero's				--> True
+
+ex1:
+---
+while True:
+    print("hai")
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+ex2:
+----
+while 1:
+    print("hai")
+
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+ex3:
+----
+while 9:
+    print("hai")
+
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+
+ex4:
+----
+while "siva":
+    print("hai")
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+Jumping/Transform statements:
+-----------------------------
+the python supported jumping/transform statements are,
+
+	1).break
+	2).continue
+	3).pass
+
+break statement:
+-----------------
+the "break" statement is a keyword in python,which is used in the looping statements.
+
+if we want to exit from the loop execution at the time of middle of the loop execution,in that case we are using "break" statement.
+
+once the control reach the "break" statement then immediately the control will goto outside the loop.
+
+ex1:
+----
+i=0
+while True:
+    print("hai",i)
+    if i==3:
+        break
+    i+=1
+print("bye")
+
+output:
+-------
+hai 0
+hai 1
+hai 2
+hai 3
+bye
+
+
+continue statement:
+------------------
+the "continue" statement is a keyword in python, which is used in the looping statements.
+
+if we want to skip the execution of one particular iteration, in that case we are using "continue" statement.
+
+ex:
+---
+i=0
+while i<5:
+    i+=1
+    if i==3:
+        continue
+    print("hai",i)
+print("bye")
+
+output:
+-------
+hai 1
+hai 2
+hai 4
+hai 5
+bye
+
+ex:
+---
+u_c=p_c=0
+while True:
+    uname=input("enter your user name: ")
+    if uname=='siva':
+        while True:
+            pwd=input("enter your password: ")
+            if pwd=='krish@123':
+                break
+            else:
+                p_c+=1
+                if p_c==3:
+                    break
+                else:
+                    print("Invalid Password")
+                    print("You have only %d attempts left"%(3-p_c))
+                    continue
+        break
+                    
+    else:
+        u_c+=1
+        if u_c==3:
+            break
+        else:
+            print("Invalid User Name")
+            print("You have only %d attempts left"%(3-u_c))
+            continue
+if uname=='siva':
+    if pwd=='krish@123':
+        print("successfully login")
+    else:
+        print("Sorry,You are enter 3-time's wrong password,please try again\
+ after 24 hours")
+else:
+    print("Sorry,You are enter 3-time's wrong user name,please try again\
+ after 24 hours")
+        
+output1:
+--------
+enter your user name: abc
+Invalid User Name
+You have only 2 attempts left
+enter your user name: pqr
+Invalid User Name
+You have only 1 attempts left
+enter your user name: xyz
+Sorry,You are enter 3-time's wrong user name,please try again after 24 hours
+
+output2:
+--------
+enter your user name: abc
+Invalid User Name
+You have only 2 attempts left
+enter your user name: siva
+enter your password: krishna
+Invalid Password
+You have only 2 attempts left
+enter your password: siva@123
+Invalid Password
+You have only 1 attempts left
+enter your password: xyz@123
+Sorry,You are enter 3-time's wrong password,please try again after 24 hours
+
+output3:
+--------
+enter your user name: abc
+Invalid User Name
+You have only 2 attempts left
+enter your user name: siva
+enter your password: krish@123
+successfully login
+
+assignment-1:
+------------
+write a python script/program to implement the menu driven electricity bill calculator?
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+
+	enter your option: 1
+	previous reading:
+	current reading:
+	units=current reading-previous reading
+Category 1(between - 0to 100)
+	0-50 Units - ₹1.45,consumer charges : 25₹
+	51-100 units - ₹ 2.60 consumer charges : 30₹
+
+Category 2(between - 100 to 200)
+	0-100 Units - ₹3.30 consumer charges : ₹50
+	101-200 units - ₹ 4.30 consumer charges : 50₹
+
+Category 3(more than 200 units)
+0-200 Units - ₹5 consumer charges : ₹60
+201-300 units - ₹ 7.20 consumer charges : ₹60
+
+
+301-400 units - ₹ 8.50 consumer charges : ₹80
+401-800 units - ₹ 9 consumer charges : ₹80
+Above 800 Units - ₹ 9.5 consumer charges : ₹80 
+
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+	enter your option: 2
+	previous reading:
+	current reading:
+	units=current reading-previous reading
+
+Category 1(between - 0to 50)
+	0-50 Units - ₹7,consumer charges : 45₹
+	
+Category 2
+	0-100 Units - ₹8.50,consumer charges : ₹70
+	101-300 units - ₹ 9.90,consumer charges : 100₹
+	301-500 units - 10.40,consumer charges: 120
+	above 500     - 11.50, consumer charges:150
+
+final bill= electricity bill+consumer charges+ electricity duty(5% of             electricity bill) 
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+	enter your option: 3
+
+print("Thanks for using TSSPDCL bill calculator")

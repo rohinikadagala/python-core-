@@ -1,0 +1,274 @@
+how to read the data from the user input?
+-----------------------------------------
+in c-programming,we can read the data from the user input or console or keyboard by using scanf() function.
+
+in Python2.x,we can read the data from the user input or console or keyboard by using input(),raw_input() functions.
+
+in Python3.x,we can read the data from the user input or console or keyboard by using input() function only.
+
+ex1:
+----
+write a c-program,to read the two input values from the user and to perform the addition operation?
+
+#include<stdio.h>
+void main()
+{
+    int x,y,z;
+    printf("enter x value: ");
+    scanf("%d",&x);
+    printf("enter y value: ");
+    scanf("%d",&y);
+    z=x+y;
+    printf("%d",z);
+}
+
+output:
+------
+enter x value: 4
+enter y value: 5
+9
+
+ex2:
+----
+write a Python-program,to read the two input values from the user and to perform the addition operation?
+
+
+x=input("enter x value: ")
+y=input("enter y value: ")
+z=x+y
+print(z)
+
+output:
+-------
+enter x value: 4
+enter y value: 5
+45
+
+note:
+-----
+in python3.x versions,we can read any value from the user input through 	input() function, by default that value treated as string object.
+
+if we want to required data as a input,in that case we are using type conversions concept.
+
+what is type conversion?
+------------------------
+the type conversion means to convert one type of data into another type of data.
+
+	(or)
+
+the type conversion means to convert one datatype into another datatype.
+
+
+the type conversion can be categorized into two types, they are
+
+	1).Implicit Type Conversion
+
+	2).Explicit Type Conversion
+
+
+Implicit Type Conversion:
+-------------------------
+the type conversion will be done automatically without programmer/developer interaction by explicitly, is known as a Implicit Type conversion.
+
+Explicit Type Conversion:
+-------------------------
+the type conversion will be done with the help of programmer/developer interaction by explicitly, is known as a Explicit Type conversion.
+
+ex:
+---
+x=int(input("enter x value: "))
+y=int(input("enter y value: "))
+print(x+y)
+
+output:
+-------
+enter x value: 4
+enter y value: 5
+9
+
+ex2:
+---
+x=int(input("enter x value: "))
+y=float(input("enter y value: "))
+print(x+y)
+
+output:
+-------
+enter x value: 4
+enter y value: 5
+9.0
+
+
+assignment-1:
+-------------
+wap to read the 5 item's pricess from the user input,to calculate the total ammount after 15% discount?
+
+assignment-2:
+-------------
+wap to calculate the simple intrest?
+
+Number System's:
+-----------------
+the Number System's are used to represent the numbers in a computer memory.
+
+the Number System's can be categorized into 4-types, they are
+
+	1).Binary Number System's
+
+	2).Octal Number System's
+
+	3).Decimal Number System's
+
+	4).Hexadecimal Number System's
+
+Binary Number System's:
+-----------------------
+the Binary Number System base value is 2
+
+it contains 0-1
+
+we can represent the Binary Number System's in python, that number system contains prefix with "0b"
+
+	ex: 0b1010
+
+Octal Number System's:
+----------------------
+the Octal Number System base value is 8
+
+it contains 0-7
+
+we can represent the Octal Number System's in python,that number system contains prefix with "0o"
+
+	ex: 0o37
+
+Decimal Number System's:
+-------------------------
+the Decimal Number System base value is 10
+
+it contains 0-9
+
+in python,there's no special charecter to represent the Decimal Number System's.
+
+in python,the Decimal Number System's contains 0 but dont starts with 0
+
+	ex: 39	#valid
+	    309	#valid
+	    039 #invalid
+
+Hexadecimal Number System's:
+-----------------------------
+the Hexadecimal Number System base value is 16
+
+it contains 0-15(0123456789abcdef/ABCDEF)
+
+we can represent the Hexadecimal Number System's in python, that number system contains prefix with '0x'
+
+	ex: 0x2c
+
+ex:
+---
+>>> x=0b1010 #binary
+>>> x
+10 #decimal
+
+>>> y=0o37 #octal
+>>> y
+31 #decimal
+
+>>> z=39 #decimal
+>>> z
+39 #decimal
+
+>>> p=0x2c #hexadecimal
+>>> p
+44
+
+note:
+------
+we can pass any number system as a input to the python interpreter by default our python interpreter to return the output as decimal number system only.
+
+if we want to our required number system as a output,in that case we are using number system conversions concept.
+
+Number System Conversions:
+---------------------------
+the Number system conversions are used to convert one number system into another number system.
+
+	1).to convert Binary into Decimal
+
+>>> x=0b1101 #binary
+>>> x
+13 #decimal
+
+	2).to convert Decimal into Bianry
+
+in python,we can convert any number system into binary simply we are using bin() function.
+
+>>> y=17 #decimal
+>>> bin(y)
+0b10001 #binary
+
+	3).to convert Octal into Decimal
+
+>>> x=0o37 #octal
+>>> x
+31 #decimal
+
+
+	4).to convert Decimal into Octal
+
+in python,we can convert any number system into octal number system, in that case we are using oct() function.
+
+>>> y=39 #decimal
+>>> oct(y)
+0o47 #octal
+
+	5).to convert Hexadecimal into Decimal
+
+>>> x=0x2c #hexadecimal
+>>> x
+44
+
+	6).to convert Decimal into Hexadecimal
+
+in python,we can convert any number system into hexadecimal number system, in that case we are using hex() function.
+
+>>> y=63 #decimal
+>>> hex(y)
+0x3f #hexadecimal
+
+
+	7). to convert Binary into Octal
+
+>>> x=0b1101 #binary
+>>> oct(x)
+0o15 #octal
+
+	8).to convert Octal into Binary
+
+>>> y=0o27 #octal
+>>> bin(y)
+0b10111  #binary
+
+	9).to convert Binary into Hexadecimal
+
+>>> x=0b101101 #binary
+>>> hex(x)
+0x2d #hexadecimal
+
+	10).to convert Hexadecimal into Binary
+
+>>> y=0x2c #hexadecimal
+>>> bin(y)
+0b101100 #binary
+
+	11).to convert Octal into Hexadecimal
+
+>>> x=0o37 #octal
+>>> hex(x)
+0x1f #hexadecimal
+
+	12).to convert Hexadecimal into Octal
+
+>>> y=0x2c #hexadecimal
+>>> oct(y)
+0o54  #octal

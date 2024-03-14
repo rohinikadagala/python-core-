@@ -1,0 +1,168 @@
+Dictionary Datatype:
+---------------------
+in python, the dictionary datatype having "dict" class
+
+we can create a dict object by using {} or by calling dict()
+
+>>> x={}
+>>> x
+{}
+>>> type(x)
+<class 'dict'>
+
+>>> y=dict()
+>>> y
+{}
+>>> type(y)
+<class 'dict'>
+
+the dict object contains group of key-value pairs, each key-value pair act as a one item in our dict object.
+
+	{key_1:value_1,key_2:value_2,....,key_n:value_n}
+	 -------------,-------------,    ,--------------
+	      |             |                  |
+	   item_1       item_2              item_n
+
+
+the dict object is a mutable object but key's must be immutable and values are either mutable or immutable objects.
+
+>>> x={'name':'siva',2:4.5,False:[6,7],(2,3):9,4j:{8,5}}
+>>> x
+{'name': 'siva', 2: 4.5, False: [6, 7], (2, 3): 9, 4j: {8, 5}}
+>>> type(x)
+<class 'dict'>
+
+>>> y={'name':'siva',2:4.5,False:(6,7),[2,3]:9,4j:{8,5}}
+TypeError: unhashable type: 'list'
+
+
+from python3.4+ versions onwards, the dict object act as a sequence object.
+
+the dict object dont allow the duplicate key's but it allow the duplicate values.
+
+>>> y={'m':45,'sc':89,'tel':34,'hin':67,'m':31}
+>>> y
+{'m': 31, 'sc': 89, 'tel': 34, 'hin': 67}
+
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89}
+
+the dict object dont support indexing concept but it supporting hashing concept i.e., we are using key's
+
+by using hashing concept, we can perform 3-operations on the dict object, they are
+
+	1).retreive the value
+	2).insert an item
+	3).update the value
+
+ex1: retreive the value
+----
+>>> x={'name':'siva',2:4.5,False:[6,7],(2,3):9,4j:{8,5}}
+>>> x
+{'name': 'siva', 2: 4.5, False: [6, 7], (2, 3): 9, 4j: {8, 5}}
+>>> x['name']
+'siva'
+>>> x[2]
+4.5
+>>> x[False]
+[6, 7]
+>>> x[(2,3)]
+9
+>>> x[4j]
+{8, 5}
+>>> x[False][-1]
+7
+>>> x['name'][1]
+'i'
+
+ex2: insert an item
+----
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89}
+>>> z['eng']=65
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89, 'eng': 65}
+
+ex3: update the value
+----
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89}
+>>> z['sc']=56
+>>> z
+{'m': 45, 'sc': 56, 'tel': 34, 'hin': 89}
+
+
+the dict object dont supporting slicing concept
+
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z[::-1]
+TypeError: unhashable type: 'slice'
+
+
+the dict object dont allows another dict object as a key but it allows another dict object as a vlaue.
+
+>>> a={'name':'siva','marks':{'m':45,'sc':67}}
+>>> a
+{'name': 'siva', 'marks': {'m': 45, 'sc': 67}}
+
+>>> b={'name':'siva',{'m':45,'sc':67}:'marks'}
+TypeError: unhashable type: 'dict'
+
+working with builtin functions:
+-------------------------------
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89}
+>>> len(z)
+4
+>>> min(z)
+'hin'
+>>> max(z)
+'tel'
+>>> sorted(z)
+['hin', 'm', 'sc', 'tel']
+>>> sorted(z,reverse=True)
+['tel', 'sc', 'm', 'hin']
+>>> reversed(z)
+<dict_reversekeyiterator object at 0x000001C74F6565C0>
+>>> list(reversed(z))
+['hin', 'tel', 'sc', 'm']
+
+
+
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> z
+{'m': 45, 'sc': 89, 'tel': 34, 'hin': 89}
+>>> min(z.values())
+34
+>>> max(z.values())
+89
+>>> sorted(z.values())
+[34, 45, 89, 89]
+>>> sorted(z.values(),reverse=True)
+[89, 89, 45, 34]
+>>> list(reversed(z.values()))
+[89, 34, 89, 45]
+
+
+>>> z={'m':45,'sc':89,'tel':34,'hin':89}
+>>> min(z.items())
+('hin', 89)
+>>> max(z.items())
+('tel', 34)
+>>> sorted(z.items())
+[('hin', 89), ('m', 45), ('sc', 89), ('tel', 34)]
+>>> sorted(z.items(),reverse=True)
+[('tel', 34), ('sc', 89), ('m', 45), ('hin', 89)]
+>>> list(reversed(z.items()))
+[('hin', 89), ('tel', 34), ('sc', 89), ('m', 45)]
+>>> dict(reversed(z.items()))
+{'hin': 89, 'tel': 34, 'sc': 89, 'm': 45}
+
+
+
+
+

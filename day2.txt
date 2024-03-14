@@ -1,0 +1,282 @@
+how to develop/implement python applications/programs/projects?
+----------------------------------------------------------------
+we can develop python applications/programs/projects in 2 modes, they are
+
+	1).Interactive Mode
+
+	2).Batch Mode
+
+Interactive Mode:
+-----------------
+in Interactive mode,we can write the one by one python statements directly on python interpreter and executeing.
+
+how to working with Interactive Mode?
+-------------------------------------
+	goto cmd/terminal
+	        |
+	by typeing python and to press enter key
+
+ex:
+---
+C:\Users\Lenovo>python
+Python 3.11.4 
+
+>>> print("hello world")
+hello world
+>>> x=10
+>>> y=20
+>>> print(x+y)
+30
+>>> print(x-y)
+-10
+>>>
+
+how to exit from python Interactive mode?
+------------------------------------------
+we can exit from python Interactive mode by using following options,
+
+	ctrl+z   or   quit()    or   exit()
+
+note:
+-----
+the python interactive mode working mechanism is based on REPL rule.
+
+	Read  Evaluate	Print	Loop
+
+problems in Interactive mode:
+-----------------------------
+once we are exit from python interactive mode previous workdone will not be saved in anywhere because of that reason the python interactive mode is not suitable for development of the python applications but it suitable for only learning the python.
+
+Batch Mode:
+-----------
+in Batch Mode,we can write the one or more python statements into a single file,we can save that file with ".py" extension and executeing that file.
+
+	ex: 	.c		--> C programming
+		.cpp		--> C++ programming
+		.py		--> Python programming
+		.java		--> Java programming
+		.html		--> html document
+		.css		--> css style sheet
+		.js		--> javascript programming
+		.go		--> Go programming
+
+
+how to implement the Batch mode?
+--------------------------------
+we can implement the Batch Mode in 2-ways, they are
+
+	1).by using Editor's
+
+	2).by using IDE's
+
+what is Editor?
+---------------
+Editor is an application software,which will provides good environment to writeing the source code.
+
+	windows			--> Notepad (it is a default editor)
+				--> Notepad++
+				--> editplus
+				--> sublime text editor
+
+	linux/mac os		--> Vi editor (it is a default editor)
+				--> Nano editor
+				--> Text editor
+				--> sublime text editor
+
+
+how to working with editor's?
+------------------------------
+	open any one editor in our computer
+			|
+	goto file menu and to select new file
+			|
+	to write the python statements into that file
+			|
+	to save that file with .py extenion
+
+ex1:
+----
+	C:\\Users\\Lenovo\\Desktop\\demo.py
+	------------------------------------
+print("hello world")
+
+
+how to run python file/script through cmd/terminal?
+----------------------------------------------------
+we can run python file/script through cmd/terminal by using following syntax,
+
+	syntax
+	------
+	python filename.py
+
+ex:
+----
+C:\Users\Lenovo>python demo.py
+python: can't open file 'C:\\Users\\Lenovo\\demo.py': [Errno 2] No such file or directory
+
+C:\Users\Lenovo>python C:\Users\Lenovo\Desktop\demo.py
+hello world
+
+	(or)
+
+C:\Users\Lenovo>cd desktop
+C:\Users\Lenovo\Desktop>python demo.py
+hello world
+
+
+ex2:
+----
+	D:\\sivakrishna\\xyz\\calculation.py
+	-------------------------------------
+x=10
+y=20
+z=30
+print(x+y+z)
+print(x+y-z)
+print(x*y-z)
+
+	output
+	------
+C:\Users\Lenovo>python D:\sivakrishna\xyz\calculation.py
+60
+0
+170
+
+	(or)
+
+C:\Users\Lenovo>d:
+D:\>cd sivakrishna
+D:\sivakrishna>cd xyz
+D:\sivakrishna\xyz>python calculation.py
+60
+0
+170
+
+problems in Editor's:
+---------------------
+in Editor's,the development of the application takes more time.
+
+the editor's dont support automatic debugging concept.
+
+what is debugging?
+------------------
+the concept of identify the bugs/errors/mistakes in the source code and fixing that bugs/errors/mistakes, is known as a debugging concept.
+
+the debugging is performed by the developer.
+
+what is Testing?
+-----------------
+the concept of identify the bugs/errors/mistakes in the source code,is known as a Testing.
+
+the testing can be categorized into two types, they are
+
+	1).manual testing
+		-->white box testing
+
+		-->black box testing
+			functional testing
+
+				--> unit testing	--> developer
+				--> integration testing --> tester
+
+			non functional testing
+
+		-->gray box testing
+
+	2).automation testing
+
+
+note:
+----
+to overcome the problems in editor's,in realtime scenario's we are using IDE's concept.
+
+
+what is IDE's?
+------------
+IDE(Integrated Decelopment Environment's)
+
+the IDE's are Tools which will provides good environment to Faster Development of the applications.
+
+the IDE's support Automatic Debugging Concept.
+
+the python supported IDE's are,
+
+	idle
+	pycharm
+	pydev
+	Spyder
+	Atom
+	VS code
+	Eclipse
+	Netbeans
+	Jupiter Notebook
+	.....
+	.....etc.,
+
+
+idle:
+-----
+idle is a default python IDE but it is not a standard IDE
+
+the idle support both Interactive and Batch Mode Executions
+
+how to working with interactive mode in idle?
+---------------------------------------------
+	goto search
+	    |
+	by typing idle
+	    |
+	to select any one idle in our computer
+
+how to working with Batch Mode in idle?
+----------------------------------------
+	goto search
+	    |
+	by typing idle
+	    |
+	to select any one idle in our computer
+	    |
+	goto file menu and to select new file
+	    |
+	to write one or more python statements into that file
+	    |
+	to save that file with .py extension
+
+
+how to run/execute python files/modules in idle?
+------------------------------------------------
+	goto run menu
+	      |
+	click on run module
+
+		(or)
+
+	to press F5	(or)    Fn+F5
+
+
+note:
+-----
+except idle,if we want to working with any another IDE,first we need to required download and install manually.
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+

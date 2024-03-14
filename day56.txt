@@ -1,0 +1,318 @@
+Function Recurssion?
+---------------------
+Function Recurssion means a function can call itself.
+
+ex:
+---
+write a program to find the factorial of the given number by using function recurssion?
+
+	5!
+
+	5*(5-1)!
+	5*4*(4-1)!
+	5*4*3*(3-1)!
+	5*4*3*2*(2-1)!
+	5*4*3*2*1*(1-1)!
+	5*4*3*2*1*0!
+	5*4*3*2*1*1
+	20*3*2*1*1
+	60*2*1*1
+	120*1*1
+	120*1
+	120
+
+
+num=int(input("enter your number: "))
+def my_factorial(x):
+    if x==0:
+        return 1
+    else:
+        return x*my_factorial(x-1)
+res=my_factorial(num)
+print("the factorial of %d is: %d"%(num,res))
+
+output:
+-------
+enter your number: 5
+the factorial of 5 is: 120
+
+ex2:
+----
+num=int(input("enter your number: "))
+def my_factorial(x):
+    if x==0:
+        return 1
+    else:
+        return x*my_factorial(x-1)
+for i in range(num+1):
+    res=my_factorial(i)
+    print("the factorial of %d is: %d"%(i,res))
+
+output:
+-------
+enter your number: 5
+the factorial of 0 is: 1
+the factorial of 1 is: 1
+the factorial of 2 is: 2
+the factorial of 3 is: 6
+the factorial of 4 is: 24
+the factorial of 5 is: 120
+
+ex3:
+----
+num=int(input("enter your number: "))
+from math import factorial
+for i in range(num+1):
+    res=factorial(i)
+    print("the factorial of %d is: %d"%(i,res))
+
+output:
+------
+enter your number: 5
+the factorial of 0 is: 1
+the factorial of 1 is: 1
+the factorial of 2 is: 2
+the factorial of 3 is: 6
+the factorial of 4 is: 24
+the factorial of 5 is: 120
+
+Anonymus Functions:
+-------------------
+	we can define a functions without a function name, that type of functions are called Anonymus functions.
+
+	we can define a normal functions by using "def" keyword.
+
+	syntax
+	------
+	def function_name(p_1,p_2,...,p_n):
+		---------
+		---------
+		---------
+
+
+	we can define a Anonymus functions by using lambda keyword, because of that reason,that type of functions are also called lambda functions.
+
+	syntax
+	------
+	lambda argunments:expression
+
+note:
+------
+	the lambda functions are also called single-line functions and the anonymus functions are called nameless functions.
+
+ex1:
+----
+create a normal function to perform the addition of two numbers?
+
+def add(x,y):
+    return x+y
+print(add(4,5))
+print(type(add))
+
+output:
+-------
+9
+<class 'function'>
+
+create a anonymus(lambda) function to perform the addition of two numbers?
+
+add=lambda x,y:x+y
+print(add(4,5))
+print(type(add))
+
+output:
+-------
+9
+<class 'function'>
+
+ex2:
+----
+create a normal function to perform the arithmetic calculations?
+
+def arith_cal(x,y):
+    return x+y,x-y,x*y,x/y
+print(arith_cal(4,5))
+
+output:
+------
+(9, -1, 20, 0.8)
+
+create a anonymus(lambda) function to perform the arithmetic calculations?
+
+arith_cal=lambda x,y:(x+y,x-y,x*y,x/y)
+print(arith_cal(4,5))
+
+output:
+------
+(9, -1, 20, 0.8)    
+
+ex3:
+----
+create a normal function to check wheather given number is either even or odd?
+
+num=int(input("enter your number: "))
+def even_odd(x):
+    if x%2==0:
+        return "Even Number"
+    else:
+        return "Odd Number"
+print(even_odd(num))
+
+output1:
+--------
+enter your number: 5
+Odd Number
+
+output2:
+--------
+enter your number: 12
+Even Number
+
+
+create a anonymus(lambda) function to check wheather given number is either even or odd?
+
+num=int(input("enter your number: "))
+even_odd=lambda x:"Even Number" if x%2==0 else "Odd Number"
+print(even_odd(num))
+
+output1:
+--------
+enter your number: 5
+Odd Number
+
+output2:
+--------
+enter your number: 12
+Even Number
+
+ex4:
+----
+create a normal function to check whether given integer is either positive integer or negative integer or zero integer?
+
+num=int(input("enter your number: "))
+def p_n_z(x):
+    if x>0:
+        return "Positive Integer"
+    else:
+        if x<0:
+            return "Negative Integer"
+        else:
+            return "Zero Integer"
+print(p_n_z(num))
+
+output1:
+-------
+enter your number: 5
+Positive Integer
+
+output2:
+--------
+enter your number: -8
+Negative Integer
+
+output3:
+-------
+enter your number: 0
+Zero Integer
+
+
+create a anonymus(lambda) function to check whether given integer is either positive integer or negative integer or zero integer?
+
+num=int(input("enter your number: "))
+p_n_z=lambda x:"Positive Integer" if x>0 else "Negative Integer" if x<0 else "Zero"
+print(p_n_z(num))
+
+	(or)
+
+num=int(input("enter your number: "))
+p_n_z=lambda x:"Positive Integer" if x>0 else\
+       "Negative Integer" if x<0 else "Zero"    
+print(p_n_z(num))
+
+output1:
+-------
+enter your number: 5
+Positive Integer
+
+output2:
+--------
+enter your number: -8
+Negative Integer
+
+output3:
+-------
+enter your number: 0
+Zero
+
+use cases of lambda keyword:
+-----------------------------
+the lambda keyword is used to create a Anonymus functions in python.
+
+the lambda keyword is used to create nameless functions in python.
+
+the lambda keyword is used to single line functions.
+
+the lambda functions are used in higher-order functions like filter(),map(),
+reduce(),....,etc.,              ----------------------
+					     |
+ higher-order functions means a function takes another function as a parameter
+
+
+working with filter() function:
+--------------------------------
+the filter() function is a builtin function in both python2.x and python3.x versions.
+
+the filter() function to return the filter object.
+
+	filter(function,iterableobj)
+
+the filter() function takes the one by one element from the given iterable object, to check the condition, if condition is True the filter() to return that value otherwise the filter() to ignore that value.
+
+ex1:
+----
+x=[5,2,9,8,6,1,7,4,3]
+y=filter(lambda i:i%2==0,x)
+print(y)
+print(type(y))
+for i in y:
+    print(i)
+
+output:
+-------
+<filter object at 0x0000023A44BBBDC0>
+<class 'filter'>
+2
+8
+6
+4
+
+ex2:
+----
+print(list(filter(lambda i:i%2==0,[5,2,9,8,6,1,7,4,3])))
+
+output:
+-------
+[2, 8, 6, 4]
+
+
+assignment-1:
+-------------
+create a function to calculate the BMI(Body Mass Index) value Given Hieght and weight?
+
+	BMI Categories:
+Underweight = <18.5
+Normal weight = 18.5–24.9
+Overweight = 25–29.9
+Obesity = BMI of 30 or greater
+
+	BMI = weight (kg)/height**2 (m)
+
+
+assignment-2:
+-------------
+write a program to implement the menu driven arithmetic calculator by using functions?
+
+assignment-3:
+-------------
+write a program to implement the menu driven number system calculator by using functions?
+

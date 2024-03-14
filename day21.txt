@@ -1,0 +1,318 @@
+		Control flow statements
+		------------------------
+the control flow statements are used to control the flow of the program execution.
+
+why we need to control the flow of the program execution?
+---------------------------------------------------------
+	Generally in any programming language program,by default all the statements are executed at only once.
+
+ex:
+---
+	demo.py
+	-------
+print("hai")
+print("siva")
+print("good morning")
+print("krishna")
+print("good night")
+print("bye")
+
+	output
+	------
+hai
+siva
+good morning
+krishna
+good night
+bye
+
+ex2:
+---
+	demo.c
+	------
+#include<stdio.h>
+void main()
+{
+    printf("hai\n");
+    printf("siva\n");
+    printf("good morning\n");
+    printf("krishna\n");
+    printf("good night\n");
+    printf("bye");
+}
+
+	output
+	------
+hai
+siva
+good morning
+krishna
+good night
+bye
+
+
+if we want to execute the block of statements repeatedly or repeated N-no.of times, if we dont want to executed block of statements at least one time also i.e., to skip the execution of block of statements,in these two scenario's we need to control the flow of the program execution.
+
+	ref fig: execution flow
+
+ex:
+---
+	demo.py
+	-------
+print("hai")
+num=int(input("enter your number: "))
+if num>5:
+    print("siva")
+    print("good morning")
+for i in range(num):
+    print("krishna")
+    print("good night")
+print("bye")
+
+	output
+	------
+hai
+enter your number: 4
+krishna
+good night
+krishna
+good night
+krishna
+good night
+krishna
+good night
+bye
+
+
+how to control the flow of the program execution?
+-------------------------------------------------
+	we can control the flow of the program execution by using control flow statements.
+
+the control flow statements can be categorized into 3-types, they are
+
+	1).Conditional/Sequential Statements
+
+	2).Looping/Iterative Statements
+
+	3).Jumping/Transform Statements
+
+what is Condition?
+------------------
+the boolean expressions are called conditions.
+
+	(or)
+
+any expression to return the output as boolean values like True or False, that type of expressions are called Conditions.
+
+ex:
+---
+x,y=10,3
+
+x+y	--> 13		--> expression
+x-y	--> 7		--> expression
+x*y	--> 30		--> expression
+x==y	--> False	--> expression		--> condition
+x>y	--> True	--> expression		--> condition
+x<y	--> False	--> expression		--> condition
+x&y	--> 2		--> expression
+x|y	--> 11		--> expression
+
+note:
+----
+all conditions are expressions but all expressions are not a conditions.
+
+what is block/clause?
+---------------------
+in python, the group of statements which are follow the same space indentation is known as a block or clause.
+
+	ref fig: block
+
+Conditional/Sequential Statements:
+----------------------------------
+	the conditional statements are used to execute the block of statements or to skip the execution of block of statements or to execute one block of statements among from multiple blocks of statements.
+
+the python supported conditional statements are,
+
+	if
+	if else
+	if elif else(if else-if else in C/C++/Java)
+	nested if
+	elif ladder(else-if ladder in C/C++/Java)
+	match-case(switch-case in C/C++/Java)
+
+if block:
+----------
+we can define any block which is preceeded by "if" keyword, that block is called "if" block.
+
+	syntax
+	------
+	if condition: stmt
+
+		(or)
+
+	if condition:
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+
+		(or)
+
+	if(condition):
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+
+flowchart:
+----------
+	ref fig: if flowchart
+
+ex1:
+----
+print("hai")
+age=int(input("enter your age: "))
+if age>=18:print("congratulations,you are eligible of voter registration")
+print("bye")
+
+output1:
+--------
+hai
+enter your age: 13
+bye
+
+output2:
+--------
+hai
+enter your age: 19
+congratulations,you are eligible of voter registration
+bye
+
+ex2:
+---
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+if age>=18:
+    print("hello %s"%name)
+    print("you are %d years old"%age)
+    print("congratulations,you are eligible of voter registration")
+print("bye")
+
+output1:
+-------
+enter your name: siva
+enter your age: 12
+bye
+
+output2:
+-------
+enter your name: rama
+enter your age: 18
+hello rama
+you are 18 years old
+congratulations,you are eligible of voter registration
+bye
+
+if else block
+-------------
+	syntax
+	-------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+flowchart:
+----------
+	ref fig: if else flowchart
+
+ex1:
+---
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+if age>=18:
+    print("hello %s"%name)
+    print("you are %d years old"%age)
+    print("congratulations,you are eligible of voter registration")
+else:
+    print("hello %s"%name)
+    print("you are %d years old"%age)
+    print("sorry,you are not eligible of voter registration")
+print("bye")
+
+output1:
+--------
+enter your name: siva
+enter your age: 12
+hello siva
+you are 12 years old
+sorry,you are not eligible of voter registration
+bye
+
+output2:
+-------
+enter your name: rama
+enter your age: 19
+hello rama
+you are 19 years old
+congratulations,you are eligible of voter registration
+bye
+
+
+assignment-1:
+------------
+wap to check wheather given number is either Even or Odd?
+
+	input			output
+	----			------
+	5			Odd
+	8			Even
+
+
+assignment-2:
+------------
+wap to check wheather given string is alindrom string or not,without ignore the case?
+
+	input		Reverse_order		output
+	------		------------		-------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	LevEl		lEveL			not a palindrom
+
+
+assignment-3:
+------------
+wap to check wheather given string is alindrom string or not,with ignore the case?
+
+	input		Reverse_order		output
+	------		------------		-------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	LevEl		lEveL			palindrom
+
+assignment-4:
+------------
+wap take the string as a input and to return the first,middle and last charecters from the given string?
+
+	--> if string length is even,it return only first and last charecters.
+
+	--> if string length is odd,it returns first,middle and last 	    charecters
+
+
+	input		no_of_char		output
+	-----		---------		-------
+	siva		   4			sa
+
+	krishna		   7			ksa
+
+

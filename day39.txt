@@ -1,0 +1,315 @@
+assignment-1:
+--------------
+wap take the list object as a input from the user,to convert that list into two sublists, one sub list contains even numbers in ascending order and another sublist contains odd numbers in descending order?
+
+	input			output
+	-----			-------
+[5,2,8,3,12,35,1,6,9]		[[2,6,8,12],[35,9,5,3,1]]
+
+sol:
+----
+x=eval(input("enter your list object: "))
+even_list=[]
+odd_list=[]
+result=[]
+for ele in x:
+    if ele%2==0:
+        even_list.append(ele)
+    else:
+        odd_list.append(ele)
+result.append(sorted(even_list))
+result.append(sorted(odd_list,reverse=True))
+print(result)
+        
+
+assignment-2:
+-------------
+wap take the nested list object as a input from the user,to convert that nested list into flatted/single list?
+
+	input			output
+	------			-------
+[[4,2,7],[1,9,3]]		[4,2,7,1,9,3]
+
+sol:
+----
+x=eval(input("enter your nested list object: "))
+y=[]
+for i in x:
+    for j in i:
+        y.append(j)
+print(y)
+        
+
+
+assignment-3:
+-------------
+wap take the list object as a input from the user and to return the sum of odd numbers in that list?
+
+	input			output
+	-----			-------
+[5,2,8,3,12,35,1,6,9]		53
+
+sol:
+----
+x=eval(input("enter your list object: "))
+s=0
+for ele in x:
+    if ele%2!=0:
+        s+=ele
+print(s)
+
+
+index()
+-------
+to return the positive index of first occurencess of given element in a list object from left to right.
+
+	listobj.index(element,[start],[stop])
+
+ex1:
+---
+>>> x=[10,20,30,40,50]
+>>> x
+[10, 20, 30, 40, 50]
+>>> x.index(10)
+0
+>>> x.index(30)
+2
+>>> x.index(50)
+4
+>>> x.index(60)
+ValueError: 60 is not in list
+>>> x.index()
+TypeError: index expected at least 1 argument, got 0
+
+ex2:
+----
+>>> y=[10,20,30,10,40,30,10,20,30,10]
+>>> y
+[10, 20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.index(10)
+0
+>>> y.index(10,1)
+3
+>>> y.index(10,4)
+6
+>>> y.index(10,4,6)
+ValueError: 10 is not in list
+>>> y.index(10,4,7)
+6
+
+ex3:
+----
+wap to print all the possible indexex of given element in a list object?
+
+	demo.py
+	------
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your element: "))
+if ele in x:
+    for ind in range(len(x)):
+        if x[ind]==ele:
+            print(ind)
+else:
+    print("Element not Found")
+
+output1:
+-------
+enter your list object: [10,2.3,4j,10,"siva",4j,2.3,10,4j,False,10]
+enter your element: 10
+0
+3
+7
+10
+
+output2:
+--------
+enter your list object: [10,2.3,4j,10,"siva",4j,2.3,10,4j,False,10]
+enter your element: 4j
+2
+5
+8
+
+output3:
+--------
+enter your list object: [10,2.3,4j,10,"siva",4j,2.3,10,4j,False,10]
+enter your element: 20
+Element not Found
+
+assignment-1:
+-------------
+wap to print all the possible indexex of each and every element in a list object?
+
+	input				output
+	-----				-------
+[10,20,30,10,20,40,10,30,20,10]		indexes of element 10: 0
+							       3
+							       6
+							       9
+
+					indexes of element 20: 1
+							       4
+							       8
+
+					indexes of element 30: 2
+							       7
+
+					indexes of element 40: 5
+
+
+assignment-2:
+-------------
+wap to calculate the accumulated sum of given list object elements?
+
+	input			output
+	-----			------
+     [2,7,3,8,5]		[2,9,12,20,25]
+
+
+insert()
+--------
+to insert an element into the list object at any position/place/indexing.
+
+	listobj.insert(index,element)
+
+ex:
+---
+>>> x=[10,20,30,40,50]
+>>> x
+[10, 20, 30, 40, 50]
+>>> x.insert(0,7)
+>>> x
+[7, 10, 20, 30, 40, 50]
+>>> x.insert(2,15)
+>>> x
+[7, 10, 15, 20, 30, 40, 50]
+>>> x.insert(x.index(30),33)
+>>> x
+[7, 10, 15, 20, 33, 30, 40, 50]
+>>> x.insert(len(x)-1,45)
+>>> x
+[7, 10, 15, 20, 33, 30, 40, 45, 50]
+>>> x.insert(len(x),35)
+>>> x
+[7, 10, 15, 20, 33, 30, 40, 45, 50, 35]
+>>> x.insert(1000,27)
+>>> x
+[7, 10, 15, 20, 33, 30, 40, 45, 50, 35, 27]
+>>> x.index(27)
+10
+
+pop()
+-----
+to remove an particular element from the list object based on indexing.
+
+	listobj.pop(index=-1)
+
+ex:
+---
+>>> x=[10,20,30,40,50]
+>>> x
+[10, 20, 30, 40, 50]
+>>> x.pop(0)
+10
+>>> x
+[20, 30, 40, 50]
+>>> x.pop(x.index(30))
+30
+>>> x
+[20, 40, 50]
+>>> x.pop()
+50
+>>> x
+[20, 40]
+>>> x.pop(2)
+IndexError: pop index out of range
+
+remove()
+--------
+to remove an particular element from the list object based on element.
+
+	listobj.remove(element)
+
+in our list object duplicate elements are there, in that case the remove() to remove the only first occurence of that element from left to right.
+
+ex:
+---
+>>> a=[10,20,30,40,50]
+>>> a
+[10, 20, 30, 40, 50]
+>>> a.remove(10)
+>>> a
+[20, 30, 40, 50]
+>>> a.remove(50)
+>>> a
+[20, 30, 40]
+>>> a.remove(60)
+ValueError: list.remove(x): x not in list
+>>> a.remove()
+TypeError: list.remove() takes exactly one argument (0 given)
+
+ex2:
+---
+>>> y=[10,20,30,10,40,30,10,20,30,10]
+>>> y
+[10, 20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.remove(10)
+>>> y
+[20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.remove(20)
+>>> y
+[30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.remove(30)
+>>> y
+[10, 40, 30, 10, 20, 30, 10]
+
+
+ex3:
+----
+write a program,to remove all the possible occurencess of given element in a list object?
+
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your element: "))
+y=[]
+if ele in x:
+    for i in x:
+        if i!=ele:
+            y.append(i)
+    print(y)
+else:
+    print("Element not Found")
+
+output1:
+---------
+enter your list object: [10,20,30,10,40,20,10,30,20,10]
+enter your element: 10
+[20, 30, 40, 20, 30, 20]
+
+output2:
+--------
+enter your list object: [10,20,30,10,10,40,20,10,30,20,20,10]
+enter your element: 10
+[20, 30, 40, 20, 30, 20, 20]
+
+output3:
+--------
+enter your list object: [10,20,30,10,10,40,20,10,30,20,20,10]
+enter your element: 50
+Element not Found
+
+assignment-3:
+--------------
+write a program to remove all the duplicate elements in a given list object?
+
+	input					output
+	-----					-------
+[10,2.3,4j,10,False,2.3,"siva",10,4j]	  [10,2.3,4j,False,"siva"]
+
+
+assignment-4:
+-------------
+write a program to move the zero's at the end of the list?
+
+	input				output
+	-----				-------
+[9,2.3,0,False,4j,0,"siva",5,0,[4,2]]   [9,2.3,False,4j,"siva",5,[4,2],0,0,0]
+

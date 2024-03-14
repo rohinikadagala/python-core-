@@ -1,0 +1,271 @@
+assignment-1:
+-------------
+wap take the string as a input and to seperate the even indexing charecters and odd indexing charecters,seperated by "," ?
+
+	input			output
+	-----			------
+	siva			sv,ia
+
+	good morning		go onn,odmrig
+
+sol:
+----
+x=input("enter your string object: ")
+print(x[::2],x[1::2],sep=",")
+
+
+assignment-2:
+-------------
+wap take the string as a input and to exchange the first charecter and last charecter in that string?
+
+	input			output
+	-----			-------
+	siva			aivs
+
+	siva krishna		aiva krishns
+
+sol:
+-----
+x=input("enter your string object: ")
+print(x[-1]+x[1:-1]+x[0])
+
+
+assignment-3:
+-------------
+wap take the first name and last name of the employee and to generate the Full Name of the employee, first name and last name seperated by ' ' charecter?
+
+	input			output
+	-----			-------
+	siva
+	krishna
+				siva krishna
+
+sol:
+----
+fname=input("enter first name: ")
+lname=input("enter last name: ")
+print(fname,lname)
+
+
+working with builtin functions:
+-------------------------------
+len()
+-----
+to return the no.of charecters/elements/item's in a given iterable/container/collection object.
+
+	len(iterableobj)
+
+ex:
+---
+>>> x="siva" #str
+>>> y=[5,3,7,8,9,2] #list
+>>> z={'name':'siva','sal':3500.0,'dno':10} #dict
+>>> a=34 #int
+>>> len(x)
+4
+>>> len(y)
+6
+>>> len(z)
+3
+>>> len(a)
+TypeError: object of type 'int' has no len()
+
+ord()
+-----
+to return the ASCII(American Standard Code for Information and Interchange) value of the given charecter.
+
+the ord() takes the parameter as single charecter only.
+
+	ord(charecter)
+
+note:
+	0-9	--> 48-57
+	A-Z	--> 65-90
+	a-z	--> 97-122
+
+ex:
+---
+>>> ord('9')
+57
+>>> ord('A')
+65
+>>> ord('a')
+97
+>>> ord('@')
+64
+>>> ord('#')
+35
+>>> ord('ab')
+TypeError: ord() expected a character, but string of length 2 found
+
+chr()
+-----
+to return the charecter of the given ASCII value.
+
+	chr(ASCII value)
+
+ex:
+---
+>>> chr(65)
+'A'
+>>> chr(97)
+'a'
+>>> chr(64)
+'@'
+>>> chr(50)
+'2'
+>>> chr(32)
+' '
+
+min()
+-----
+to return the minimum element/charecter from the given iterable object.
+
+	min(iterableobj)
+
+ex:
+---
+>>> x="sIVa"
+>>> y=[5,3,8,4]
+>>> z=453
+>>> min(x)
+'I'
+>>> min(y)
+3
+>>> min(z)
+TypeError: 'int' object is not iterable
+
+max()
+-----
+to return the maximum charecter/element from the given iterable object.
+
+	max(iterableobj)
+
+ex:
+---
+>>> x="sIVa"
+>>> y=[5,3,8,4]
+>>> z=453
+>>> max(x)
+'s'
+>>> max(y)
+8
+>>> max(z)
+TypeError: 'int' object is not iterable
+
+sorted()
+-------
+to return the charecters/elements in sorting order from the given iterable object.
+
+by default,the sorted() to return the ascending order.
+
+by default,the sorted() to return the output as list format/list object.
+
+	sorted(iterableobj,reverse=False)
+
+ex1:
+---
+>>> x="sIVa"
+>>> y=[5,3,8,4]
+>>> z=453
+>>> sorted(x)
+['I', 'V', 'a', 's']
+>>> sorted(y)
+[3, 4, 5, 8]
+>>> sorted(z)
+TypeError: 'int' object is not iterable
+
+note:
+-----
+if we want to print the charecters/elements in descending order,in that case we are change the reverse attribute value False to True.
+
+ex2:
+----	
+>>> x="sIVa"
+>>> y=[5,3,8,4]
+>>> z=453
+>>> sorted(x,reverse=True)
+['s', 'a', 'V', 'I']
+>>> sorted(y,reverse=True)
+[8, 5, 4, 3]
+>>> sorted(z,reverse=True)
+TypeError: 'int' object is not iterable
+
+reversed()
+---------
+the reversed() to return the reversed iterator object.
+
+that reversed iterator object contains elements/charecters in reverse order.
+
+	reversed(iterableobj)
+
+ex:
+---
+>>> x="sIVa"
+>>> y=[5,3,8,4]
+>>> z=453
+>>> reversed(x)
+<reversed object at 0x0000023D48BFBA00>
+>>> list(reversed(x))
+['a', 'V', 'I', 's']
+
+>>> reversed(y)
+<list_reverseiterator object at 0x0000023D48BF9870>
+>>> list(reversed(y))
+[4, 8, 3, 5]
+
+>>> reversed(z)
+TypeError: 'int' object is not reversible
+
+
+Basic Differencess between Function's and Method's:
+-----------------------------------------------------
+		Function's
+		----------
+1).we can define any one logic to perform a particular operation from outside the class,that logic is called Function.
+
+2).the function is not executed automatically,whenever we are calling a function then only function logic will be executed.
+we can call the function directly by using function name.
+
+3).we can use function's on top of any type objects.
+
+		Method's
+		---------
+1).we can define any one logic to perform a particular operation from within the class,that logic is called Method.
+
+2).the method is not executed automatically,whenever we are calling a method then only method logic will be executed.
+we can call the method with the help of object reference.
+
+3).we can use methods only on top of that particular type of objects.
+
+
+assignment-1:
+--------------
+wap take the string object as a input from the user and to print that string repeatedly based on the no.of charecters in that string?
+
+	input		output
+	-----		------
+	hai		haihaihai
+	siva		sivasivasivasiva
+	hello		hellohellohellohellohello
+
+
+assignment-2:
+--------------
+wap take the employe yearly gross salary as a input from the user and to calculate the monthly net salary after deducting the HRA,TA,DA,PF,ESI ?
+
+	HRA	--> 10%
+	TA	--> 5%
+	DA	--> 5%
+	PF	--> 7%
+	ESI	--> 3%
+
+
+
+
+
+
+
+
+
+

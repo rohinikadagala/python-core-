@@ -1,0 +1,289 @@
+assignment-1:
+------------
+wap to check wheather given charecter is either alphabet or digit or special charecter, dont use any builtin methods like isalpha(),isdigit() ?
+
+	input			output
+	-----			-------
+	t			alphabet
+	R			alphabet
+	6			digit
+	@			special charecter
+
+
+sol:
+----
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    print("Given charecter is a Alphabet")
+elif ch>='0' and ch<='9':
+    print("Given charecter is a Digit")
+else:
+    print("Given charecter is a Special Charecter")
+
+
+assignment-2:
+-------------
+wap to check wheather given triangle is either right-angle triangle or accute trianle or obtuse triangle based on angles?
+
+	input			output
+	-----			-------
+	a1=90,a2=45,a3=45	right-angle triangle
+	a1=60,a2=20,a3=100	obtuse triangle
+	a1=60,a2=50,a3=70	accute triangle
+
+
+sol:
+----
+a1,a2,a3=eval(input("enter your 3-angles degrees: "))
+if a1==90 or a2==90 or a3==90:
+    print("Given Triangle is Right Angle Triangle")
+elif a1>90 or a2>90 or a3>90:
+    print("Given Triangle is Obtuse Triangle")
+else:
+    print("Given Triangle is Accute Triangle")
+
+
+assignment-3:
+------------
+wap to find the maximum number among from given 3-numbers?
+
+	input			output
+	-----			-------
+	a,b,c=3,5,4		b is a maximum number
+
+	a,b,c=5,3,4		a is a maximum number
+
+	a,b,c=4,3,5		c is a maximum number
+
+	a,b,c=5,5,5		all are equal numbers
+
+	a,b,c=5,3,5		a and c are maximum numbers
+
+	a,b,c=5,5,3		a and b are maximum numbers
+
+	a,b,c=3,5,5		b and c are maximum numbers
+
+sol:
+----
+x,y,z=eval(input("enter x,y and z values: "))
+if x>y and x>z:
+    print("x is a maximum number")
+elif y>x and y>z:
+    print("y is a maximum number")
+elif z>x and z>y:
+    print("z is a maximum number")
+elif x==y and y==z and z==x:
+    print("all are equal numbers")
+elif x==y and z<x:
+    print("x and y are maximum numbers")
+elif y==z and x<y:
+    print("y and z are maximum numbers")
+elif x==z and y<x:
+    print("x and z are maximum numbers")
+
+
+
+assignment-4:
+-------------
+wap take the customer N-products rates,to calculate total ammount and to display net ammount after discount based on following discount rates?
+
+	total ammount>=10000		--> 30% discount
+
+	7000<=total ammount<10000	--> 20% discount
+
+	5000<=total ammount<7000	--> 15% discount
+
+	3000<=total ammount<5000	--> 10% discount
+
+	total ammount<3000		--> 5% discount
+
+
+sol:
+-----
+products_rates=eval(input("enter product rates: "))
+total_ammount=sum(products_rates)
+if total_ammount>=10000:
+    discount=(30/100)*total_ammount
+    print("Total Ammount:",total_ammount)
+    print("Discount Ammount:",discount)
+    print("Net Ammount:",total_ammount-discount)
+elif total_ammount>=7000 and total_ammount<10000:
+    discount=(20/100)*total_ammount
+    print("Total Ammount:",total_ammount)
+    print("Discount Ammount:",discount)
+    print("Net Ammount:",total_ammount-discount)
+elif total_ammount>=5000 and total_ammount<7000:
+    discount=(15/100)*total_ammount
+    print("Total Ammount:",total_ammount)
+    print("Discount Ammount:",discount)
+    print("Net Ammount:",total_ammount-discount)
+elif total_ammount>=3000 and total_ammount<5000:
+    discount=(10/100)*total_ammount
+    print("Total Ammount:",total_ammount)
+    print("Discount Ammount:",discount)
+    print("Net Ammount:",total_ammount-discount)
+else:
+    discount=(5/100)*total_ammount
+    print("Total Ammount:",total_ammount)
+    print("Discount Ammount:",discount)
+    print("Net Ammount:",total_ammount-discount)
+    
+
+ex:
+---
+wap to check wheather given charecter is either alphabet or digit or special charecter by using builtin methods?
+
+
+	input			output
+	-----			-------
+	t			alphabet
+	R			alphabet
+	6			digit
+	@			special charecter
+
+sol:
+---
+ch=input("enter your charecter: ")
+if ch.isalpha():
+    print("Given charecter is a Alphabet")
+elif ch.isdigit():
+    print("Given charecter is a Digit")
+else:
+    print("Given charecter is a Special Charecter")
+
+
+nested if:
+----------
+nested if means we can define a if block inside another if block.
+
+	syntax
+	------
+	if condition: #outer if
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+		if condition: #inner if
+			stmt_1
+			stmt_2
+			......
+			stmt_n
+
+ex:
+---
+wap to check wheather given charecter is a alphabet or not,wheather it is a alphabet to check wheather that alphabet is either lower case alphabet or uppercase alphabet?
+
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    if ch>='a' and ch<='z':
+        print("Given charecter is a Lowercase alphabet")
+    else:
+        print("Given charecter is a Uppercase alphabet")
+else:
+    print("Given charecter is not a alphabet")
+    
+	(or)
+
+ch=input("enter your charecter: ")
+if ch.isalpha():
+    if ch.islower():
+        print("Given charecter is a Lowercase alphabet")
+    else:
+        print("Given charecter is a Uppercase alphabet")
+else:
+    print("Given charecter is not a alphabet")
+
+
+output1:
+--------
+enter your charecter: r
+Given charecter is a Lowercase alphabet
+
+output2:
+--------
+enter your charecter: T
+Given charecter is a Uppercase alphabet
+
+output3:
+--------
+enter your charecter: 7
+Given charecter is not a alphabet
+
+output4:
+--------
+enter your charecter: @
+Given charecter is not a alphabet
+
+
+ex2:
+----
+wap to check wheather given two strings are Anagram strings or not?
+
+	anagram string means,the second string is generated the shuffeling of first string.
+
+	scenario-1
+	----------
+	s1="eat"
+	s2="tea"
+	
+	here s1 and s2 are anagram strings
+
+	scenario-2
+	----------
+	s1="bad"
+	s2="bed"
+
+	here s1 and s2 are not a anagram strings
+
+	scenario-3:
+	----------
+	s1="madam"
+	s2="mad"
+	
+	here s1 and s2 are not a anagram strings
+
+sol:
+---
+s1=input("enter string_1: ")
+s2=input("enter string_2: ")
+if len(s1)==len(s2):
+    if sorted(s1)==sorted(s2):
+        print("Given string's are Anagram strings")
+    else:
+        print("Given string's are not a Anagram strings")
+else:
+    print("Given string's are not a Anagram strings")
+    
+
+assignment-1:
+-------------
+wap to check wheather given string object contains only alphabets or not,wheather it is contains only alphabets to check wheather that string contains only lowercase alphabets or only uppercase alphabets or contains both lowercase and uppercase alphabets?
+
+	input			output
+	-----			------
+	siva			only lowercase alphabets
+
+	RAMA			only Uppercase alphabets
+
+	KrIsHnA			both lowercase and uppercase alphabets
+
+	Rama@123		not only alphabets
+
+
+assignment-2:
+------------
+wap to check wheather given charecter is alphabet or not,wheather it is a alphabet to check wheather that alphabet is either vowel or consonent?
+
+	input			output
+	-----			------
+	e			vowel
+	t			consonent
+	R			consonent
+	I			vowel
+	6			digit
+	@			special charecter
+
+
+			
+
+ 

@@ -1,0 +1,303 @@
+assignment-1:
+-------------
+wap to print all the possible indexex of each and every element in a list object?
+
+	input				output
+	-----				-------
+[10,20,30,10,20,40,10,30,20,10]		indexes of element 10: 0
+							       3
+							       6
+							       9
+
+					indexes of element 20: 1
+							       4
+							       8
+
+					indexes of element 30: 2
+							       7
+
+					indexes of element 40: 5
+
+sol:
+---
+x=eval(input("enter your list: "))
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+for ele in y:
+    print(f"the indexex of element {ele}:")
+    for i in range(len(x)):
+        if x[i]==ele:
+            print("\t\t",i)
+
+
+
+assignment-2:
+-------------
+wap to calculate the accumulated sum of given list object elements?
+
+	input			output
+	-----			------
+     [2,7,3,8,5]		[2,9,12,20,25]
+
+sol:
+----
+x=eval(input("enter your list: "))
+y=[]
+s=0
+for ele in x:
+    s+=ele
+    y.append(s)
+print(y)
+
+
+assignment-3:
+--------------
+write a program to remove all the duplicate elements in a given list object?
+
+	input					output
+	-----					-------
+[10,2.3,4j,10,False,2.3,"siva",10,4j]	  [10,2.3,4j,False,"siva"]
+
+
+sol:
+----
+x=eval(input("enter your list: "))
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+print(y)
+
+assignment-4:
+-------------
+write a program to move the zero's at the end of the list?
+
+	input				output
+	-----				-------
+[9,2.3,0,False,4j,0,"siva",5,0,[4,2]]   [9,2.3,False,4j,"siva",5,[4,2],0,0,0]
+
+sol:
+----
+x=eval(input("enter your list: "))
+for ele in x:
+    if ele==0:
+        x.remove(ele)
+        x.append(ele)
+print(x)
+
+sort()
+------
+to return the list object elements in sorting order.
+
+by default, the sort() to perform the ascending order.
+
+the sort() to perform the inplace order operation.
+
+	listobj.sort(reverse=False)
+
+ex:
+---
+>>> x=[5,3,7,2]
+>>> x
+[5, 3, 7, 2]
+>>> sorted(x) #sorted is a function
+[2, 3, 5, 7]
+>>> x
+[5, 3, 7, 2]
+>>> x.sort() #sort is a list class method
+>>> x
+[2, 3, 5, 7]
+
+ex2:
+----
+>>> y="siva" #str object
+>>> y
+'siva'
+>>> sorted(y) #sorted is a function
+['a', 'i', 's', 'v']
+>>> y
+'siva'
+>>> y.sort()
+AttributeError: 'str' object has no attribute 'sort'
+
+ex3:
+----
+>>> x=[5,3,7,2]
+>>> x
+[5, 3, 7, 2]
+>>> sorted(x,reverse=True)
+[7, 5, 3, 2]
+>>> x
+[5, 3, 7, 2]
+>>> x.sort(reverse=True)
+>>> x
+[7, 5, 3, 2]
+
+reverse()
+---------
+to return the list object elements in reverse order.
+
+the reverse() to perform the inplace order operation.
+
+	listobj.reverse()
+
+ex1:
+----
+>>> x=[5,3,7,2]
+>>> x
+[5, 3, 7, 2]
+>>> reversed(x) #reversed is a function
+<list_reverseiterator object at 0x0000015B4BB7FC10>
+>>> list(reversed(x))
+[2, 7, 3, 5]
+>>> x
+[5, 3, 7, 2]
+>>> x.reverse() #reverse is a list class method
+>>> x
+[2, 7, 3, 5]
+
+
+what is Comprihension?
+----------------------
+	to generate the elements into the object dynamically by writeing some logic in that object,is known as a Comprihension concept.
+
+	the comprihension technique is applicable only on mutable objects like list,set,dict,...
+
+list comprihension:
+--------------------
+	to generate the elements into list object dynamically by writeing some logic in that list object, is known as a List Comprihension.
+
+	we can implement the list comprihension,in that case we need to required minimum one list object and one for loop.
+
+ex1:
+----
+write a program input to the N-no.of elements into list object?
+
+	Normal case
+	-----------
+x=[]
+num=int(input("enter no.of elements: "))
+for i in range(num):
+    x.append(eval(input()))
+print(x)
+
+	output
+	------
+enter no.of elements: 5
+5
+2.3
+4j
+False
+"siva"
+[5, 2.3, 4j, False, 'siva']
+
+	list comprihension
+	------------------
+num=int(input("enter no.of elements: "))
+print([eval(input()) for i in range(num)])
+
+	output
+	------
+enter no.of elements: 5
+5
+2.3
+4j
+False
+"siva"
+[5, 2.3, 4j, False, 'siva']
+
+
+ex2:
+----
+write a program to generate the even numbers into list object from 1-N natural numbers?
+
+	Normal case
+	-----------
+num=int(input("enter your number: "))
+x=[]
+for i in range(1,num+1):
+    if i%2==0:
+        x.append(i)
+print(x)
+
+	output
+	------
+enter your number: 10
+[2, 4, 6, 8, 10]
+
+
+	list comprihension
+	------------------
+num=int(input("enter your number: "))
+print([i for i in range(1,num+1) if i%2==0])
+
+	output
+	------
+enter your number: 10
+[2, 4, 6, 8, 10]
+
+ex3:
+----
+write a program to generate the resut of both if and else into list object from 1-N natural numbers?
+
+	Normal case
+	-----------
+num=int(input("enter your number: "))
+x=[]
+for ele in range(1,num+1):
+    if ele%2==0:
+        x.append(True)
+    else:
+        x.append(False)
+print(x)
+
+	output
+	------
+enter your number: 10
+[False, True, False, True, False, True, False, True, False, True]
+	
+	List comprihension
+	------------------
+num=int(input("enter your number: "))
+print([True if ele%2==0 else False for ele in range(1,num+1)])
+
+	output
+	------
+enter your number: 10
+[False, True, False, True, False, True, False, True, False, True]
+
+
+assignment-1:
+-------------
+wap to generate the elements into list object, that element contains value and no.of occurencess of that element from the given list?
+
+	input
+	-----
+[10,20,30,10,30,40,10,20,30,10,40,50,20,10]
+
+	output
+	------
+[(10,5),(20,3),(30,3),(40,2),(50,1)]
+
+assignment-2:
+--------------
+wap to print the list object elements in reverse order, dont use reversed() function and reverse() methods?
+
+	input			output
+	-----			------
+     [3,2,6,8,5]		[5,8,6,2,3]
+
+assignment-3:
+-------------
+wap to perform the aggrigate operations on given list object?
+
+	input			output
+	-----			-------
+[4,7,None,8,9,None,2,5]		min: 2
+				max: 9
+			        count:6
+				sum:35
+				avg:5.83...
+

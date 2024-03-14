@@ -1,0 +1,437 @@
+assignment:
+-----------
+wap take the string object as a input from the user and to add first charecter in that string repeatedly depends on the no.of charecters at leftside and to add last charecter in that string repeatedly depends on the no.of charecters at rightside?
+
+	input			output
+	-----			------
+	hai			hhhhaiiii
+
+	siva			sssssivaaaaa
+
+sol:
+----
+x=input("enter your string: ")
+print(x[0]*len(x)+x+x[-1]*len(x))
+
+strip()
+-------
+to remove all the possible occurencess of given charecters in a string object at begening or ending or both places.
+
+	strobj.strip(chars)
+
+by default, the strip() to remove the whitespace charecters.
+
+ex1:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.strip('s')
+'iva krishna'
+>>> x
+'siva krishna'
+>>> x.strip('a')
+'siva krishn'
+>>> x
+'siva krishna'
+>>> x.strip('siva')
+' krishn'
+>>> x
+'siva krishna'
+
+ex2:
+----
+>>> y="madam"
+>>> y
+'madam'
+>>> y.strip('m')
+'ada'
+>>> y
+'madam'
+>>> y.strip('am')
+'d'
+>>> y
+'madam'
+>>> y.strip('dma')
+''
+>>> y
+'madam'
+>>> y.strip('k')
+'madam'
+>>> y
+'madam'
+
+ex3:
+----
+>>> z=" siva "
+>>> z
+' siva '
+>>> z.strip()
+'siva'
+>>> z
+' siva '
+
+ex4:
+----
+>>> a="\n \tsiva\n \t"
+>>> a
+'\n \tsiva\n \t'
+>>> a.strip()
+'siva'
+>>> a
+'\n \tsiva\n \t'
+
+lstrip()
+---------
+to remove all the possible occurencess of given charecters in a string object at begening position only i.e., from left side only.
+
+	strobj.lstrip(chars)
+
+by default, the lstrip() to remove the whitespace charecters from leftside.
+
+ex1:
+-----
+>>> x="madam"
+>>> x
+'madam'
+>>> x.lstrip('m')
+'adam'
+>>> x
+'madam'
+>>> x.lstrip('am')
+'dam'
+>>> x
+'madam'
+>>> x.lstrip('dma')
+''
+>>> x
+'madam'
+>>> x.lstrip('d')
+'madam'
+>>> x.lstrip('k')
+'madam'
+>>> x
+'madam'
+
+ex2:
+----
+>>> y=" siva "
+>>> y
+' siva '
+>>> y.lstrip()
+'siva '
+>>> y
+' siva '
+
+ex3:
+----
+>>> z="\n \tsiva\n\t "
+>>> z
+'\n \tsiva\n\t '
+>>> z.lstrip()
+'siva\n\t '
+>>> z
+'\n \tsiva\n\t '
+
+rstrip()
+--------
+to remove all the possible occurencess of given charecters in a string object at ending position only i.e., from right side only.
+
+	strobj.rstrip(chars)
+
+by default, the rstrip() to remove the whitespace charecters from rightside.
+
+ex1:
+----
+>>> x="madam"
+>>> x
+'madam'
+>>> x.rstrip('m')
+'mada'
+>>> x
+'madam'
+>>> x.rstrip('am')
+'mad'
+>>> x
+'madam'
+>>> x.rstrip('dma')
+''
+>>> x
+'madam'
+>>> x.rstrip('k')
+'madam'
+>>> x
+'madam'
+
+ex2:
+----
+>>> y=" siva "
+>>> y
+' siva '
+>>> y.rstrip()
+' siva'
+>>> y
+' siva '
+
+ex3:
+----
+>>> z="\n \tsiva \n\t"
+>>> z
+'\n \tsiva \n\t'
+>>> z.rstrip()
+'\n \tsiva'
+>>> z
+'\n \tsiva \n\t'
+
+split()
+--------
+to split the string into list of words based on the given seperators/delimeters.
+
+	strobj.split(sep)
+
+by default, the split() to split the string into list of words based on space charecter.
+
+ex1:
+----
+>>> x="hai siva krishna good morning"
+>>> x.split()
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.split(' ')
+['hai', 'siva', 'krishna', 'good', 'morning']
+
+ex2:
+----
+>>> y="hai,siva krishna,good morning"
+>>> y.split(",")
+['hai', 'siva krishna', 'good morning']
+
+ex3:
+----
+>>> x="hai siva krishna good morning"
+>>> x.split("i")
+['ha', ' s', 'va kr', 'shna good morn', 'ng']
+>>> x
+'hai siva krishna good morning'
+>>> x.split(",")
+['hai siva krishna good morning']
+
+join()
+------
+to join the elements from the given iterable object with our string object.
+
+	strobj.join(iterableobj)
+
+ex1:
+----
+>>> x=" "
+>>> y="siva"
+>>> x.join(y)
+'s i v a'
+
+ex2:
+----
+>>> a="."
+>>> b=["D","Siva"]
+>>> a.join(b)
+'D.Siva'
+
+
+replace()
+---------
+to replace the existed char/substr with new char/substr.
+
+	strobj.replace(existed char/substr, new char/substr)
+
+ex1:
+----
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.replace('i','u')
+'suva krushna'
+>>> x
+'siva krishna'
+>>> x.replace('siva','rama')
+'rama krishna'
+>>> x
+'siva krishna'
+>>> x.replace('krishna','ram')
+'siva ram'
+>>> x
+'siva krishna'
+>>> x.replace('I','u')
+'siva krishna'
+>>> x
+'siva krishna'
+
+assignment-1:
+--------------
+wap to return the no.of words in a given string based on space charecter?
+
+	input				output
+	-----				------
+	hai				1
+	hai siva			2
+	hai siva krishna		3
+	hai siva krishna good night	5
+
+assignment-2:
+-------------
+wap to remove the spaces from the given string dont use replace() method?
+
+	input				output
+	------				-------
+	hai siva			haisiva
+	hai siva krishna good night	haisivakrishnagoodnight
+
+assignment-3:
+-------------
+wap take the string as a input from the user,to convert that string into title case and remove the space's from that string?
+
+	input				output
+	------				-------
+	hai siva			HaiSiva
+	hai siva krishna good night	HaiSivaKrishnaGoodNight
+
+assignment-4:
+--------------
+wap take the string as a input from the user to generate the string,that string contains words in ascending order?
+
+	input				output
+	-----				-------
+	hai siva			hai siva
+	hai siva krishna good night	good hai krishna night siva
+
+
+upper()
+--------
+to convert a string into uppercase.
+
+	strobj.upper()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.upper()
+'SIVA'
+>>> y.upper()
+'RAMA'
+>>> z.upper()
+'KRISHNA'
+>>> a.upper()
+'SIVA@123'
+>>> b.upper()
+'RAMA@123'
+
+lower()
+-------
+to convert the string into lower case
+
+	strobj.lower()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.lower()
+'siva'
+>>> y.lower()
+'rama'
+>>> z.lower()
+'krishna'
+>>> a.lower()
+'siva@123'
+>>> b.lower()
+'rama@123'
+
+swapcase()
+---------
+to swap the cases i.e., to convert lower to upper and vice-versa.
+
+	strobj.swapcase()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.swapcase()
+'SIVA'
+>>> y.swapcase()
+'rama'
+>>> z.swapcase()
+'kRiShNa'
+>>> a.swapcase()
+'SIVA@123'
+>>> b.swapcase()
+'rama@123'
+
+Assignment-5:
+--------------
+wap take the string object as a input from the user and to return the string in reverse order of the title case?
+
+	input				output
+	------				-------
+	hai				hAI
+	hai siva			hAI sIVA
+	hai siva krishna good night	hAI sIVA kRISHNA gOOD nIGHT
+
+
+islower()
+---------
+to check wheather the string object contains all the alphabets are lowercase alphabets or not.
+
+	strobj.islower()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.islower()
+True
+>>> y.islower()
+False
+>>> z.islower()
+False
+>>> a.islower()
+True
+>>> b.islower()
+False
+
+isupper()
+---------
+to check wheather the string object contains all the alphabets are uppercase alphabets or not.
+
+	strobj.isupper()
+
+ex:
+----
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.isupper()
+False
+>>> y.isupper()
+True
+>>> z.isupper()
+False
+>>> a.isupper()
+False
+>>> b.isupper()
+True
+	
+	

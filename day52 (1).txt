@@ -1,0 +1,326 @@
+assignment-1:
+-------------
+create a function to check wheather given integer is either even or odd?
+
+sol:
+----
+num=int(input("enter your number: "))
+def even_odd(x):
+    if x%2==0:
+        print("Even")
+    else:
+        print("Odd")
+even_odd(num)
+
+
+assignment-2:
+------------
+create a function to check wheather given string object is palindrom string or not?
+
+sol:
+----
+x=input("enetr your string: ").casefold()
+def isPalindrom(y):
+    if y==y[::-1]:
+        print("Palindrom String")
+    else:
+        print("Not a Palindrom String")
+isPalindrom(x)
+
+
+assignment-3:
+------------
+create a function to check wheather given integer is either positive integer or negative integer or zero?
+
+sol:
+----
+num=int(input("enter your number: "))
+def pos_neg_zero(x):
+    if x>0:
+        print("Positive Integer")
+    elif x<0:
+        print("Negative Integer")
+    else:
+        print("Zero Integer")
+pos_neg_zero(num)
+
+
+assignment-4:
+--------------
+create a function to check wheather given alphabet is vowel or not?
+
+	def isVowel(ch):
+		-----
+		-----
+		-----
+
+sol:
+----
+ch=input("enter your charecter: ").casefold()
+def isVowel(char):
+    if char in "aeiou":
+        print(True)
+    else:
+        print(False)
+if ch.isalpha():
+    isVowel(ch)
+else:
+    print("Given Charecter is not a alpahbet")
+
+
+Types of Arguments:
+--------------------
+in python, the Arguments can be categorized into 3-types, they are
+
+	1).Normal Arguments
+
+	2).Arbitrary Arguments
+
+	3).Kw Args i.e., variable keyword arguments
+
+Normal Arguments:
+-----------------
+the Normal Arguments can be categorized into 2-types,they are
+
+	1).based on function definition
+		a).non-default arguments/parameters
+		b).default arguments/parameters
+
+	2).based on function calling
+		a).non-keyword arguments
+		b).keyword arguments
+
+non-default arguments/parameters:
+---------------------------------
+	the programmer/developer dont assign the any value to the parameters at the time of function definition, that type of parameters are called 		non-default arguments/parameters.
+
+ex:
+---
+def add(x,y): #here x and y are non-default argunments
+    z=x+y
+    print(z)
+add(4,5)
+
+output:
+------
+9
+
+default arguments/parameters:
+-----------------------------
+	the programmer/developer to assign the any value to the parameters at the time of function definition, that type of parameters are called 		default arguments/parameters.
+
+ex:
+---
+def add(x=1,y=2): #here x and y are default argunments
+    z=x+y
+    print(z)
+add(4,5)
+add(4)
+add()
+
+output:
+-------
+9 #4+5
+6 #4+2
+3 #1+2
+
+mixing of both non-default and default arguments:
+--------------------------------------------------
+ex:
+---
+def add(x,y=2): #here x is non-default and y is a default argunments
+    z=x+y
+    print(z)
+add(4,5)
+add(4)
+
+output:
+-------
+9 #4+5
+6 #4+2
+
+
+mixing of both default and non-default arguments:
+--------------------------------------------------
+ex:
+---
+def add(x=1,y): #here x is default and y is a non-default argunments
+    z=x+y
+    print(z)
+add(4,5)
+
+SyntaxError: non-default arguments follow the default arguments
+
+note:
+-----
+in python,the non-default arguments never dont follow the default arguments.
+
+non-keyword arguments:
+-----------------------
+	the programmer/developer dont assign the any parameter to the arguments at the time function calling, that type of arguments are called non-keyword arguments.
+
+	the non-keyword arguments are also called positional arguments.
+
+ex:
+---
+def msg(x,y):
+    print(x,"siva",y)
+msg("hai","good afternoon")
+#here 'hai' and 'good afternoon' are non-keyword arguments
+msg("good afternoon","hai")
+#here 'good afternoon' and 'hai' are non-keyword arguments
+
+output:
+------
+hai siva good afternoon
+good afternoon siva hai
+
+keyword arguments:
+------------------
+	the programmer/developer to assign the parameter to the arguments at the time function calling, that type of arguments are called keyword arguments.
+
+ex:
+---
+def msg(x,y):
+    print(x,"siva",y)
+msg(x="hai",y="good afternoon")
+#here 'hai' and 'good afternoon' are keyword arguments
+msg(y="good afternoon",x="hai")
+#here 'good afternoon' and 'hai' are keyword arguments
+
+output:
+------
+hai siva good afternoon
+hai siva good afternoon
+
+mixing of both non-keyword and keyword arguments:
+-------------------------------------------------
+ex:
+---
+def msg(x,y):
+    print(x,"siva",y)
+msg("hai",y="good afternoon")
+#here 'hai' is a non-keyword argument
+#here 'good afternoon' is a keyword argument
+
+output:
+-------
+hai siva good afternoon
+
+mixing of both keyword and non-keyword arguments:
+-------------------------------------------------
+ex:
+---
+def msg(x,y):
+    print(x,"siva",y)
+msg(x="hai","good afternoon")
+#here 'hai' is a keyword argument
+#here 'good afternoon' is a non-keyword argument
+
+SyntaxError: Positional arguments follows keyword arguments
+
+note:
+-----
+in python, the non-keyword(positional) argumenets never don't follow the keyword arguments.
+
+
+in python, the normal argument takes only one value.
+
+ex1:
+---
+def f1(x):
+    print(x)
+f1()
+
+TypeError: f1() missing 1 required positional argument: 'x'
+
+ex2:
+----
+def f1(x):
+    print(x)
+f1(3,2,5)
+
+TypeError: f1() takes 1 positional argument but 3 were given
+
+ex3:
+----
+def f1(x):
+    print(x)
+f1(3)
+
+output:
+-------
+3
+
+
+the normal argument type is depends on the value of that argument.
+
+ex:
+---
+def f1(x):
+    print(x,type(x))
+f1(3)
+f1(2.3)
+f1(3+2j)
+f1("siva")
+f1(False)
+f1([5,3,7,2])
+f1((4,3,6,2))
+f1({4,3,9,2})
+f1(frozenset([4,2,9,1]))
+f1({'name':'siva','sal':3000,'dno':10})
+
+output:
+-------
+3 <class 'int'>
+2.3 <class 'float'>
+(3+2j) <class 'complex'>
+siva <class 'str'>
+False <class 'bool'>
+[5, 3, 7, 2] <class 'list'>
+(4, 3, 6, 2) <class 'tuple'>
+{9, 2, 3, 4} <class 'set'>
+frozenset({9, 2, 4, 1}) <class 'frozenset'>
+{'name': 'siva', 'sal': 3000, 'dno': 10} <class 'dict'>
+
+
+assignment-1:
+--------------
+create a function to find the GCD/HCF of given two numbers?
+
+assignment-2:
+--------------
+create a function to find the LCM of given two numbers?
+
+assignment-3:
+------------
+create a function to check wheather given two strings are anagram strings or not?
+
+assignment-4:
+-------------
+create a function to calculate the area of the circle?
+
+assignment-5:
+-------------
+create a function to calculate the area of the Square?
+
+assignment-6:
+-------------
+create a function to calculate the area of the rectangle?
+
+assignment-7:
+--------------
+create a function to calculate the volume of the cube?
+
+
+
+
+
+
+
+
+
+
+
+
+

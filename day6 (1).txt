@@ -1,0 +1,744 @@
+Objects:
+--------
+in python,everything treated as objects.
+
+	scenario-1: based on insertion order
+	----------
+	sequence objects
+	non-sequence objects
+
+	scenario-2: based on iteration
+	-----------
+	iterable objects
+	non-iterable objects
+
+	scenario-3: based on mutability
+	----------
+	mutable objects
+	immutable objects
+
+sequence objects:
+-------------------
+	any object which follow the insertion order is preserved concept i.e., both input order and output order will be same, that type of objects are called Sequence objects.
+
+	ex: str,list,tuple,range,dict(3.4+ versions onwards),...
+
+ex1:
+----
+>>> x="krishna"
+>>> x
+'krishna'
+>>> type(x)
+<class 'str'>
+
+ex2:
+-----
+>>> y=[7,4,8,9]
+>>> y
+[7, 4, 8, 9]
+>>> type(y)
+<class 'list'>
+
+non-sequence objects:
+---------------------
+	any object which dont follow the insertion order is preserved concept i.e., both input order and output order will not be same, that type of objects are called Non-Sequence objects.
+
+	ex: set,frozenset,dict(2.x and 3.x(3.0 to 3.4))
+
+ex1:
+----
+>>> x={4,8,9,7}
+>>> x
+{8, 9, 4, 7}
+>>> type(x)
+<class 'set'>
+
+ex2:
+-----
+>>> y=frozenset([6,3,8,9])
+>>> y
+frozenset({8, 9, 3, 6})
+>>> type(y)
+<class 'frozenset'>
+
+iterable objects:
+-----------------
+	any object which allow the iterations, that type of objects are called iterable objects.
+
+		(or)
+
+	we can use any object as a repeated purpose, that type of objects are called iterable objects.
+
+	ex: str,list,tuple,set,frozenset,dict,range,...
+
+ex1:
+----
+>>> msg="hai siva good afternoon"
+>>> x="krishna"
+>>> for ch in x:
+        print(msg)
+
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+
+ex2:
+-----
+>>> msg="hai siva good afternoon"
+>>> y=[5,2,7,8]
+>>> for ele in y:
+        print(msg)
+
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+hai siva good afternoon
+
+non-iterable objects
+---------------------
+	any object which dont allow the iterations, that type of objects are called non-iterable objects.
+
+		(or)
+
+	we can't use any object as a repeated purpose, that type of objects are called non-iterable objects.
+
+	ex: int,float,complex,bool
+
+ex:
+----
+>>> msg="hai siva good afternoon"
+>>> x=456
+>>> for i in x:
+       print(msg)
+
+TypeError: 'int' object is not iterable
+
+
+mutable objects:
+----------------
+	any object which allows to modify(insert,delete and update) the data, that type of objects are called mutable objects.
+
+	ex: list,set,dict,bytearray,...
+
+ex:
+----
+>>> x=[5,3,8,9]
+>>> x
+[5, 3, 8, 9]
+>>> id(x)
+2770228384320
+>>> type(x)
+<class 'list'>
+>>> x[1]
+3
+>>> x[1]=30
+>>> x
+[5, 30, 8, 9]
+>>> id(x)
+2770228384320
+
+
+immutable objects:
+----------------
+	any object which don't allows to modify(insert,delete and update) the data, that type of objects are called immutable objects.
+
+	ex: str,tuple,frozenset,int,float,complex,bool,bytes,range,...
+
+ex:
+---
+>>> x=(5,3,8,9)
+>>> x
+(5, 3, 8, 9)
+>>> id(x)
+2770228370768
+>>> type(x)
+<class 'tuple'>
+>>> x[1]
+3
+>>> x[1]=30
+TypeError: 'tuple' object does not support item assignment
+
+assignment-1:
+--------------
+wap to take the input as degrees and to convert that degrees into radians?
+
+assignment-2:
+-------------
+wap to take the input as radians and to convert that radians into degrees?
+
+assignment-3:
+-------------
+wap takes temparature as a fahrenheit(F) and to convert into celsius(C)?
+
+assignment-4:
+-------------
+wap takes temparature as a celsius(C) and to convert into fahrenheit(F)?
+
+
+
+note:
+-----
+the different immutable objects having the same data but referenceing to same object in the memory.
+
+	ref fig: immutable objects
+
+ex1:
+----
+	demo.py
+	--------
+x=10
+y=10
+z=10
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+140731513955400
+140731513955400
+140731513955400
+
+ex2:
+----
+	demo.py
+	-------
+x="hai siva krishna"
+y="hai siva krishna"
+z="hai siva krishna"
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+1634458671408
+1634458671408
+1634458671408
+
+ex3:
+----
+	demo.py
+	-------
+x=(1,2,3)
+y=(1,2,3)
+z=(1,2,3)
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+2387446455040
+2387446455040
+2387446455040
+
+
+the different mutable objects having the same data but referenceing to different objects in the memory.
+
+	ref fig: mutable objects
+
+ex:
+---
+	demo.py
+	-------
+x=[1,2,3]
+y=[1,2,3]
+z=[1,2,3]
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+2475984507520
+2475986548288
+2475986641472
+
+
+		String Handling
+		----------------
+what is String?
+--------------
+a string is a charecter or collection of charecters or sequence of words.
+
+in python,the string datatype having "str" class
+
+in python,the string object is a Sequence,Iterable and Immutable object.
+
+How to Represent the String objects in python?
+-----------------------------------------------
+we can represent the string objects in python, in two ways
+
+	1).Single Line Strings
+
+		a). by using single-single quote's
+
+			ex: 'siva'
+
+		b). by using single-double quote's
+
+			ex: "siva"
+
+	2).Multi-Line Strings
+
+		a).by using tripple-single quote's
+
+			ex: '''siva'''
+
+		b).by using tripple-double quote's
+
+			ex: """siva"""
+
+ex:
+---
+	sample.py
+	---------
+x='siva'
+y="krishna"
+z='''siva
+ameerpet
+hyderabad
+telangana
+500016'''
+a="""krishna
+guntur
+amaravathi
+andhrapradesh
+522646"""
+print(x)
+print("="*30)
+print(y)
+print("="*30)
+print(z)
+print("="*30)
+print(a)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python sample.py
+
+siva
+==============================
+krishna
+==============================
+siva
+ameerpet
+hyderabad
+telangana
+500016
+==============================
+krishna
+guntur
+amaravathi
+andhrapradesh
+522646
+
+note:
+-----
+a quote inside different quote is possible but a quote inside same quote is not possible.
+
+ex2:
+----
+	sample.py
+	---------
+x='hai "siva" krishna'
+y="hai 'siva' krishna"
+z='''siva
+"ameerpet"
+'hyderabad'
+"""telangana"""
+500016'''
+a="""krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646"""
+print(x)
+print("="*30)
+print(y)
+print("="*30)
+print(z)
+print("="*30)
+print(a)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python sample.py
+hai "siva" krishna
+==============================
+hai 'siva' krishna
+==============================
+siva
+"ameerpet"
+'hyderabad'
+"""telangana"""
+500016
+==============================
+krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646
+
+ex3:
+----
+	sample.py
+	---------
+x='hai 'siva' krishna'
+print(x)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python sample.py
+
+SyntaxError: invalid syntax
+
+ex4:
+----
+	sample.py
+	---------
+x="hai "siva" krishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python sample.py
+
+SyntaxError: invalid syntax
+
+ex5:
+----
+	sample.py
+	---------
+x="""hai """siva""" krishna"""
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python sample.py
+
+SyntaxError: invalid syntax
+
+ex6:
+----
+	sample.py
+	---------
+x='''hai '''siva''' krishna'''
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python sample.py
+
+SyntaxError: invalid syntax
+
+assignment-1:
+---------------
+what is armstrong number and explain with one example?
+
+assignment-2:
+-------------
+what is palindrom number and explain with one example?
+
+assignment-3:
+--------------
+what is a Strong number and explain with one example?
+
+assignment-4:
+-------------
+what is a Perfect number and explain with one example?
+
+assignment-5:
+-------------
+what is a Prime number and explain with one example?
+
+
+ex7:
+----
+	demo.py
+	--------
+x="""hai '''siva "krishna 'bye'"'''"""
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai '''siva "krishna 'bye'"'''
+
+ex8:
+----
+	demo.py
+	-------
+x="hai\nsiva\nkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+siva
+krishna
+
+ex9:
+----
+	demo.py
+	-------
+x="hai\tsiva\tkrishna"
+print(x)
+	
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai     siva    krishna
+
+
+ex10:
+----
+	demo.py
+	-------
+x="hai\n\tsiva\n\t\tkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+        siva
+                krishna
+
+
+ex11:
+----
+	demo.py
+	-------
+x="hai\rkrishna\rsiva"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+sivahna
+
+ex12:
+-----
+	demo.py
+	-------
+x="hello\rsiva\rkrishna\rafternoon"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+afternoon
+
+ex13
+----
+	demo.py
+	-------
+x="hello\rsiva\rgood\krishna\rnight"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+nightkrishna
+
+the string object supporting indexing concept,in python the indexing can be categorized into two types, they are
+
+	1).Positive/Forward indexing
+
+	2).Negative/Backward indexing
+
+
+			Indexing
+			   |
+		-------------------------
+		|			|
+	Positive/Forward	Negative/Backward
+		|			|
+takes from left to right	takes from right to left
+		|			|
+	starts with '0'		starts with '-1'
+
+
+in string object each and every charecter having unique indexing.
+
+	ref fig: string indexing
+
+by using indexing concept we can retreive only one charecter from the string object at a time.
+
+ex:
+----
+>>> x="siva krishna"
+>>> x[2]
+'v'
+>>> x[9]
+'h'
+>>> x[4]
+' '
+>>> x[-3]
+'h'
+>>> x[-8]
+' '
+>>> x[-10]
+'v'
+>>> x[12]
+IndexError: string index out of range
+
+the string object supporting slicing concept also.
+
+by using slicing concept we can retreive one or more charecters from the string object at a time.
+
+	Scenario-1
+	-----------
+	if we want to retreive First-N charecters from the string object, in that case we are using following syntax,
+
+	strobj[ : stop ]
+
+		here the stop index is a exclusive value
+		     by default starts with '0'
+		     by default increment by '1'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x[:4]
+'siva'
+>>> x[:6]
+'siva k'
+>>> x[:-8]
+'siva'
+
+	
+	Scenario-2
+	----------
+	if we want to retreive Last-N charecters from the string object, in that case we are using following syntax,
+
+	strobj[start : ]
+
+		here the start index is a inclusive value
+		     by default increment by '1'
+
+
+ex:
+----
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[-3:]
+'hna'
+>>> x[-7:]
+'krishna'
+>>> x[5:]
+'krishna'
+
+	Scenario-3
+	----------
+	if we want to print some middle charecters from the string object, in that case we are using following syntax,
+
+	strobj[start : stop]
+
+		here the start index is a Inclusive value
+		     the stop index is a Exclusive value
+		     by default increment by '1'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x[5:10]
+'krish'
+>>> x[-7:-2]
+'krish'
+>>> x[5:-2]
+'krish'
+>>> x[-7:10]
+'krish'
+>>> x[4:5]
+' '
+
+note:
+-----
+	strobj[start:stop:step],here we are not passing any start value,stop value and step value,in that case our original string exactly printed i.e., our string is printed from left to right.
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x[::]
+'siva'
+>>> x[::1]
+'siva'
+
+	strobj[start:stop:step],here we are not passing any start value,stop value but we are passing step value as negative value,in that case our original string printed in reverse order i.e., our string is printed from right to left.
+
+ex:
+----
+>>> x="siva"
+>>> x[::-1]
+'avis'
+
+ex2:
+----
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[::2]
+'sv rsn'
+>>> x[::-2]
+'ahikai'
+>>> x[5:10:2]
+'kih'
+>>> x[-7:-2:-2]
+''
+>>> x[-2:-7:-2]
+'nsr'
+
+assignment-1:
+-------------
+wap take the string as a input and to seperate the even indexing charecters and odd indexing charecters,seperated by "," ?
+
+	input			output
+	-----			------
+	siva			sv,ia
+
+	good morning		go onn,odmrig
+
+
+assignment-2:
+-------------
+wap take the string as a input and to exchange the first charecter and last charecter in that string?
+
+	input			output
+	-----			-------
+	siva			aivs
+
+	siva krishna		aiva krishns
+
+
+assignment-3:
+-------------
+wap take the first name and last name of the employee and to generate the Full Name of the employee, first name and last name seperated by ' ' charecter?
+
+	input			output
+	-----			-------
+	siva
+	krishna
+				siva krishna
+
+
+
+	
+
+
+
+

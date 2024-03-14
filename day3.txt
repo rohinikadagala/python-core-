@@ -1,0 +1,305 @@
+what is Keyword?
+----------------
+a keyword is a special/reserved word for some special purpose.
+
+we can use that words only for that particular purpose.
+
+python2.x versions support 31 keywords
+
+python3.0.x to 3.6.x versions support 33 keywords
+
+python3.7.x to 3.8.x versions support 35 keywords
+
+python3.9.0 to 3.9.x versions support 36 keywords
+
+python3.10.x to 3.11.x versions support 35 keywords
+
+ex1:
+---
+write a python script to return the list of all the keywords?
+
+	listofkeywords.py
+	-----------------
+import keyword
+print(keyword.kwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python listofkeywords.py
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+ex2:
+----
+write a python script to return the no.of keywords?
+
+	noofkeywords.py
+	---------------
+import keyword
+print(len(keyword.kwlist))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python noofkeywords.py
+35
+
+ex3:
+----
+write a python script to get the python version?
+
+	python_version.py
+	-------------------
+import sys
+print(sys.version)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python python_version.py
+3.11.4
+
+how to get python version through cmd(command prompt)/Terminal?
+----------------------------------------------------------------
+
+C:\Users\Lenovo\Desktop>python -V
+Python 3.11.4
+
+	(or)
+
+C:\Users\Lenovo\Desktop>python --version
+Python 3.11.4
+
+
+note:
+-----
+from python3.11 versions onwards, to introduce soft keywords.
+
+the soft keywords are used to implement the match-case(switch-case in c programming) concept.
+
+ex:
+---
+write a python script,to print the list of soft keywords?
+
+	listofsoftkeywords.py
+	----------------------
+import keyword
+print(keyword.softkwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python listofsoftkeywords.py
+['_', 'case', 'match']
+
+
+		Identifier's
+		--------------
+what is Identifier?
+--------------------
+	an Identifier is a name,it's may be a variable name or function name or class name or method name,....,etc.,
+
+in python,at the time of declaring the identifier,we are follow the some rules, they are
+
+	rule1:
+	------
+	the identifier contains alphabets(lower/upper/both),digits(0-9) and
+underscore(_) symbols.
+
+	rule2:
+	------
+	the identifier must be starts with either alphabets or underscore(_)
+	symbols.
+
+		(or)
+
+	the identifier shouldn't begin with digits
+
+	rule3:
+	------
+	don't assign any keyword as identifier
+
+note:
+----
+in python,the identifiers are case sensitive because of that reason the python is a case-sensitive language.
+
+		Variable's
+		----------
+what is Variable?
+-----------------
+the variable is a name,which is referenceing to an object in the memory.
+
+the variables are used to store the data for future use/reference.
+
+	syntax
+	------
+	variablename=value
+
+examples:
+--------
+>>> x=10
+>>> x
+10
+
+>>> My_Name_123="siva"
+>>> My_Name_123
+'siva'
+
+>>> _y=45
+>>> _y
+45
+
+>>> __z=49
+>>> __z
+49
+
+>>> __in__=90
+>>> __in__
+90
+
+>>> 2c=78
+SyntaxError: invalid decimal literal
+
+>>> and=97 #here and is a keyword
+SyntaxError: invalid syntax
+
+>>> break=90 #here break is a keyword
+SyntaxError: invalid syntax
+
+>>> Break=90 #here Break is not a keyword
+>>> Break
+90
+
+>>> my name="siva"
+SyntaxError: invalid syntax
+
+>>> my@name="siva"
+SyntaxError: cannot assign to expression here.
+
+>>> my.name="siva"
+NameError: name 'my' is not defined.
+
+if we want to assign the single value to the multiple variables at a time, in that case we are using following syntax,
+
+	var_1=var_2=....=var_n=value
+
+ex:
+---
+>>> x=y=z=10
+>>> x
+10
+>>> y
+10
+>>> z
+10
+
+if we want to assign the different values to different variables at a time, in that case we are using following syntax,
+
+	var_1,var_2,...,var_n=value_1,value_2,...,value_n
+
+ex:
+---
+>>> p,q,r=10,20,30
+>>> p
+10
+>>> q
+20
+>>> r
+30
+
+ex2:
+----
+>>> a=4,5,8
+>>> a
+(4, 5, 8)
+
+>>> b,c,d=9
+TypeError: cannot unpack non-iterable int object
+
+>>> b,c,d=3,8
+ValueError: not enough values to unpack (expected 3, got 2)
+
+>>> b,c,d=9,1,7,8
+ValueError: too many values to unpack (expected 3)
+
+>>> b,c,d=a
+>>> b
+4
+>>> c
+5
+>>> d
+8
+
+note:
+-----
+in python,the variable names are unlimited length.
+
+ex1:
+---
+write a python script/program,to perform the swapping of two numbers with the help of third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("before swapping:",x,y)
+z=x
+x=y
+y=z
+print("after swapping:",x,y)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python swapping.py
+before swapping: 10 20
+after swapping: 20 10
+
+note:
+-----
+	%d	--> int
+
+	%f	--> float
+
+	%s	--> string
+
+ex2:
+----
+	swapping.py
+	-----------
+x,y=10,20
+print("before swapping x=%d and y=%d"%(x,y))
+z=x
+x=y
+y=z
+print("after swapping x=%d and y=%d"%(x,y))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+before swapping x=10 and y=20
+after swapping x=20 and y=10
+
+ex3:
+----
+write a python script/program,to perform the swapping of two numbers with out  third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("before swapping x=%d and y=%d"%(x,y))
+x=x+y #x=30
+y=x-y #y=10
+x=x-y #x=20
+print("after swapping x=%d and y=%d"%(x,y))
+
+	(or)
+
+x,y=10,20
+print("before swapping x=%d and y=%d"%(x,y))
+x,y=y,x
+print("after swapping x=%d and y=%d"%(x,y))
+
+	output:
+	--------
+C:\Users\Lenovo\Desktop>python swapping.py
+before swapping x=10 and y=20
+after swapping x=20 and y=10
+
+
+	

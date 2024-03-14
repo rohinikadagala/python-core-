@@ -1,0 +1,377 @@
+assignment-1:
+-------------
+write a python script/program,to return the no.of charecters in a given string without using builtin len() function?
+
+	input			output
+	-----			------
+	hai			3
+	siva			4
+	krishna			7
+	siva krishna		12
+
+sol:
+----
+x=input("enter your string: ")
+c=0
+i=0
+while i<len(x):
+    c+=1
+    i+=1
+print(c)
+
+	(or)
+
+x=input("enter your string: ")
+c=0
+for ch in x:
+    c+=1
+print(c)
+
+
+assignment-2:
+-------------
+write a python script/program,to return the given string object in ascending order?
+
+	input			output
+	-----			------
+	hai			ahi
+	siva			aisv
+	krishna			ahiknrs
+
+sol:
+---
+x=input("enter your string: ")
+print(''.join(sorted(x)))
+
+
+assignment-3:
+------------
+write a python script/program,to print the given string in a square pattern?
+
+	input			output
+	-----			------
+	siva			s i v a
+				s i v a
+				s i v a
+				s i v a
+
+
+sol:
+-----
+x=input("enter your string: ")
+r=0
+while r<len(x):
+    c=0
+    while c<len(x):
+        print(x[c],end=" ")
+        c+=1
+    r+=1
+    print()
+        
+
+assignment-4:
+-------------
+write a python script/program,to print the given string in a square pattern?
+
+	input			output
+	-----			------
+	siva			s s s s
+				i i i i
+				v v v v
+				a a a a
+
+sol:
+----
+x=input("enter your string: ")
+r=0
+while r<len(x):
+    c=0
+    while c<len(x):
+        print(x[r],end=" ")
+        c+=1
+    r+=1
+    print()
+        
+working with range() function:
+------------------------------
+the range() function is a builtin function in both python2.x and python3.x versions.
+
+in python2.x,the range() to return the list object, the list object is a mutable object.
+
+in python3.x,the range() to return the range object, the range object is a immutable object.
+
+	scenario-1
+	----------
+	range(stop)
+		here the stop value is a exclusive value
+		     by default starts with 0
+		     by default increment by 1
+
+ex1:
+----
+>>> x=range(5)
+>>> x
+range(0, 5)
+>>> type(x)
+<class 'range'>
+>>> for i in x:
+        print(i)
+
+0
+1
+2
+3
+4
+
+>>> list(x)
+[0, 1, 2, 3, 4]
+
+>>> tuple(x)
+(0, 1, 2, 3, 4)
+
+	scenario-2
+	----------
+	range(start,stop)
+		here the start value is a inclusive value
+		     the stop value is a exclusive value
+		     by default increment by '1'
+
+ex2:
+----
+>>> y=range(5,10)
+>>> y
+range(5, 10)
+>>> type(y)
+<class 'range'>
+>>> for j in y:
+        print(j)
+
+5
+6
+7
+8
+9
+
+>>> list(y)
+[5, 6, 7, 8, 9]
+
+>>> tuple(y)
+(5, 6, 7, 8, 9)
+	
+	scenario-3
+	-----------
+	range(start,stop,step)
+		here the start value is inclusive value
+		     the stop value is exclusive value
+		     the step value either increment/decrement
+
+ex3:
+---
+>>> z=range(1,10,2)
+>>> z
+range(1, 10, 2)
+>>> type(z)
+<class 'range'>
+>>> for k in z:
+        print(k)
+
+1
+3
+5
+7
+9
+
+>>> list(z)
+[1, 3, 5, 7, 9]
+
+>>> tuple(z)
+(1, 3, 5, 7, 9)
+	
+ex2:
+----
+>>> a=range(10,1,-2)
+>>> a
+range(10, 1, -2)
+>>> type(a)
+<class 'range'>
+>>> for i in a:
+        print(i)
+
+10
+8
+6
+4
+2
+
+>>> list(a)
+[10, 8, 6, 4, 2]
+
+>>> tuple(a)
+(10, 8, 6, 4, 2)
+
+
+note:
+-----
+in python, the range() takes the parameter as interger objects only, by mistakely we are passing boolean values internally that boolean values are converted into integers like True means 1 and False means 0.
+
+examples:
+--------
+>>> range(5)
+range(0, 5)
+
+>>> range(True)
+range(0, 1)
+
+>>> range(2.3)
+TypeError: 'float' object cannot be interpreted as an integer
+
+>>> range(2+3j)
+TypeError: 'complex' object cannot be interpreted as an integer
+
+>>> range("siva")
+TypeError: 'str' object cannot be interpreted as an integer
+
+>>> range([5,3,7,2])
+TypeError: 'list' object cannot be interpreted as an integer
+
+>>> range((4,1,7,9))
+TypeError: 'tuple' object cannot be interpreted as an integer
+
+>>> range({5,9,3,7})
+TypeError: 'set' object cannot be interpreted as an integer
+
+>>> range(frozenset([4,3,7,2]))
+TypeError: 'frozenset' object cannot be interpreted as an integer
+
+>>> range({'name':'siva','sal':3000,'dno':10})
+TypeError: 'dict' object cannot be interpreted as an integer
+
+
+in range(),we are passing both start value and stop value as a same number,in that case the range() to return the empty range object i.e., there's no elements.
+
+>>> x=range(5,10)
+>>> x
+range(5, 10)
+>>> len(x)
+5
+>>> list(x)
+[5, 6, 7, 8, 9]
+
+>>> y=range(5,5)
+>>> y
+range(5, 5)
+>>> len(y)
+0
+>>> list(y)
+[]
+
+ex1:
+----
+wap to print 1-N natural numbers by using for loop?
+
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i)
+
+output:
+------
+enter your number: 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+ex2:
+----
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i,end=" ")
+
+output:
+-------
+enter your number: 10
+1 2 3 4 5 6 7 8 9 10 
+
+ex3:
+----
+wap to print the sum of 1-N natural numbers by using for loop?
+
+N=int(input("enter your number: "))
+s=0
+for i in range(1,N+1):
+    s+=i
+print(s)
+
+output:
+------
+enter your number: 10
+55
+
+
+assignment-1:
+-------------
+wap to print N-1 natural numbers by using for loop?
+
+	input			output
+	------			-------
+	N=10			10 9 8 7 6 5 4 3 2 1
+
+assignment-2:
+------------
+wap to print the odd numbers from 1-N natural numbers by using for loop?
+
+	input			output
+	-----			------
+	N=10			1 3 5 7 9
+
+assignment-3:
+------------
+wap to print the sum of even numbers from 1-N natural numbers by using for loop?
+
+	input			output
+	-----			-------
+	N=10			30
+
+assignment-4:
+-------------
+wap to print the sum of the divisibles of the given number by using for loop?
+
+	input			output
+	------			-------
+	N=6			12
+
+assignment-5:
+-----------
+wap to print the divisbles of the given number except that number by using for loop?
+
+	input			output
+	-----			-------
+	N=6			1 2 3
+
+assignment-6:
+-------------
+wap to print the multilication table of the given number by using for loop?
+
+	input			output
+	-----
+	N=5			5 x 1 = 5
+				5 x 2 = 10
+				5 x 3 = 15
+				....
+				....
+assignment-7:
+-------------
+wap to check wheather given string is palindrom string or not with ignore the case by using for loop?
+
+
+
+
+
+
+

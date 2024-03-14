@@ -1,0 +1,436 @@
+ex1:
+----
+wap to print 1-N natural numbers in a inverted right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 2 3 4 5
+  1 2 3 4
+    1 2 3
+      1 2
+	1
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r):
+        print(" ",end=" ")
+    for c in range(1,num-r+2):
+        print(c,end=" ")
+    print()
+
+assignment-1:
+-------------
+wap to print N-1 natural numbers in a inverted right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+5 4 3 2 1
+  5 4 3 2
+    5 4 3
+      5 4
+        5
+
+ex2:
+----
+wap to print 1-N natural numbers in floyd's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+assignment-2:
+-------------
+wap to print 1-N natural numbers in floyd's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    1
+   2 2
+  3 3 3
+ 4 4 4 4
+5 5 5 5 5
+
+ex3:
+----
+wap to print N-1 natural numbers in a inverted floud's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+5 5 5 5 5
+ 4 4 4 4
+  3 3 3
+   2 2
+    1
+
+
+num=int(input("enter your number: "))
+for r in range(num,0,-1):
+    for c in range(1,num-r+1):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+
+assignment-3:
+--------------
+wap to print N-1 natural numbers in a inverted floud's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+5 4 3 2 1
+ 4 3 2 1
+  3 2 1
+   2 1
+    1
+
+ex4:
+----
+wap to print 1-N natural nmbers in a diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-----
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(" ",end="")
+    for c in range(1,num-r+1):
+        print(c,end=" ")
+    print()
+
+
+assignment-4:
+--------------
+wap to print N-1 natural nmbers in a diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-----
+    5
+   4 4
+  3 3 3
+ 2 2 2 2
+1 1 1 1 1
+ 2 2 2 2
+  3 3 3
+   4 4
+    5
+
+
+ex5:
+---
+wap to print 1-N natural numbers in a pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        1
+      2 1 2
+    3 2 1 2 3
+  4 3 2 1 2 3 4
+5 4 3 2 1 2 3 4 5
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(" ",end=" ")
+    for c in range(r,0,-1):
+        print(c,end=" ")
+    for c in range(2,r+1):
+        print(c,end=" ")
+    print()
+
+
+assignment-5:
+-------------
+wap to print 1-N natural numbers in a inverted pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 2 3 4 5 4 3 2 1
+  2 3 4 5 4 3 2 
+    3 4 5 4 3
+      4 5 4
+        5
+
+ex6:
+----
+wap to print natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+sol:
+---
+num=int(input("enter your number: "))
+i=1
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(i,end=" ")
+        i+=1
+    print()
+
+assignment-6:
+-------------
+wap to print N-1 natural numbers in a pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        5
+      4 5 4
+    3 4 5 4 3
+  2 3 4 5 4 3 2
+1 2 3 4 5 4 3 2 1
+
+
+ex7:
+----
+wap to print lowercase alphabets in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num):
+        print(chr(97+c),end=" ")
+    print()
+
+
+assignment-7:
+--------------
+wap to print uppercase alphabets in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+A A A A A
+B B B B B
+C C C C C
+D D D D D
+E E E E E
+
+ex8:
+----
+wap to print uppercase alphabets in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+A
+A B
+A B C
+A B C D
+A B C D E
+
+sol:
+---
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(r+1):
+        print(chr(65+c),end=" ")
+    print()
+
+assignment-8:
+-------------
+wap to print lowercase alphabets in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+a
+b b
+c c c
+d d d d
+e e e e e
+
+ex9:
+-----
+wap to print lowercase alphbaets in left-side right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        a
+      a b
+    a b c
+  a b c d
+a b c d e
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end=" ")
+    for c in range(r+1):
+        print(chr(97+c),end=" ")
+    print()
+
+
+assignment-9:
+-------------
+wap to print uppercase alphbaets in left-side right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        A
+      B B
+    C C C
+  D D D D
+E E E E E
+
+
+ex10:
+-----
+wap to print uppercase alphabets in a inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+A B C D E
+A B C D
+A B C
+A B
+A
+
+sol:
+----
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r):
+        print(chr(65+c),end=" ")
+    print()
+
+assignment-10:
+---------------
+wap to print lowercase alphabets in a inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+a a a a a
+b b b b
+c c c
+d d
+e
+

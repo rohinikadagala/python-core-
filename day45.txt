@@ -1,0 +1,224 @@
+frozenset datatype:
+--------------------
+in python, the frozenset datatype having 'frozenset' class
+
+we can create a frozenset object by using frozenset() or 		frozenset(iterableobj)
+
+>>> x=frozenset()
+>>> x
+frozenset()
+>>> type(x)
+<class 'frozenset'>
+
+>>> y=frozenset("siva")
+>>> y
+frozenset({'i', 'a', 's', 'v'})
+>>> type(y)
+<class 'frozenset'>
+
+>>> z=frozenset([6,4,9,3])
+>>> z
+frozenset({9, 3, 4, 6})
+>>> type(z)
+<class 'frozenset'>
+
+the frozenset object is a immutable object but it allows only immutable objects.
+
+>>> x=frozenset([3,2.3,4j,False,"siva",(7,8)])
+>>> x
+frozenset({False, 'siva', 2.3, 3, 4j, (7, 8)})
+
+>>> y=frozenset([3,2.3,4j,False,"siva",[7,8]])
+TypeError: unhashable type: 'list'
+
+in frozenset object, the insertion order is not preserved because of that reason the frozenset object is a non-sequence object.
+
+the frozenset object allows both homogenious and hetrogenious elements.
+
+	homogenious(similar/same type of elements)
+	-----------
+>>> a=frozenset([5,3,8,9])
+>>> a
+frozenset({8, 9, 3, 5})
+
+>>> b=frozenset((5.3,4.9,7.1,6.3))
+>>> b
+frozenset({4.9, 5.3, 6.3, 7.1})
+
+	hetrogenious(dissimilar/different type of elements)
+	-------------
+>>> x=frozenset([3,2.3,4j,False,"siva",(7,8)])
+>>> x
+frozenset({False, 'siva', 2.3, 3, 4j, (7, 8)})
+
+the frozenset object don't support both indexing and slicing concept's.
+
+>>> x=frozenset([3,2.3,4j,False,"siva",(7,8)])
+>>> x
+frozenset({False, 'siva', 2.3, 3, 4j, (7, 8)})
+>>> x[0] #indexing
+TypeError: 'frozenset' object is not subscriptable
+>>> x[:3] #slicing
+TypeError: 'frozenset' object is not subscriptable
+
+the frozenset object allows nested frozenset mechanism.
+
+>>> y=frozenset((2,3.2,frozenset([4j,False]),"siva"))
+>>> y
+frozenset({'siva', 2, 3.2, frozenset({False, 4j})})
+
+
+working with builtin functions:
+-------------------------------
+>>> x=frozenset([6,4,7,3,9])
+>>> x
+frozenset({3, 4, 6, 7, 9})
+>>> x
+frozenset({3, 4, 6, 7, 9})
+>>> len(x)
+5
+>>> min(x)
+3
+>>> max(x)
+9
+>>> sum(x)
+29
+>>> sorted(x)
+[3, 4, 6, 7, 9]
+>>> sorted(x,reverse=True)
+[9, 7, 6, 4, 3]
+>>> reversed(x)
+TypeError: 'frozenset' object is not reversible
+
+note:
+-----
+the reversed() is applicable only on sequence objects.
+
+working with frozenset class methods:
+--------------------------------------
+	if we want to display the frozenset class methods with syntax and description, in that case we are using help() function.
+
+	help(frozenset)
+
+	if we want to display the list of all the available frozenset class method names without syntax and description, in that case we are using dir() function.
+
+	dir(frozenset)
+
+copy()
+------
+>>> x=frozenset([2,3.1,4j,"siva"])
+>>> y=x.copy()
+>>> y
+frozenset({'siva', 2, 3.1, 4j})
+
+union()
+-------
+>>> a=frozenset([1,2,3,4])
+>>> a
+frozenset({1, 2, 3, 4})
+>>> b=frozenset([3,4,5,6])
+>>> b
+frozenset({3, 4, 5, 6})
+>>> a.union(b)
+frozenset({1, 2, 3, 4, 5, 6})
+>>> a|b
+frozenset({1, 2, 3, 4, 5, 6})
+
+intersection()
+--------------
+>>> a=frozenset([1,2,3,4])
+>>> a
+frozenset({1, 2, 3, 4})
+>>> b=frozenset([3,4,5,6])
+>>> b
+frozenset({3, 4, 5, 6})
+>>> a.intersection(b)
+frozenset({3, 4})
+>>> a&b
+frozenset({3, 4})
+
+difference()
+------------
+>>> a=frozenset([1,2,3,4])
+>>> a
+frozenset({1, 2, 3, 4})
+>>> b=frozenset([3,4,5,6])
+>>> b
+frozenset({3, 4, 5, 6})
+>>> a.difference(b)
+frozenset({1, 2})
+>>> a-b
+frozenset({1, 2})
+>>> b.difference(a)
+frozenset({5, 6})
+>>> b-a
+frozenset({5, 6})
+
+symmetric_difference()
+----------------------
+>>> a=frozenset([1,2,3,4])
+>>> a
+frozenset({1, 2, 3, 4})
+>>> b=frozenset([3,4,5,6])
+>>> b
+frozenset({3, 4, 5, 6})
+>>> a.symmetric_difference(b)
+frozenset({1, 2, 5, 6})
+>>> a^b
+frozenset({1, 2, 5, 6})
+>>> a-b|b-a
+frozenset({1, 2, 5, 6})
+
+issuperset()
+------------
+>>> a=frozenset([1,2,3,4,5])
+>>> b=frozenset([1,3,5])
+>>> c=frozenset([2,4,6])
+>>> a
+frozenset({1, 2, 3, 4, 5})
+>>> b
+frozenset({1, 3, 5})
+>>> c
+frozenset({2, 4, 6})
+>>> a.issuperset(b)
+True
+>>> a.issuperset(c)
+False
+
+issubset()
+----------
+>>> a=frozenset([1,2,3,4,5])
+>>> a
+frozenset({1, 2, 3, 4, 5})
+>>> b=frozenset([1,3,5])
+>>> b
+frozenset({1, 3, 5})
+>>> c=frozenset([2,4,6])
+>>> c
+frozenset({2, 4, 6})
+>>> b.issubset(a)
+True
+>>> c.issubset(a)
+False
+
+isdisjoint()
+------------
+>>> a=frozenset([1,2,3,4])
+>>> b=frozenset([5,8,6])
+>>> c=frozenset([0,4,7])
+>>> a
+frozenset({1, 2, 3, 4})
+>>> b
+frozenset({8, 5, 6})
+>>> c
+frozenset({0, 4, 7})
+>>> a.isdisjoint(b)
+True
+>>> a.isdisjoint(c)
+False
+>>> b.isdisjoint(c)
+True
+
+
+
+

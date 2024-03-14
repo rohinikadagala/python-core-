@@ -1,0 +1,276 @@
+assignment-1:
+------------
+write a python script/program to implement the menu driven electricity bill calculator?
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+
+	enter your option: 1
+	previous reading:
+	current reading:
+	units=current reading-previous reading
+Category 1(between - 0to 100)
+	0-50 Units - ₹1.45,consumer charges : 25₹
+	51-100 units - ₹ 2.60 consumer charges : 30₹
+
+Category 2(between - 100 to 200)
+	0-100 Units - ₹3.30 consumer charges : ₹50
+	101-200 units - ₹ 4.30 consumer charges : 50₹
+
+Category 3(more than 200 units)
+0-200 Units - ₹5 consumer charges : ₹60
+201-300 units - ₹ 7.20 consumer charges : ₹60
+
+
+301-400 units - ₹ 8.50 consumer charges : ₹80
+401-800 units - ₹ 9 consumer charges : ₹80
+Above 800 Units - ₹ 9.5 consumer charges : ₹80 
+
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+	enter your option: 2
+	previous reading:
+	current reading:
+	units=current reading-previous reading
+
+Category 1(between - 0to 50)
+	0-50 Units - ₹7,consumer charges : 45₹
+	
+Category 2
+	0-100 Units - ₹8.50,consumer charges : ₹70
+	101-300 units - ₹ 9.90,consumer charges : 100₹
+	301-500 units - 10.40,consumer charges: 120
+	above 500     - 11.50, consumer charges:150
+
+final bill= electricity bill+consumer charges+ electricity duty(5% of             electricity bill) 
+
+	select any one option from the following options:
+		1).Domestic
+		2).Non-Domestic/Commercial
+		3).Exit
+	enter your option: 3
+
+print("Thanks for using TSSPDCL bill calculator")
+
+
+sol:
+----
+while True:
+    print("Select any one option from the following options:\
+\n\t 1).Domestic\n\t 2).Non-Domestic(Commercial)\n\t 3).Exit")
+    ch=int(input("Select your option: "))
+    if ch==1:
+        prev_reading=int(input("enter previous reading in units: "))
+        cur_reading=int(input("enter current reading in units: "))
+        units=cur_reading-prev_reading
+        if units<=100:
+            if units<=50:
+                electricity_bill=units*1.45
+                consumer_charges=25
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+            else:
+                electricity_bill_1=50*1.45
+                electricity_bill_2=(units-50)*2.60
+                electricity_bill=electricity_bill_1+electricity_bill_2
+                consumer_charges=30
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+        elif units>=101 and units<=200:          
+                electricity_bill_1=100*3.30
+                electricity_bill_2=(units-100)*4.30
+                electricity_bill=electricity_bill_1+electricity_bill_2
+                consumer_charges=50
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+        elif units>200:            
+            if units>=201 and units<=300:
+                electricity_bill_1=200*5
+                electricity_bill_2=(units-200)*7.20
+                electricity_bill=electricity_bill_1+electricity_bill_2
+                consumer_charges=60
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+            elif units>=301 and units<=400:
+                electricity_bill_1=200*5
+                electricity_bill_2=100*7.20
+                electricity_bill_3=(units-300)*8.50
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3
+                consumer_charges=80
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+            elif units>=401 and units<=800:
+                electricity_bill_1=200*5
+                electricity_bill_2=100*7.20
+                electricity_bill_3=100*8.50
+                electricity_bill_4=(units-400)*9
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3+electricity_bill_4
+                consumer_charges=80
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+            elif units>800:
+                electricity_bill_1=200*5
+                electricity_bill_2=100*7.20
+                electricity_bill_3=100*8.50
+                electricity_bill_4=400*9
+                electricity_bill_5=(units-800)*9.5 
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3+electricity_bill_4+electricity_bill_5
+                consumer_charges=80
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)               
+    elif ch==2:
+        prev_reading=int(input("enter previous reading in units: "))
+        cur_reading=int(input("enter current reading in units: "))
+        units=cur_reading-prev_reading
+        if units<=50:
+            electricity_bill=units*7
+            consumer_charges=45
+            electricity_duty=(5/100)*electricity_bill
+            total_bill=electricity_bill+consumer_charges+electricity_duty
+            print("No.Of.Unist:",units)
+            print("Electricity Bill",electricity_bill)
+            print("Consumer Charges:",consumer_charges)
+            print("Electricity Duty:",electricity_duty)
+            print("Total Bill Ammount:%.2f"%total_bill)               
+        elif units>50:
+            if units>=51 and units<=100:
+                electricity_bill_1=50*7
+                electricity_bill_2=(units-50)*8.50
+                electricity_bill=electricity_bill_1+electricity_bill_2
+                consumer_charges=70
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)   
+            elif units>=101 and units<=300:
+                electricity_bill_1=50*7
+                electricity_bill_2=50*8.50
+                electricity_bill_3=(units-100)*9.90
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3
+                consumer_charges=100
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill) 
+            elif units>=301 and units<=500:
+                electricity_bill_1=50*7
+                electricity_bill_2=50*8.50
+                electricity_bill_3=200*9.90
+                electricity_bill_4=(units-300)*10.40
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3+electricity_bill_4
+                consumer_charges=120
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)
+            elif units>500:
+                electricity_bill_1=50*7
+                electricity_bill_2=50*8.50
+                electricity_bill_3=200*9.90
+                electricity_bill_4=200*10.40
+                electricity_bill_5=(units-500)*11.50
+                electricity_bill=electricity_bill_1+electricity_bill_2+electricity_bill_3+electricity_bill_4+electricity_bill_5
+                consumer_charges=150
+                electricity_duty=(5/100)*electricity_bill
+                total_bill=electricity_bill+consumer_charges+electricity_duty
+                print("No.Of.Unist:",units)
+                print("Electricity Bill",electricity_bill)
+                print("Consumer Charges:",consumer_charges)
+                print("Electricity Duty:",electricity_duty)
+                print("Total Bill Ammount:%.2f"%total_bill)     
+                
+    elif ch==3:
+        break
+    else:
+        print("Invalid Option")
+
+print("Thanks for using TSSPDCL bill calculator")
+
+
+output:
+------
+Select any one option from the following options:
+	 1).Domestic
+	 2).Non-Domestic(Commercial)
+	 3).Exit
+Select your option: 1
+enter previous reading in units: 100
+enter current reading in units: 197
+No.Of.Unist: 97
+Electricity Bill 194.7
+Consumer Charges: 30
+Electricity Duty: 9.735
+Total Bill Ammount:234.44
+Select any one option from the following options:
+	 1).Domestic
+	 2).Non-Domestic(Commercial)
+	 3).Exit
+Select your option: 2
+enter previous reading in units: 150
+enter current reading in units: 345
+No.Of.Unist: 195
+Electricity Bill 1715.5
+Consumer Charges: 100
+Electricity Duty: 85.775
+Total Bill Ammount:1901.28
+Select any one option from the following options:
+	 1).Domestic
+	 2).Non-Domestic(Commercial)
+	 3).Exit
+Select your option: 4
+Invalid Option
+Select any one option from the following options:
+	 1).Domestic
+	 2).Non-Domestic(Commercial)
+	 3).Exit
+Select your option: 3
+Thanks for using TSSPDCL bill calculator

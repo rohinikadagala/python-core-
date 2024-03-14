@@ -1,0 +1,249 @@
+assignment-1:
+-------------
+wap to generate the elements into list object, that element contains value and no.of occurencess of that element from the given list?
+
+	input
+	-----
+[10,20,30,10,30,40,10,20,30,10,40,50,20,10]
+
+	output
+	------
+[(10,5),(20,3),(30,3),(40,2),(50,1)]
+
+sol:
+---
+x=eval(input("enter your list: "))
+y=[]
+z=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+for ele in y:
+    z.append((ele,x.count(ele)))
+print(z)
+
+assignment-2:
+--------------
+wap to print the list object elements in reverse order, dont use reversed() function and reverse() methods?
+
+	input			output
+	-----			------
+     [3,2,6,8,5]		[5,8,6,2,3]
+
+sol:
+----
+x=eval(input("enter your list: "))
+y=[]
+for i in range(len(x)-1,-1,-1):
+    y.append(x[i])
+print(y)
+
+
+assignment-3:
+-------------
+wap to perform the aggrigate operations on given list object?
+
+	input			output
+	-----			-------
+[4,7,None,8,9,None,2,5]		min: 2
+				max: 9
+			        count:6
+				sum:35
+				avg:5.83...
+
+sol:
+----
+x=eval(input("enter your list: "))
+y=[]
+for ele in x:
+    if ele==None:
+        pass
+    else:
+        y.append(ele)
+minimum=y[0]
+for ele in y:
+    if minimum>ele:
+        minimum=ele
+print("Minimum element:",minimum)
+maximum=y[0]
+for ele in y:
+    if maximum<ele:
+        maximum=ele
+print("Maximum element:",maximum)
+count=0
+for ele in y:
+    count+=1
+print("No.of Elements are:",count)
+s=0
+for ele in y:
+    s+=ele
+print("Total:",s)
+avg=s/count
+print("Average:",avg)
+
+
+ex:
+----
+write a program input to the elements into nested list?
+
+x=eval(input("enter your nested list: "))
+y=int(input("enter no.of element's into each list: "))
+for i in range(len(x)):
+    for j in range(y):
+        x[i].append(eval(input()))
+print(x)
+
+output
+------
+enter your nested list: [[],[]]
+enter no.of element's into each list: 2
+3
+5
+2.3
+4j
+[[3, 5], [2.3, 4j]]
+
+	by using list comprihension
+	---------------------------
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of element's into each list: "))
+print([[eval(input())for j in range(y)]for i in range(x)])
+
+	output
+	------
+enter no.of list objects: 2
+enter no.of element's into each list: 2
+2
+3.2
+4j
+False
+[[2, 3.2], [4j, False]]
+
+ex:
+---
+write a program to perform the matrix addition?
+
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of element's into each list: "))
+print("enter the elements into a matrix:")
+a=[[eval(input())for j in range(y)]for i in range(x)]
+print("enter the elements into b matrix:")
+b=[[eval(input())for j in range(y)]for i in range(x)]
+print('a matrix:')
+for row in a:
+    print("\t",row)
+print('b matrix:')
+for row in b:
+    print("\t",row)
+
+c=[[a[i][j]+b[i][j] for j in range(y)]for i in range(x)]
+print('result matrix:')
+for row in c:
+    print("\t",row)
+
+output:
+-------
+enter no.of list objects: 3
+enter no.of element's into each list: 3
+enter the elements into a matrix:
+3
+2
+4
+1
+5
+6
+2
+8
+2
+enter the elements into b matrix:
+1
+7
+2
+6
+1
+7
+9
+3
+5
+a matrix:
+	 [3, 2, 4]
+	 [1, 5, 6]
+	 [2, 8, 2]
+b matrix:
+	 [1, 7, 2]
+	 [6, 1, 7]
+	 [9, 3, 5]
+result matrix:
+	 [4, 9, 6]
+	 [7, 6, 13]
+	 [11, 11, 7]
+
+
+ex:
+---
+write a program to perform the transpose of a matrix?
+
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of element's into each list: "))
+print("enter the elements into a matrix:")
+a=[[eval(input())for j in range(y)]for i in range(x)]
+for row in a:
+    print("\t",row)
+a_transpose=[[a[j][i] for j in range(x)]for i in range(y)]
+print('result matrix:')
+for row in a_transpose:
+    print("\t",row)
+
+output:
+-------
+enter no.of list objects: 2
+enter no.of element's into each list: 2
+enter the elements into a matrix:
+2
+4
+1
+5
+matrix a: 
+	 [2, 4]
+	 [1, 5]
+result matrix:
+	 [2, 1]
+	 [4, 5]
+
+output2:
+--------
+enter no.of list objects: 2
+enter no.of element's into each list: 3
+enter the elements into a matrix:
+3
+2
+6
+2
+7
+1
+matrix a: 
+	 [3, 2, 6]
+	 [2, 7, 1]
+result matrix:
+	 [3, 2]
+	 [2, 7]
+	 [6, 1]
+
+assignment-1:
+--------------
+wap to find the most common occurence of element in a given list?
+
+	input				output
+	-----				-------
+[10,20,30,10,20,30,40,20,30,10,20]	20
+
+
+assignment-2:
+------------
+wap to find the maximum string based on their length?
+
+	input				output
+	-----				---------
+hai siva krishna good bye		krishna
+
+

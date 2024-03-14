@@ -1,0 +1,321 @@
+working with dict class methods:
+--------------------------------
+if we want to display all the available dict class methods with syntax and description, in that case we are using help() function.
+
+	help(dict)
+
+if we want to display the list of all the available dict class method names without syntax and description, in that case we are using dir() function.
+
+	dir(dict)
+
+
+clear()
+-------
+to clear the dict object i.e., to remove all the item's from the dict object at a time.
+
+	dictobj.clear()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> len(x)
+4
+>>> x.clear()
+>>> x
+{}
+>>> len(x)
+0
+
+copy()
+------
+to create a shallow copy of a dict object.
+
+	dictobj.copy()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> y=x.copy()
+>>> y
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+
+fromkeys()
+----------
+to assign the values to the multiple keys at a time.
+
+	dictobj.fromkeys(key,value)
+			
+	here the key must be iterable object
+	     the value is either iterable or non-iterable object
+
+ex:
+---
+>>> {}.fromkeys("siva",5)
+{'s': 5, 'i': 5, 'v': 5, 'a': 5}
+
+>>> y={}
+>>> y.fromkeys(['m','sc'],45)
+{'m': 45, 'sc': 45}
+
+>>> {}.fromkeys(45,['m','sc'])
+TypeError: 'int' object is not iterable
+
+>>> {}.fromkeys(['m','sc'],[45,67])
+{'m': [45, 67], 'sc': [45, 67]}
+
+get()
+-----
+to get the value from the dict object based on key's
+
+	dictobj.get(key)
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> x['sc']
+78
+>>> x.get('sc')
+78
+>>> x.get('sc',67)
+78
+>>> x.get('py',67)
+67
+>>> x['py']
+KeyError: 'py'
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+
+
+items()
+-------
+to return the list of all the items from the dict object.
+
+	dictobj.items()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+
+>>> x.items()
+dict_items([('m', 56), ('sc', 78), ('so', 32), ('tel', 42)])
+
+>>> for i in x.items():
+        print(i)
+
+('m', 56)
+('sc', 78)
+('so', 32)
+('tel', 42)
+
+keys()
+------
+to return the list of all the keys from the dict object.
+
+	dictobj.keys()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+
+>>> x.keys()
+dict_keys(['m', 'sc', 'so', 'tel'])
+
+>>> for k in x.keys():
+        print(k)
+
+m
+sc
+so
+tel
+
+values()
+-------
+to return the list of all the values from the dict object.
+
+	dictobj.values()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+
+>>> x.values()
+dict_values([56, 78, 32, 42])
+
+>>> for v in x.values():
+        print(v)
+
+56
+78
+32
+42
+
+pop()
+-----
+to remove an item from the dict object based on keys.
+
+	dictobj.pop(key)
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> x.pop('sc')
+78
+>>> x
+{'m': 56, 'so': 32, 'tel': 42}
+>>> x.pop('tel')
+42
+>>> x
+{'m': 56, 'so': 32}
+>>> x.pop()
+TypeError: pop expected at least 1 argument, got 0
+>>> x.pop('py')
+KeyError: 'py'
+
+popitem()
+---------
+to remove an item from the dict object, by default it will remove an item from right to left(3.4+ versions onwards)
+
+	dictobj.popitem()
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> x.popitem()
+('tel', 42)
+>>> x
+{'m': 56, 'sc': 78, 'so': 32}
+>>> x.popitem()
+('so', 32)
+>>> x
+{'m': 56, 'sc': 78}
+
+setdefault()
+------------
+to set the default value to the keys.
+
+	dictobj.setdefault(key,value)
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> x.get('sc',65)
+78
+>>> x.get('py',65)
+65
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> x.setdefault('sc',65)
+78
+>>> x.setdefault('py',65)
+65
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42, 'py': 65}
+
+
+update()
+-------
+to update the dict object.
+
+	dictobj.update(dictobj)
+
+ex:
+---
+>>> x={'m':56,'sc':78,'so':32,'tel':42}
+>>> y={'hin':89,'sc':67,'eng':21,'so':16}
+>>> x
+{'m': 56, 'sc': 78, 'so': 32, 'tel': 42}
+>>> y
+{'hin': 89, 'sc': 67, 'eng': 21, 'so': 16}
+>>> x.update(y)
+>>> x
+{'m': 56, 'sc': 67, 'so': 16, 'tel': 42, 'hin': 89, 'eng': 21}
+>>> y
+{'hin': 89, 'sc': 67, 'eng': 21, 'so': 16}
+
+
+dict comprihension:
+--------------------
+to generate the item's into dict object dynamically by writeing the some logic in that dict object, is known as a dict comprihension.
+
+if we want to implement the dict comprihension, in that case we need to required minimum one for loop and one dict object.
+
+ex1:
+---
+write a python program to generate the item's(keys are even numbers and values are odd numbers) into dict object from 1 to N natural numbers?
+
+num=int(input("enter your number: "))
+x={}
+for i in range(1,num+1):
+    if i%2==0:
+        x[i]=i-1
+print(x)
+
+	(or)
+
+num=int(input("enter your number: "))
+print({i:i-1 for i in range(1,num+1) if i%2==0})
+
+output:
+-------
+enter your number: 10
+{2: 1, 4: 3, 6: 5, 8: 7, 10: 9}
+
+ex2:
+----
+write a python script to generate the item's(key's are elements and values are no.of occurencess) into dict object from the given list object?
+
+x=eval(input("enter your list: "))
+y={}
+for ele in x:
+    y[ele]=x.count(ele)
+print(y)
+
+	(or)
+
+x=eval(input("enter your list: "))
+print({ele:x.count(ele) for ele in x})
+
+output:
+-------
+enter your list: [10,20,30,10,20,40,30,20,10,30,20,10]
+{10: 4, 20: 4, 30: 3, 40: 1}
+
+
+ex3:
+----
+write a python script to generate the items(key's are words and values are no.of charecters) into dict object from the given string object?
+
+x=input("enter your string object: ").split()
+y={}
+for word in x:
+    y[word]=len(word)
+print(y)
+
+	(or)
+
+x=input("enter your string object: ").split()
+print({word:len(word) for word in x})
+
+output:
+------
+enter your string object: hello siva krishna good afternoon
+{'hello': 5, 'siva': 4, 'krishna': 7, 'good': 4, 'afternoon': 9}
+

@@ -1,0 +1,227 @@
+ex1:
+----
+wap to check wheather given number is palindrom number or not?
+
+num=int(input("enter your number: "))
+temp=num
+rev=0
+while num>=1:
+    dig=num%10
+    rev=rev*10+dig
+    num//=10
+if temp==rev:
+    print("Given number is a Palindrom number")
+else:
+    print("Given number is not a Palindrom number")
+
+output1:
+-------
+enter your number: 5
+Given number is a Palindrom number
+
+output2:
+-------
+enter your number: 11
+Given number is a Palindrom number
+
+output3:
+-------
+enter your number: 12
+Given number is not a Palindrom number
+
+output4:
+-------
+enter your number: 121
+Given number is a Palindrom number
+
+output5:
+-------
+enter your number: 123
+Given number is not a Palindrom number
+
+ex2:
+----
+write a python script/program,to check wheather given number is a Strong number or not?
+
+number	 sum_of_the_digits_with_the		result
+	 factorial_of_each_and_every_dig
+------	 -------------------------------	--------
+5		5!				120     no
+
+2		2!				2	yes
+
+12		1!+2!
+		1+2				3	no
+
+145		1!+4!+5!
+		1+24+120			145	yes
+
+153		1!+5!+3!
+		1+120+6				127	no
+
+
+
+sol:
+---
+num=int(input("enter your number: "))
+temp=num
+s=0
+while num>=1:
+    dig=num%10
+    i=1
+    f=1
+    while i<=dig:
+        f*=i
+        i+=1
+    s+=f       
+    num//=10
+if temp==s:
+    print("Given number is a Strong number")
+else:
+    print("Given number is not a Strong number")
+
+
+assignment-1:
+-------------
+wap to print the sum of the digits in a given positive integer?
+
+	input			output
+	-----			-------
+	0			0
+
+	3			3
+
+	12			3
+
+	321			6
+
+	3241			10
+
+sol:
+----
+num=int(input("enter your number: "))
+if num>=0:
+    s=0
+    if num>0:
+        while num>=1:
+            dig=num%10
+            s+=dig
+            num//=10
+        print(s)
+    else:
+        print(s)
+else:
+    print("enter positive integers only")
+        
+
+
+assignment-2:
+-------------
+wap to print the no.of digits in a given number?
+
+	input			output
+	-----			-------
+	0			1
+
+	123			3
+
+	-32			2
+
+	7639			4
+
+	00000			1
+
+sol:
+----
+num=int(input("enter your number: "))
+no_of_dig=0
+if num>=0:    
+    if num>0:
+        while num>=1:
+            dig=num%10
+            no_of_dig+=1
+            num//=10
+        print(no_of_dig)
+    else:
+        no_of_dig+=1
+        print(no_of_dig)
+else:
+    x=int(str(num)[1:])
+    while x>=1:
+        dig=x%10
+        no_of_dig+=1
+        x//=10
+    print(no_of_dig)
+
+
+	(or)
+
+
+num=int(input("enter your number: "))
+x=str(num)
+no_of_dig=0
+i=0
+while i<len(x):
+    if x[i].isdigit():
+        no_of_dig+=1
+    i+=1
+print(no_of_dig)
+        
+    
+        
+
+assignment-3:
+------------
+wap to print the reverse order of the each and every word in a given string?
+
+	input			output
+	-----			------
+	hai			iah
+
+	hai siva		iah avis
+
+	hello siva krishna	olleh avis anhsirk
+
+sol:
+----
+x=input("enter your string: ")
+words=x.split()
+i=0
+y=''
+while i<len(words):
+    y+=words[i][::-1]+' '
+    i+=1
+print(y.rstrip(' '))
+
+
+assignment-1:
+------------
+wap to return the no.of occurencess of given charecter in a string,with out using count() method?
+
+	input		charecter		output
+	-----		--------		-------
+	hai siva	  i			2
+
+	hai siva krishna  a			3
+
+
+assignment-2:
+-------------
+wap to return the no.of occurencess of given word in a string object,with out using count() method?
+
+	input			word		output
+	-----			-----		-------
+hai siva hai rama hello siva    hai		2
+
+assignment-3:
+-------------
+wap to print the repeated charecters from the given string?
+
+	input			output
+	-----			------
+	hai			no repeated charecters
+
+	hai siva		a,i
+
+	hello siva krishna	h,l,s,i,a
+

@@ -1,0 +1,455 @@
+assignment-1:
+--------------
+wap to return the no.of words in a given string based on space charecter?
+
+	input				output
+	-----				------
+	hai				1
+	hai siva			2
+	hai siva krishna		3
+	hai siva krishna good night	5
+
+sol:
+----
+x=input("enter your string: ")
+print(len(x.split()))
+
+
+assignment-2:
+-------------
+wap to remove the spaces from the given string dont use replace() method?
+
+	input				output
+	------				-------
+	hai siva			haisiva
+	hai siva krishna good night	haisivakrishnagoodnight
+
+sol:
+---
+x=input("enter your string: ")
+print(''.join(x.split()))
+
+
+
+assignment-3:
+-------------
+wap take the string as a input from the user,to convert that string into title case and remove the space's from that string?
+
+	input				output
+	------				-------
+	hai siva			HaiSiva
+	hai siva krishna good night	HaiSivaKrishnaGoodNight
+
+sol:
+----
+x=input("enter your string: ").title()
+print(''.join(x.split()))
+
+
+
+assignment-4:
+--------------
+wap take the string as a input from the user to generate the string,that string contains words in ascending order?
+
+	input				output
+	-----				-------
+	hai siva			hai siva
+	hai siva krishna good night	good hai krishna night siva
+
+sol:
+----
+x=sorted(input("enter your string: ").split())
+print(' '.join(x))
+
+	(or)
+
+x=input("enter your string: ")
+list_of_words=x.split()
+ascending_order=sorted(list_of_words)
+print(' '.join(ascending_order))
+
+Assignment-5:
+--------------
+wap take the string object as a input from the user and to return the string in reverse order of the title case?
+
+	input				output
+	------				-------
+	hai				hAI
+	hai siva			hAI sIVA
+	hai siva krishna good night	hAI sIVA kRISHNA gOOD nIGHT
+
+sol:
+----
+x=input("enter your string: ").title()
+print(x.swapcase())
+
+	(or)
+
+x=input("enter your string: ")
+title_case=x.title()
+print(title_case.swapcase())
+
+
+istitle()
+---------
+to check wheather the given string to follow the title case or not.
+
+	strobj.istitle()
+
+ex:
+---
+>>> x="Hai"
+>>> y="Hai SIVA"
+>>> z="Hai siva Rama Krishna"
+>>> a="Hai Siva 123rama"
+>>> b="Hai Siva 123Rama"
+>>> x.istitle()
+True
+>>> y.istitle()
+False
+>>> z.istitle()
+False
+>>> a.istitle()
+False
+>>> b.istitle()
+True
+
+isspace()
+---------
+to check wheather given string object contains only whitespace charecters
+(' ','\n','\t') or not.
+
+	strobj.isspace()
+
+ex:
+---
+>>> x=""
+>>> y=" "
+>>> z=" siva "
+>>> a="   "
+>>> b="\n\t"
+>>> x.isspace()
+False
+>>> y.isspace()
+True
+>>> z.isspace()
+False
+>>> a.isspace()
+True
+>>> b.isspace()
+True
+
+startswith()
+------------
+to check wheather given string object is startswith either given char/substr or not.
+
+	strobj.startswith(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.startswith('s')
+True
+>>> x.startswith('a')
+False
+>>> x.startswith('siv')
+True
+>>> x.startswith('sia')
+False
+>>> x.startswith('S')
+False
+>>> x.startswith('k',5)
+True
+>>> x.startswith('k',5,10)
+True
+
+endswith()
+----------
+to check wheather the string object endswith given char/substr or not.
+
+	strobj.endswith(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.endswith('a')
+True
+>>> x.endswith('s')
+False
+>>> x.endswith('hna')
+True
+>>> x.endswith('sna')
+False
+>>> x.endswith('h',5,10)
+True
+>>> x.endswith('n',5,10)
+False
+>>> x.endswith('n',5,11)
+True
+
+isalnum()
+---------
+to check wheather the string object contains only alphabets or only digits or both combination of alphabets and digits or not.
+
+	strobj.isalnum()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="Rama123"
+>>> b="123"
+>>> c="Rama@123"
+>>> d="Rama 123"
+>>> x.isalnum()
+True
+>>> y.isalnum()
+True
+>>> z.isalnum()
+True
+>>> a.isalnum()
+True
+>>> b.isalnum()
+True
+>>> c.isalnum()
+False
+>>> d.isalnum()
+False
+
+isalpha()
+---------
+to check wheather given string object contains only alphabets or not.
+
+	strobj.isalpha()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="Rama123"
+>>> b="123"
+>>> c="Rama@123"
+>>> d="Rama 123"
+>>> x.isalpha()
+True
+>>> y.isalpha()
+True
+>>> z.isalpha()
+True
+>>> a.isalpha()
+False
+>>> b.isalpha()
+False
+>>> c.isalpha()
+False
+>>> d.isalpha()
+False
+
+isdigit()
+----------
+to check wheather given string object contains only digits or not.
+
+	strobj.isdigit()
+
+ex:
+---
+>>> a="Rama123"
+>>> b="123"
+>>> c="Rama@123"
+>>> d="Rama 123"
+>>> a.isdigit()
+False
+>>> b.isdigit()
+True
+>>> c.isdigit()
+False
+>>> d.isdigit()
+False
+
+casefold()
+---------
+the casefold() is used to perform the caseless comparissions.
+
+the casefold() internally to convert the string into lowercase it is similar to lower()
+
+	strobj.casefold()
+
+ex1:
+----
+>>> x="rama"
+>>> y="rama"
+>>> z="Rama"
+>>> x==y
+True
+>>> x==z
+False
+>>> x==z.casefold()
+True
+>>> x==z.lower()
+True
+
+partition()
+-----------
+to partition the string based on given char from left most.
+
+	strobj.partition(char)
+
+ex:
+---
+>>> x="hai siva krishna good morning"
+>>> x
+'hai siva krishna good morning'
+>>> x.partition(' ')
+('hai', ' ', 'siva krishna good morning')
+
+rpartition()
+-----------
+to partition the string based on given char from right most.
+
+	strobj.rpartition(char)
+
+ex:
+---
+>>> x="hai siva krishna good morning"
+>>> x
+'hai siva krishna good morning'
+>>> x.rpartition(' ')
+('hai siva krishna good', ' ', 'morning')
+
+format()
+---------
+to format the string into required format.
+
+	strobj.format()
+
+ex:
+---
+>>> "".format("hai","siva","krishna")
+''
+
+>>> "{}{}".format("hai","siva","krishna")
+'haisiva'
+
+>>> "{0} {2}".format("hai","siva","krishna")
+'hai krishna'
+
+>>> "{1} {2} {0}".format("hai","siva","krishna")
+'siva krishna hai'
+
+>>> "{} {} {}".format("hai","siva","krishna")
+'hai siva krishna'
+
+>>> "{} {} {} {}".format("hai","siva","krishna")
+IndexError: Replacement index 3 out of range for positional args tuple
+
+>>> "{} {} {2}".format("hai","siva","krishna")
+ValueError: cannot switch from automatic field numbering to manual field specification
+
+>>> "{0} {1} {}".format("hai","siva","krishna")
+ValueError: cannot switch from manual field specification to automatic field numbering
+
+
+ex:
+---
+	demo.py
+	-------
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+print("My name is",name,"and my age is",age)
+print("My name is %s and my age is %d"%(name,age))
+print("My name is {} and my age is {}".format(name,age))
+print(f"My name is {name} and my age is {age}")
+
+	output
+	------
+enter your name: siva
+enter your age: 30
+My name is siva and my age is 30
+My name is siva and my age is 30
+My name is siva and my age is 30
+My name is siva and my age is 30
+
+assignment-1:
+-------------
+wap take the employe id,name and salary from the user input and to display the employe details in a single line?
+
+input:
+	emp id: 101
+	emp name: siva
+	emp sal:3000
+
+output:
+	employe siva having employe id 101 and to get the salary is 3000.00Rs
+
+
+encode()
+--------
+to encode the string
+
+	strobj.encode()
+
+ex1:
+----
+>>> x="siva"
+>>> y=x.encode(encoding="utf-8")
+>>> y
+b'siva'
+>>> z=str(y,encoding="utf-8")
+>>> z
+'siva'
+>>> type(x)
+<class 'str'>
+>>> type(y)
+<class 'bytes'>
+>>> type(z)
+<class 'str'>
+
+note:
+-----
+from python3.8 versions onwards in string class to introduce two new methods they are
+
+	removeprefix()
+	removesuffix()
+
+ex1:
+----
+>>> x="aaabbbaaa"
+>>> x
+'aaabbbaaa'
+>>> x.lstrip('a')
+'bbbaaa'
+>>> x
+'aaabbbaaa'
+>>> x.removeprefix('a')
+'aabbbaaa'
+>>> x
+'aaabbbaaa'
+>>> x.removeprefix('aa')
+'abbbaaa'
+>>> x
+'aaabbbaaa'
+
+ex2:
+----
+>>> x="aaabbbaaa"
+>>> x
+'aaabbbaaa'
+>>> x.rstrip('a')
+'aaabbb'
+>>> x
+'aaabbbaaa'
+>>> x.removesuffix('a')
+'aaabbbaa'
+>>> x
+'aaabbbaaa'
+>>> x.removesuffix('aa')
+'aaabbba'
+>>> x
+'aaabbbaaa'
+

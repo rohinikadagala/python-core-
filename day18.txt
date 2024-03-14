@@ -1,0 +1,347 @@
+		Operators
+		---------
+what is Operator?
+-----------------
+	an Operator is a special charecter,which is used to perform the operation on the data of the operands/objects.
+
+
+	ex:
+	---
+	x=10
+	y=20
+
+	x + y	--> expression(it is a combination of both operators and
+				operands)
+
+		--> here x and y are operands
+		--> + is a operator
+		--> 10 and 20 are the data of the operands
+
+Types of Operators:
+------------------
+	1).Arithmetic Operators
+
+	2).Comparission/Relational Operators
+
+	3).Logical Operators
+
+	4).Bitwise Operators
+
+	5).Assignment Operators
+	
+	6).Identity Operators
+
+	7).Membership Operators
+
+
+
+Arithmetic Operators:
+--------------------
+these operators are used to perform the arithmetic calculations.
+
+	Arithmetic	Arithmetic	Input's		Result
+	   Operation	    Operator    x=10,y=3	
+	-----------	------------	--------	------
+	Addition	     +		x+y		13
+
+	Subtraction	     -		x-y		7
+
+	Multiplication	     *		x*y		30
+
+	Division	     /		x/y		3.3333335
+		    (Floating point division)
+
+	Floor Division	     //		x//y		3
+		     (Integer division)
+
+	Modulo		     %		x%y		1
+
+	Exponennt	    **		x**y		1000
+
+
+ex:
+----
+	arith.py
+	---------
+x,y=10,3
+print(x+y)
+print(x-y)
+print(x*y)
+print(x/y)
+print(x//y)
+print(x%y)
+print(x**y)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python arith.py
+13
+7
+30
+3.3333333333333335
+3
+1
+1000
+
+string concatination:
+-----------------------
+if we want to perform the string concatination,in that case we need to required both input's are string objects only.
+
+ex:
+---
+>>> x="siva"
+>>> y="krishna"
+>>> z=3
+>>> x+y
+'sivakrishna'
+>>> x+z
+TypeError: can only concatenate str (not "int") to str
+
+
+string multiplication:
+----------------------
+if we want to perform the string multiplication in that case we need to required minimum one input is integer object.
+
+ex:
+---
+>>> x="siva"
+>>> y="krishna"
+>>> z=3
+>>> x*y
+TypeError: can't multiply sequence by non-int of type 'str'
+>>> x*z
+'sivasivasiva'
+>>> z*y
+'krishnakrishnakrishna'
+
+
+Comparission/Relational Operators:
+----------------------------------
+these Operators are used to compare the data of the operands.
+
+these operators always to return the output as Boolean format like True and False.
+
+the Comparission Operators are,
+
+	==		--> Equal Too
+
+	!=		--> Not Equal Too
+
+	<		--> Lessthan
+
+	<=		--> Lessthan or Equal Too
+
+	>		--> Greaterthan
+
+	>=		--> Greaterthan or Equal Too
+
+
+ex:
+---
+	relational.py
+	--------------
+x,y=10,3
+print(x==y)
+print(x!=y)
+print(x<y)
+print(x<=y)
+print(x>y)
+print(x>=y)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python relational.py
+False
+True
+False
+False
+True
+True
+
+ex2:
+----
+	relational.py
+	-------------
+x,y="siva","krishna"
+print(x==y)
+print(x!=y)
+print(x<y)
+print(x<=y)
+print(x>y)
+print(x>=y)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python relational.py
+False
+True
+False
+False
+True
+True
+
+Logical Operators:
+------------------
+these operators are used to perform the mathmatical logical operations.
+
+these operators takes the input as boolean values and to return the output as boolean values.
+
+	Logical Operation's		Logical Operator's
+					C/C++/Java	Python
+	---------------------		-----------------------
+	Logical and			&&		and
+
+	Logical or			||		or
+
+	logical not			!		not
+
+
+Logical and truth table:
+-------------------------
+	input_1		input_2		      output
+					input_1 and input_2
+	-----------------------------------------------------
+	False		False			False
+	False		True			False
+	True		False			False
+	True		True			True
+
+
+Logical or truth table:
+-------------------------
+	input_1		input_2		      output
+					input_1 or input_2
+	-----------------------------------------------------
+	False		False			False
+	False		True			True
+	True		False			True
+	True		True			True
+
+Logical not truth table:
+------------------------
+	input		output(not input)
+	--------------------------------
+	False		True
+	True		False
+
+ex:
+---
+	logical.py
+	----------
+x,y,z=False,True,not False
+print(x and y)
+print(not x and z)
+print(not y or not x)
+print(not z and y)
+print(not y or x)
+print(not z)
+print(not x)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python relational.py
+False
+True
+True
+False
+False
+False
+True
+
+note:
+----
+False	--> 0,0.0,0j,0+0j,0.0+0.0j,0+0.0j,0.0+0j
+
+True	--> except zero's,we can take any value that value treated as True
+
+ex1:
+----
+>>> 1 and 9
+9
+>>> 9 and 1
+1
+>>> 0 and 1
+0
+>>> 9 and 0
+0
+>>> 1 and True
+True
+>>> True and 1
+1
+>>> 0 and False
+0
+>>> False and 0
+False
+
+ex2:
+----
+>>> 1 or 9
+1
+>>> 9 or 1
+9
+>>> 1 or False
+1
+>>> False or 9
+9
+>>> 0 or False
+False
+>>> False or 0
+0
+
+Bitwise Operators:
+------------------
+these operators are used to perform the operation on the binary data.
+
+the bitwise operator takes the input as decimal and to return the output as decimal value.
+
+the bitwise operator,internally to perform the following operations,
+
+	step1: to convert Decimal into Binary
+
+	step2: to perform the operation on the Binary data
+
+	step3: to convert Binary into Decimal
+
+the Bitwise operators are,
+
+	Bitwise and			--> &
+	Bitwise or			--> |
+	Bitwise xor			--> ^
+	Bitwise Negation		--> ~
+	Bitwise Leftshift		--> <<
+	Bitwise Rightshift		--> >>
+
+Bitwise and(&) example
+----------------------
+>>> x=10
+>>> y=3
+>>> x&y
+2
+
+	step1: to convert Decimal into Binary
+	------
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+ip_1	ip_2	ip_1 & ip_2
+----------------------------
+0	0	     0		x=1010
+0	1	     0		y=0011
+1	0	     0	      x&y=0010
+1	1	     1
+
+	step3: to convert binary into decimal
+	------
+		0010
+		0*2**3+0*2**2+1*2**1+0*2**0
+		0*8+0*4+1*2+0*1
+		0+0+2+0
+		2
+
+
+
+
+	
+	

@@ -1,0 +1,277 @@
+how to merge two dict objects:
+------------------------------
+ex:
+---
+>>> x={'a':4,'b':8}
+>>> y={'c':5,'d':9}
+>>> {**x,**y}
+{'a': 4, 'b': 8, 'c': 5, 'd': 9}
+
+from python3.8 versions onwards, in dict class to introduce two new operators to perform the merge and update operations.
+
+	merge	--> |
+
+	update	--> |=
+
+merge example:
+--------------
+>>> x={'a':4,'b':8}
+>>> y={'c':5,'d':9}
+>>> {**x,**y}
+{'a': 4, 'b': 8, 'c': 5, 'd': 9}
+>>> x
+{'a': 4, 'b': 8}
+>>> y
+{'c': 5, 'd': 9}
+>>> x|y
+{'a': 4, 'b': 8, 'c': 5, 'd': 9}
+>>> x
+{'a': 4, 'b': 8}
+>>> y
+{'c': 5, 'd': 9}
+
+update example:
+----------------
+>>> x={'a':4,'b':8}
+>>> y={'c':5,'d':9}
+>>> x.update(y)
+>>> x
+{'a': 4, 'b': 8, 'c': 5, 'd': 9}
+>>> y
+{'c': 5, 'd': 9}
+>>> p={'a':4,'b':8}
+>>> q={'c':5,'d':9}
+>>> p|=q
+>>> p
+{'a': 4, 'b': 8, 'c': 5, 'd': 9}
+>>> q
+{'c': 5, 'd': 9}
+
+assignment-1:
+-------------
+	input:
+	-----
+	s1={'m':45,'sc':78,'so':89}
+	s2={'sc':23,'so':31,'tel':45}
+	s3={'m':71,'hin':45,'sc':41,'tel':21}
+
+	output
+	------
+	{'m':116,'sc':142,'so':120,'tel':66,'hin':45}
+
+assignment-2:
+--------------
+	x={'m':71,'hin':41,'sc':45,'tel':21}
+
+	output
+	------
+	{'tel':21,'hin':41,'sc':45,'m':71}
+
+
+differencess between List and Tuple:
+-------------------------------------
+		List
+		----
+1).the List object is a Mutable object
+2).the List object support Comprihension Concept
+3).on top of the List object we can perform Insert,Delete,Update and Retreival Operations.
+4).we can't assign the List object as a key to the dict object
+5).the List object is a Variable Size
+6).the List performance is Slow when compared to Tuple with respect to memory utilization.
+7).we can create a list object by using list() or [ ]
+
+		Tuple
+		------
+1).the Tuple object is a Immutable object
+2).the Tuple object don't support Comprihension Concept
+3).on top of the Tuple object we can perform only Retreival Operations.
+4).we can assign the Tuple object as a key to the dict object
+5).the Tuple object is a Fixed Size
+6).the Tuple performance is more when compared to List with respect to memory utilization.
+7).we can create a tuple object by using tuple() or ()
+
+
+Differencess Between Set and Frozenset:
+----------------------------------------
+		Set
+		----
+1).the Set object is a Mutable object
+2).the set object support comprihension concept
+3).on top of the set object we can perform insert,delete and update operations.
+4).we can't asssign the set object as a key to the dict object
+5).the set object is a variable size
+6).we can create a set object by using set()
+7).the set object dont support nested set mechanism
+8).the set object allows frozenset object
+
+		Frozenset
+		---------
+1).the Frozenset object is a Immutable object
+2).the frozenset object don't support comprihension concept
+3).on top of the frozenset object we can't perform insert,delete and update operations.
+4).we can assign the frozenset object as a key to the dict object.
+5).the frozenset object is a fixed size
+6).we can create a frozenset object by using frozenset()
+7).the frozenset object support nested frozenset mechanism
+8).the frozenset object dont allows set object
+
+
+how to copy the data from one object to another object?
+------------------------------------------------------
+we can copy the data from one object another object in 3-ways, they are
+
+	1).Hard Copy
+
+	2).Shallow Copy
+
+	3).Deep Copy
+
+
+Hard Copy:
+---------
+we can implement the Hard Copy by using "=" operator.
+
+whenever we are trying to implement the Hard Copy, in that case both original data and copied data are referenceing to same object in the memory.
+
+in single dimensional,we can change the original data that is effected in copied data and vice-versa.
+
+in multi-dimensional,we can change the original data that is effected in copied data and vice-versa.
+
+ex:
+---
+>>> x=[1,2,3,[4,5,[6,7]]]
+>>> y=x #hardcopy
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> id(x)
+2343191555648
+>>> id(y)
+2343191555648
+
+	Single Dimensional(single indexing)
+	-------------------
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> x[1]=20
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y[0]=10
+>>> y
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> x
+[10, 20, 3, [4, 5, [6, 7]]]
+
+	Multi-Dimensional(Multi-Indexing)
+	-----------------
+>>> x
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> x[3][1]=50
+>>> x
+[10, 20, 3, [4, 50, [6, 7]]]
+>>> y
+[10, 20, 3, [4, 50, [6, 7]]]
+>>> y[-1][-1][-1]=70
+>>> y
+[10, 20, 3, [4, 50, [6, 70]]]
+>>> x
+[10, 20, 3, [4, 50, [6, 70]]]
+
+
+Shallow copy:
+-------------
+we can implement the shallow copy in 4-ways, they are
+
+	1). by using builtin functions
+
+	2). by using builtin methods
+
+	3). by using comprihension concept
+
+	4). by using copy() of copy module
+
+
+whenever we are trying to implement the Shallow Copy, in that case both original data and copied data are referenceing to different object in the memory.
+
+in single dimensional,we can change the original data that is not effected in copied data and vice-versa.
+
+in multi-dimensional,we can change the original data that is effected in copied data and vice-versa.
+
+ex1: by using builtin functions
+----
+>>> x=[1,2,3]
+>>> y=list(x)
+>>> x
+[1, 2, 3]
+>>> y
+[1, 2, 3]
+>>> id(x)
+2343191538624
+>>> id(y)
+2343188186560
+
+ex2: by using builtin methods
+----
+>>> a=[1,2,3]
+>>> b=a.copy()
+>>> a
+[1, 2, 3]
+>>> b
+[1, 2, 3]
+>>> id(a)
+2343191555648
+>>> id(b)
+2343191554176
+
+ex3: by using comprihension concept
+----
+>>> x=[1,2,3]
+>>> y=[i for i in x]
+>>> x
+[1, 2, 3]
+>>> y
+[1, 2, 3]
+>>> id(x)
+2343191556864
+>>> id(y)
+2343191538624
+
+ex4: by using copy() of copy module
+----
+>>> p=[1,2,3]
+>>> import copy
+>>> q=copy.copy(p)
+>>> p
+[1, 2, 3]
+>>> q
+[1, 2, 3]
+>>> id(p)
+2343188186560
+>>> id(q)
+2343191537984
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

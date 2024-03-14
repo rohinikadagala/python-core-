@@ -1,0 +1,434 @@
+how to get the documentation string of a function?
+---------------------------------------------------
+	if we want to get the documentation string of a function, in that case we are using help() function.
+
+	help(functionname)
+
+ex1:
+----
+>>> help(len)
+Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+
+ex2:
+----
+>>> from math import sqrt
+>>> help(sqrt)
+Help on built-in function sqrt in module math:
+
+sqrt(x, /)
+    Return the square root of x.
+
+
+ex3:
+----
+	addition.py
+	-----------
+def add(x,y):
+    '''to return the addition of x and y i.e., x+y '''
+    z=x+y
+    return z
+
+
+>>> from addition import add
+>>> help(add)
+Help on function add in module addition:
+
+add(x, y)
+    to return the addition of x and y i.e., x+y
+
+
+variables:
+-----------
+the variable is a name,which is referenceing to an object in the memory.
+
+the variables are used to store the data for future use/reference.
+
+in procedure oriented programming, the variables can be categorized into 	3-types, they are
+
+	1).Local Variables
+
+	2).Global Variables
+
+	3).Non-Local Variables
+
+Local Variables:
+----------------
+we can define a variables within/inside the function,that type of variables are called Local Variables.
+
+we can access the Local Variables data within/inside that particular function only.
+
+ex1:
+---
+def f1():
+    x=10 #local variable
+    print(x)
+f1()
+
+output:
+------
+10
+
+
+we can't access the local variables data from outside of that function.
+
+ex2:
+----
+def f1():
+    x=10 #local variable    
+f1()
+print(x)
+
+output:
+------
+NameError: name 'x' is not defined
+
+
+we can't access the local variables data within another functions also.
+
+ex3:
+----
+def f1():
+    x=10 #local variable    
+f1()
+def f2():
+    print(x)
+f2()
+
+output:
+------
+NameError: name 'x' is not defined
+
+
+in python, directly we can modify the local variables data within that particular function.
+
+ex4:
+----
+def f1():
+    x=10 #local variable
+    print(x)
+    x+=5
+    print(x)
+f1()
+
+output:
+-------
+10
+15
+
+note:
+----
+the function parameter is also act as a local variable to that particular function.
+
+ex5:
+----
+def f1(x):
+    print(x)
+    x+=5
+    print(x)
+f1(10)
+print(x) #error
+
+output:
+-------
+10
+15
+NameError: name 'x' is not defined
+
+
+Global Variables:
+-----------------
+we can define a variables above the function definition, that type of variables are called Global Variables to that particular function.
+
+we can access the global variables data on any location in our program.
+
+ex1:
+----
+x=10 #global variable
+def f1():
+    print(x)
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+-------
+10
+10
+10
+
+
+in python,directly we can't modify the global variables data within the functions.
+
+ex2:
+----
+x=10 #global variable
+def f1():
+    print(x)
+    x+=5
+    print(x)
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+-------
+UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
+
+
+if we want to update/modify the global variables data within the function,in that case we are using forward decleration mechanism.
+
+	syntxa
+	------
+	global  global_variable_name
+
+once we can modify the Global variables data that is effected in remaining all other cases.
+
+ex3:
+----
+x=10 #global variable
+def f1():
+    global x
+    print(x)
+    x+=5
+    print(x)
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+------
+10
+15
+15
+
+Non-Local Variables:
+---------------------
+we can define a variables within the outer function definition and above the inner function definition, that type of variables we are calling as non-local to inner function and local to outer function.
+
+we can access the non-local variables data within the outer function only i.e., we can access the within the inner function and outside the inner function.
+
+ex1:
+----
+def f1(): #outer function
+    x=10 #local to f1 and non-local to f2
+    def f2(): #inner function
+        print(x)
+    f2()
+    print(x)
+f1()
+
+output:
+-------
+10
+10
+
+
+in python,directly we can't modify the non-local variables data within the inner functions.
+
+ex2:
+----
+def f1(): #outer function
+    x=10 #local to f1 and non-local to f2
+    def f2(): #inner function
+        print(x)
+        x+=5
+        print(x)
+    f2()
+    print(x)
+f1()
+
+output:
+------
+UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
+
+
+if we want to modify/update the non-local variables data within the inner function, in that case we are using forward decleration mechanism.
+
+	syntax
+	-----
+	nonlocal  nonlocal_variable_name
+
+
+once we can modify the non-local variables data,that is effected in remaining all other cases.
+
+ex3:
+----
+def f1(): #outer function
+    x=10 #local to f1 and non-local to f2
+    print(x)
+    x+=5    
+    def f2(): #inner function
+        nonlocal x
+        print(x)
+        x+=5
+        print(x)
+    f2()
+    print(x)
+f1()
+
+output:
+-------
+10
+15
+20
+20
+
+ex:
+---
+x=10 #global variable
+def f1():
+    global x
+    y=20 #local varibale to f1 and non-local variable to f2
+    print(x,y)
+    x+=5
+    def f2():
+        global x
+        nonlocal y
+        z=30 #local variable to f2
+        print(x,y,z)
+        x+=5
+        y+=5
+        z+=5
+        print(x,y,z)
+    f2()
+    print(x,y)
+f1()
+print(x)
+    
+output:
+-------
+10 20
+15 20 30
+20 25 35
+20 25
+20  
+
+
+what is Scope of the Variables?
+--------------------------------
+in Generally, the scope of the variables means lifetime of the variables.
+
+in python, the scope of the variables are follow the LEGB rule.
+
+	Local
+	Encloseing(Non-Local)
+	Global
+	Builtin
+
+
+ex1:
+----
+x,y,z=1,2,3
+def f1():
+    y,z=20,30
+    def f2():
+        z=300
+        print(x,y,z)
+    f2()
+    print(x,y,z)
+f1()
+print(x,y,z)
+
+output:
+-------
+1 20 300
+1 20 30
+1 2 3
+
+ex2:
+----
+x,y,z=1,2,3
+def f1(x):
+    y,z=20,30
+    def f2(y):
+        z=300
+        print(x,y,z)
+    f2(200)
+    print(x,y,z)
+f1(10)
+print(x,y,z)
+
+output:
+-------
+10 200 300
+10 20 30
+1 2 3
+
+ex3:
+---
+def cal():
+    def len(x):
+        return x
+    print(len([5,2,6,1]))
+cal()
+print(len([5,2,6,1]))
+
+output:
+-------
+[5, 2, 6, 1]
+4
+
+assignment-1:
+-------------
+create a function to return the no_of_charecters/no_of_elements from the given iterable object?
+
+	input				output
+	-----				-------
+	[5,3,7,2]			4
+
+	"krishna"			7
+
+assignment-2:
+--------------
+create a function to return the sum of the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			17
+
+assignment-3:
+-------------
+create a function to return the minimum element from the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			2
+
+assignment-4:
+-------------
+create a function to return the maximum element from the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			7
+
+assignment-5:
+-------------
+create a function to return the list object elements in ascending order from the given list object?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[2,3,5,7]
+
+
+assignment-6:
+-------------
+create a function to return the list object elements in descending order from the given list object?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[7,5,3,2]
+	
+
+
+
+

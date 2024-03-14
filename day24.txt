@@ -1,0 +1,374 @@
+
+assignment-1:
+-------------
+wap to check wheather given string object contains only alphabets or not,wheather it is contains only alphabets to check wheather that string contains only lowercase alphabets or only uppercase alphabets or contains both lowercase and uppercase alphabets?
+
+	input			output
+	-----			------
+	siva			only lowercase alphabets
+
+	RAMA			only Uppercase alphabets
+
+	KrIsHnA			both lowercase and uppercase alphabets
+
+	Rama@123		not only alphabets
+
+sol:
+----
+x=input("enter your string: ")
+if x.isalpha():
+    if x.islower():
+        print("Given string object contains only lowercase alphabets")
+    elif x.isupper():
+        print("Given string object contains only uppercase alphabets")
+    else:
+        print("Given string object contains both combination of lowercase and\
+ uppercase alphabets")
+else:
+    print("Given string object contains not only alphabets")
+    
+
+assignment-2:
+------------
+wap to check wheather given charecter is alphabet or not,wheather it is a alphabet to check wheather that alphabet is either vowel or consonent?
+
+	input			output
+	-----			------
+	e			vowel
+	t			consonent
+	R			consonent
+	I			vowel
+	6			digit
+	@			special charecter
+
+
+sol1:
+-----
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    if ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u' or\
+       ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U':
+        print("Given alphabet is Vowel")
+    else:
+        print("Given alphabet is Consonent")
+else:
+    print("Given charecter is not a Alphabet")
+
+
+sol2:
+-----
+ch=input("enter your charecter: ").casefold()
+if ch.isalpha():
+    if ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u':
+        print("Given alphabet is Vowel")
+    else:
+        print("Given alphabet is Consonent")
+else:
+    print("Given charecter is not a Alphabet")
+
+sol3:
+-----
+ch=input("enter your charecter: ").casefold()
+if ch.isalpha():
+    if ch in 'aeiou':
+        print("Given alphabet is Vowel")
+    else:
+        print("Given alphabet is Consonent")
+else:
+    print("Given charecter is not a Alphabet")
+
+sol4:
+-----
+ch=input("enter your charecter: ").casefold()
+if ch.isalpha():
+    if ch in ['a','e','i','o','u']:
+        print("Given alphabet is Vowel")
+    else:
+        print("Given alphabet is Consonent")
+else:
+    print("Given charecter is not a Alphabet")
+
+match case:
+-----------
+the match case concept is introduced from python3.11 versions onwards.
+
+we can implement the match-case concept in python,we are using softkeywords.
+
+the match-case concept is similar to switch-case concept in C programming.
+
+the match-case concept is introduced to replace the elif-ladder concept.
+
+	syntax in C-programming		
+	------ ----------------         
+		switch (expression)
+		​{
+    			case constant1:
+      				// statements
+      				break;
+
+    			case constant2:
+     				 // statements
+     				 break;
+    			.....
+    			.....
+    			.....
+    			default:
+      				// default statements
+		}
+	
+
+	syntax in python programming
+	-----  ----------------------
+		match(expression):
+		     case value_1:
+			   stmt_1
+			   ......
+	                   stmt_n
+		     case value_2:
+			   stmt_1
+			   ......
+	                   stmt_n
+		     ........
+		     ........
+		     ........
+		     case _:
+			   stmt_1
+			   ......
+			   stmt_n
+
+ex1: by using elif ladder
+----
+name=input("enter your pet name: ")
+if name=='snoopy':
+    print("hey,your pet name is %s"%name)
+elif name=='puppy':
+    print("hey,your pet name is %s"%name)
+elif name=='kicha':
+    print("hey,your pet name is %s"%name)
+else:
+    print("None")
+
+ex2: by using match case
+----
+name=input("enter your pet name: ")
+match(name):
+    case 'snoopy':
+        print("hey,your pet name is %s"%name)
+    case 'puppy':
+        print("hey,your pet name is %s"%name)
+    case 'kicha':
+        print("hey,your pet name is %s"%name)
+    case _:
+        print("None")
+
+output1:
+-------
+enter your pet name: kicha
+hey,your pet name is kicha
+
+
+output2:
+-------
+enter your pet name: puppy
+hey,your pet name is puppy
+
+
+output3:
+-------
+enter your pet name: snoopy
+hey,your pet name is snoopy
+
+
+output4:
+-------
+enter your pet name: 
+None
+
+
+Looping/Iterative statements:
+-----------------------------
+the looping statements are used to execute the block of statements repeatedly or repeated no.of times.
+
+the python supported looping statements are,
+
+	while loop
+	while else
+	for loop
+	for else
+
+while loop:
+----------
+the while loop is used to execute the block of statements repeatedly or repeated no.of times until while condition become fail/False.
+
+the while loop can be categorized into 2-types,they are
+
+	1).Finite while loop
+
+	2).Infinite while loop
+
+
+Finite while loop:
+------------------
+the Finite while loop means at any one point of time our while condition become Fail/False.
+
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+----------
+	ref fig: while flowchart
+
+ex1:
+----
+write python script/program,to print 1 to N natural numbers?
+
+	input
+	-----
+N=10
+
+	output
+	------
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+sol:
+---
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    print(i)
+    i+=1 #i=i+1
+
+ex2:
+----
+write python script/program,to print 1 to N natural numbers?
+
+	input
+	-----
+N=10
+
+	output
+	------
+1 2 3 4 5 6 7 8 9 10
+
+sol:
+---
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    print(i,end=" ")
+    i+=1 #i=i+1
+
+ex3:
+---
+write a python script/program,to print even numbers from 1 to N natural numbers?
+
+	input
+	-----
+N=10
+
+	output
+	------
+2
+4
+6
+8
+10
+
+sol:
+----
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    if i%2==0:
+        print(i)
+    i+=1
+
+assignment-1:
+-------------
+write a python script/program,to print N to 1 natural numbers?
+
+	input
+	-----
+N=10
+
+	output
+	------
+10 9 8 7 6 5 4 3 2 1
+
+assignment-2:
+-------------
+write a python script/program,to print the sum of 1 to N natural numbers?
+
+	input
+	-----
+N=10
+
+	output
+	------
+55
+
+assignment-3:
+--------------
+write a python script/program,to print the sum of odd numbers from 1 to N natural numbers?
+
+	input
+	------
+N=10
+
+	output
+	------
+25
+
+assignment-4:
+------------
+write a python script/program,to print the sum of divisibles of the given number?
+
+	input
+	------
+num=6
+
+	output
+	------
+12
+
+assignment-5:
+------------
+write a python script/program to print the multiplication table of the given number?
+
+	input
+	-----
+num=5
+
+	output
+	-----
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+....
+....
+5 x 10 = 50
+
+
+
+
+
+
+
+
+
+	
+	             

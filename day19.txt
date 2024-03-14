@@ -1,0 +1,324 @@
+bitwise or(|) example:
+-----------------------
+>>> x=10
+>>> y=3
+>>> x|y
+11
+
+	step1: to convret Decimal into Binary
+	------
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+
+ip_1	ip_2	ip_1 | ip_2
+----------------------------
+0	0	     0		x=1010
+0	1	     1		y=0011
+1	0	     1        x|y=1011
+1	1	     1
+
+	step3: to convert binary into decimal
+	-----
+		1011
+		1*2**3+0*2**2+1*2**1+1*2**0
+		1*8+0*4+1*2+1*1
+		8+0+2+1
+		11
+
+bitwise xor(^) example:
+-----------------------
+>>> x=10
+>>> y=3
+>>> x^y
+9
+
+	step1: to convret Decimal into Binary
+	------
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+
+ip_1	ip_2	ip_1 ^ ip_2
+----------------------------
+0	0	     0		x=1010
+0	1	     1		y=0011
+1	0	     1        x^y=1001
+1	1	     0
+
+	step3: to convert binary into decimal
+	-----	
+		1001
+		1*2**3+0*2**2+0*2**1+1*2**0
+		1*8+0*4+0*2+1*1
+		8+0+0+1
+		9
+
+bitwise Negation(~) example:
+----------------------------
+>>> x=10
+>>> ~x
+-11
+
+	10
+	 | to convert decimal into binary
+	1010
+	 | to apply the 1's compliment
+	0101
+         | padding one bit i.e. 1 at left side
+       10101
+         | to convert binary into decimal
+	 | the padding bit result is always negative
+       -1*2**4+0*2**3+1*2**2+0*2**1+1*2**0
+	 |
+	-1*16+0*8+1*4+0*2+1*1
+	 |
+	-16+0+4+0+1
+	 |
+	-11
+
+note:
+-----
+the even no.of negations always to return the same number as a output.
+
+>>> x=10
+>>> ~~x
+10
+
+>>> y=9
+>>> ~~~~y
+9
+
+>>> z=-5
+>>> ~~~~~~z
+-5
+  
+the odd no.of negations always to return the output as -(num+1)
+
+>>> x=10
+>>> ~x
+-11
+
+>>> y=9
+>>> ~~~y
+-10
+
+>>> z=-5
+>>> ~~~~~z
+4
+
+bitwise leftshift(<<) example:
+------------------------------
+>>> x=10
+>>> x<<2
+40
+
+	10
+	 | to convert decimal into binary
+	1010
+	 | moving the N-bit's at left side,here N is 2
+         | to padding N-zero's at right side, here N is 2
+     101000
+	 | to convert binary into decimal
+	 | in leftshift our moving bit's are included
+     1*2**5+0*2**4+1*2**3+0*2**2+0*2**1+0*2**0
+	 |
+     1*32+0*16+1*8+0*4+0*2+0*1
+	 |
+       32+0+8+0+0+0
+	 |
+        40
+
+bitwise rightshift(>>) example:
+-------------------------------
+>>> x=13
+>>> x>>3
+1
+
+	13
+	 | to convert Decimal into Binary
+	1101
+	 | moving the N-bit's at right side,here N is 3
+         | to padding N-zero's at left side, here N is 3
+      0001101
+	 | to convert binary into decimal
+	 | in rightshift our moving bit's are excluded
+      0001
+         |
+     0*2**3+0*2**2+0*2**1+1*2**0
+	 |
+      0*8+0*4+0*2+1*1
+	 |
+	0+0+0+1
+	 |
+	 1
+    
+note:
+-----
+whenever we are moving the bit's at leftside(leftshift) that moving bit's are fit into memory but whenever we are moving the bit's at rightside(rightshift) that moving bit's are exit from memory.
+
+
+Assignment Operators:
+---------------------
+the Assignment operators are used to assign the value to variables.
+
+in python,the Assignment operators can be categorized into 3-types, they are
+
+	1).Normal Assignment Operator
+
+	2).Shorthand Assignment Operator
+
+	3).Walrus Assignment Operator
+
+Normal Assignment Operator:
+--------------------------
+in python, the single equal too i.e., = operator is a normal assignemnt operator.
+
+the normal assignment operator is used to assign the R-value to the L-value.
+
+ex:
+---
+>>> x=10
+>>> x
+10
+
+>>> a,b=10,20
+>>> a
+10
+>>> b
+20
+
+>>> c=x
+>>> c
+10
+
+Shorthand Assignment Operators:
+--------------------------------
+	the normal assignment operator which contains prefix with any another operators like arithmetic or bitwise operators, that type of assignment operators are called Shorthand Assignment Operators.
+
+ex:
+---
+x=10
+
+x += 3	--> x=x+3	--> x=13
+x -= 3	--> x=x-3	--> x=7
+x *= 3	--> x=x*3	--> x=30
+x &= 3	--> x=x&3	--> x=2
+x |= 3	--> x=x|3	--> x=11
+  ...
+  ...
+
+note:
+-----
+python dont support both increment(++) and decrement(--) operators concept but we can achive that concept indirectly by using shorthand assignment operators concept.
+
+	C/C++/Java			Python
+	---------			------
+	i++	--> i=i+1		i+=1	--> i=i+1
+
+	i--	--> i=i-1		i-=1	--> i=i-1
+
+
+Walrus Assignment operator's:
+-----------------------------
+in python,":=" is a Walrus Assignment Operator.
+
+this operator concept is introduced from python3.8 versions onwards.
+
+this operator is used to perform both initialization and evalution at a time.
+
+ex1:  normal assignment operator
+----
+	demo.py
+	-------
+x=10
+print(x)
+y=20
+print(y)
+print(x+y)
+        
+	output
+	------
+10
+20
+30
+
+ex2: walrus assignemt operator
+---
+	demo.py
+	-------
+print(x:=10)
+print(y:=20)
+print(x+y)
+        
+	output
+	------
+10
+20
+30
+
+Identity operators:
+-------------------
+the Identity operators are used to compare the address of the objects.
+
+in python, the identity operators are is,is not
+
+if address are equal, the "is" operator to return True otherwise the "is" operator to return False.
+
+if address are not equal, the "is not" operator to return True otherwise the "is not" operator to return False.
+
+ex1:
+---
+>>> x=10
+>>> y=10
+>>> x==y #comparission operator
+True
+>>> x is y #Identity operator
+True
+>>> x is not y #identity operator
+False
+>>> id(x)
+140717084959816
+>>> id(y)
+140717084959816
+
+ex2:
+----
+>>> a=[1,2,3]
+>>> b=[1,2,3]
+>>> a==b
+True
+>>> a is b
+False
+>>> a is not b
+True
+>>> id(a)
+2193049621440
+>>> id(b)
+2193049602432
+
+ex3:
+----
+	demo.py
+	-------
+x=(1,2,3)
+y=(1,2,3)
+print(x==y)
+print(x is y)
+print(id(x))
+print(id(y))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+True
+True
+1440900635136
+1440900635136
+	
+
+

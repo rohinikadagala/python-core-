@@ -1,0 +1,326 @@
+assignment-1:
+-------------
+create a function to return the no_of_charecters/no_of_elements from the given iterable object?
+
+	input				output
+	-----				-------
+	[5,3,7,2]			4
+
+	"krishna"			7
+
+sol:
+----
+obj=eval(input("enter your iterable object: "))
+def my_len(x):
+    c=0
+    for i in x:
+        c+=1
+    return c
+
+print(my_len(obj))
+
+assignment-2:
+--------------
+create a function to return the sum of the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			17
+
+sol:
+----
+obj=eval(input("enter your iterable object: "))
+def my_sum(x):
+    s=0
+    for i in x:
+        s+=i
+    return s
+
+print(my_sum(obj))
+
+
+assignment-3:
+-------------
+create a function to return the minimum element from the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			2
+
+sol:
+----
+obj=eval(input("enter your iterable object: "))
+def my_min(x):
+    m=x[0]
+    for ele in x:
+        if ele<m:
+            m=ele
+    return m
+
+print(my_min(obj))
+
+assignment-4:
+-------------
+create a function to return the maximum element from the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			7
+
+sol:
+---
+obj=eval(input("enter your iterable object: "))
+def my_max(x):
+    m=x[0]
+    for ele in x:
+        if ele>m:
+            m=ele
+    return m
+
+print(my_max(obj))
+
+
+assignment-5:
+-------------
+create a function to return the list object elements in ascending order from the given list object?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[2,3,5,7]
+
+sol:
+----
+obj=eval(input("enter your iterable object: "))
+def asc_ord(x):
+    for i in range(len(x)):
+        for j in range(i+1,len(x)):
+            if x[i]>x[j]:
+                x[i],x[j]=x[j],x[i]
+    return x
+
+print(asc_ord(obj))
+
+
+assignment-6:
+-------------
+create a function to return the list object elements in descending order from the given list object?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[7,5,3,2]
+	
+
+sol:
+----
+obj=eval(input("enter your iterable object: "))
+def desc_ord(x):
+    for i in range(len(x)):
+        for j in range(i+1,len(x)):
+            if x[i]<x[j]:
+                x[i],x[j]=x[j],x[i]
+    return x
+
+print(desc_ord(obj))
+
+
+assignment-7:
+--------------
+create a function to find the GCD/HCF of given two numbers?
+
+sol:
+----
+x,y=eval(input("enter your numbers: "))
+def divisibles(num):
+    div=set()   
+    for i in range(1,num+1):
+        if num%i==0:
+            div.add(i)
+    return div
+
+def my_gcd(a,b):
+    divisibles_a=divisibles(a)
+    divisibles_b=divisibles(b)
+    common_divisibles=divisibles_a&divisibles_b
+    return max(common_divisibles)
+print(my_gcd(x,y))
+
+
+assignment-8:
+--------------
+create a function to find the LCM of given two numbers?
+
+sol:
+----
+x,y=eval(input("enter your numbers: "))
+def multiples(num):
+    multiples=set()
+    for i in range(1,100):
+        multiples.add(num*i)
+    return multiples
+
+def my_lcm(a,b):
+    multiples_a=multiples(a)
+    multiples_b=multiples(b)
+    common_multiples= multiples_a&multiples_b
+    return min(common_multiples)
+print(my_lcm(x,y))
+
+note: by using builtin functions of math module
+-----
+from math import gcd,lcm
+x,y=eval(input("enter your numbers: "))
+print(gcd(x,y))
+print(lcm(x,y))
+
+
+assignment-9:
+------------
+create a function to check wheather given two strings are anagram strings or not?
+
+sol:
+----
+x,y=eval(input("enter your string objects: "))
+def isAnagram(a,b):
+    if len(a)==len(b):
+        if sorted(a)==sorted(b):
+            return True
+        else:
+            return False
+    else:
+        return False
+
+print(isAnagram(x,y))
+
+
+assignment-10:
+-------------
+create a function to calculate the area of the circle?
+
+sol:
+----
+x=eval(input("enter radius of the circle: "))
+def area_circle(r):
+   area=(22/7)*r**2
+   return "%.2f"%area
+
+print(area_circle(x))
+
+	(or)
+
+from math import pi
+x=eval(input("enter radius of the circle: "))
+def area_circle(r):
+   area=pi*r**2
+   return "%.2f"%area
+
+print(area_circle(x))
+
+
+assignment-11:
+-------------
+create a function to calculate the area of the Square?
+
+sol:
+----
+s=eval(input("enter side value of the square: "))
+def area_square(side):
+   area=side**2 #side*side
+   return "%.2f"%area
+
+print(area_square(s))
+
+
+assignment-12:
+-------------
+create a function to calculate the area of the rectangle?
+
+sol:
+----
+l,b=eval(input("enter length and bredth values of rectangle: "))
+def area_rectangle(length,bredth):
+   area=length*bredth
+   return "%.2f"%area
+
+print(area_rectangle(l,b))
+
+
+assignment-13:
+--------------
+create a function to calculate the volume of the cube?
+
+sol:
+---
+s=eval(input("enter side value of the cube: "))
+def volume_cube(side):
+   area=side**3 #side*side*side
+   return "%.2f"%area
+
+print(volume_cube(s))
+
+
+ex:
+----
+create a function to return the no.of permutations of the given N and R values?
+
+n,r=eval(input("enter N and R values: "))
+def factorial(x):
+    i=1
+    f=1
+    while i<=x:
+        f*=i
+        i+=1
+    return f
+
+def permutations(N,R):
+    N_factorial=factorial(N)
+    N_R_factorial=factorial(N-R)
+    res=N_factorial//N_R_factorial
+    return res
+print(permutations(n,r))
+
+output:
+------
+enter N and R values: 5,2
+20
+
+ 
+ex2:
+----
+create a function to return the no.of combinations of the given N and R values?
+
+n,r=eval(input("enter N and R values: "))
+def factorial(x):
+    i=1
+    f=1
+    while i<=x:
+        f*=i
+        i+=1
+    return f
+
+def combinations(N,R):
+    N_factorial=factorial(N)
+    N_R_factorial=factorial(N-R)
+    R_factorial=factorial(R)
+    res=N_factorial//(N_R_factorial*R_factorial)
+    return res
+print(combinations(n,r))
+
+output:
+------
+enter N and R values: 5,2
+10
+
+ex3:
+----
+from math import perm,comb
+n,r=eval(input("enter N and R values: "))
+print(perm(n,r))
+print(comb(n,r))
+
+output:
+-------
+enter N and R values: 5,2
+20
+10
+
+

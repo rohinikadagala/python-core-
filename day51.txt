@@ -1,0 +1,226 @@
+zip()
+-----
+to combine the elements from the one or more iterable objects.
+
+the zip() to return the zip object.
+
+	zip(*iterableobj)
+
+ex1:
+----
+x=zip()
+print(x)
+print(type(x))
+
+output:
+-------
+<zip object at 0x00000243BB896680>
+<class 'zip'>
+
+ex2:
+----
+eid=[101,102,103,104]
+ename=["siva","rama","krishna","sachin"]
+esal=[3000,4000,2000,5000]
+dno=[10,20,30,40]
+x=zip(eid,ename,esal,dno)
+print(x)
+print(type(x))
+for rec in x:
+    print(rec)
+
+output:
+------
+<zip object at 0x00000271D6FF6680>
+<class 'zip'>
+(101, 'siva', 3000, 10)
+(102, 'rama', 4000, 20)
+(103, 'krishna', 2000, 30)
+(104, 'sachin', 5000, 40)
+
+ex3:
+----
+eid=[101,102,103,104]
+ename=["siva","rama","krishna","sachin"]
+esal=[3000,4000,2000,5000]
+dno=[10,20,30,40]
+print(list(zip(eid,ename,esal,dno)))
+
+output:
+------
+[(101, 'siva', 3000, 10), (102, 'rama', 4000, 20), (103, 'krishna', 2000, 30), (104, 'sachin', 5000, 40)]
+
+ex4:
+---
+eid=[101,102,103,104]
+ename=["siva","rama"]
+esal=[3000]
+dno=[10,20,30]
+print(list(zip(eid,ename,esal,dno)))
+
+output:
+------
+[(101, 'siva', 3000, 10)]
+
+assignment-1:
+------------
+wap to read two list object from the user input,and to perform the addition of list object elements?
+
+	input
+	-----
+x=[1,2,3]
+y=[4,5,6]
+
+	output
+	------
+[5,7,9]
+
+
+User Defined Functions:
+-----------------------
+we can define a function to perform a particular operation according to our business requirements, that type of functions are called user-defined functions.
+
+	syntax
+	------
+	def function_name(p_1,p_2,...,p_n):
+		"""doc string"""
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+		return [value]
+
+
+ex1:
+----
+print("hai")
+def msg():
+    print("siva")
+    print("krishna")
+    print("good morning")
+print("bye")
+
+output:
+------
+hai
+bye
+
+note:
+-----
+in the above example our program executed successfully but our function is not executed.
+
+the function is not executed automatically, whenever we are calling a function then only the function logic will be executed.
+
+how to call the function?
+-------------------------
+we can call the function directly by using function name.
+
+	syntax
+	------
+	function_name(arg_1,arg_2,...,arg_n)
+
+		here the arguments are optional
+
+ex2:
+----
+print("hai")
+def msg():
+    print("siva")
+    print("krishna")
+    print("good morning")
+msg()
+print("bye")
+
+output:
+-------
+hai
+siva
+krishna
+good morning
+bye
+
+we can call one function N-no.of time's in a single program.
+
+ex3:
+----
+print("hai")
+def msg():    
+    print("good morning")
+print("siva")   
+msg()
+print("hello")
+msg()
+print("krishna")
+print("bye")
+
+output:
+------
+hai
+siva
+good morning
+hello
+good morning
+krishna
+bye
+
+function with parameters:
+-------------------------
+ex1:
+----
+def add(x,y):
+    """addition of two numbers i.e., x+y"""
+    z=x+y
+    print(z)
+add()
+
+output:
+-------
+TypeError: add() missing 2 required positional arguments: 'x' and 'y'
+
+ex2:
+----
+def add(x,y):
+    """addition of two numbers i.e., x+y"""
+    z=x+y
+    print(z)
+add(4)
+
+output:
+-------
+TypeError: add() missing 1 required positional argument: 'y'
+
+ex3:
+----
+def add(x,y): #function definition with parameters/arguments
+    """addition of two numbers i.e., x+y"""
+    z=x+y
+    print(z)
+add(4,5) #function calling with arguments
+
+output:
+------
+9
+
+
+assignment-1:
+-------------
+create a function to check wheather given integer is either even or odd?
+
+assignment-2:
+------------
+create a function to check wheather given string object is palindrom string or not?
+
+assignment-3:
+------------
+create a function to check wheather given ninteger is either positive integer or negative integer or zero?
+
+assignment-4:
+--------------
+create a function to check wheather given alphabet is vowel or not?
+
+	def isVowel(ch):
+		-----
+		-----
+		-----
+
+

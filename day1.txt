@@ -1,0 +1,447 @@
+			Python
+			-------
+what is Python?
+----------------
+Python is a General Purpose Programming Language
+Python is a High-Level Programming Language
+Python is a Multi-Paradigm
+Python supporting both Interactive and Batch Mode Executions
+
+		(or)
+
+Python is a General Purpose,High-level,Interpreted,Interactive,Modular,
+Dynamically Typed,Garbage Collected,Procedure Oriented,Object Oriented and Scripting Programming Language.
+
+History of Python:
+------------------
+the Python was developed by the "Guido Van Rossum" in the year of 1991(actually this project immplementation is started in the year of 1989 i.e., 1980's).
+
+the name python was derived from the Guido Van Rossum Favourite TV fun show "the complete monty python's flying circus".
+
+currently he is working in microsoft.
+
+he is a Dutch Programmer.
+
+the python programming language implementation is influenced by two languages, they are
+
+	ABC
+	Modula3
+
+
+Advantages of Python:
+---------------------
+1).Simple Syntax
+	in python,there's no concept of ;,(),{}
+	python simply follows Space Indentation concept.
+
+ex: if block representation
+---
+
+	C/C++/Java			Python
+	----------			--------
+	if(condition)			if condition:
+	{					stmt_1
+	  stmt_1;				stmt_2
+	    stmt_2;				......
+	  ......				stmt_n
+	stmt_n;
+        }
+
+2).Less Code
+
+	python programs having lesscode when compared to other programming languages programs code like C,C++,Java,.....
+
+ex:
+---
+write a C-program,to print "hello world"?
+
+#include<stdio.h>
+void main()
+{
+  printf("hello world");
+}
+
+write a C++ program,to print "hello world"?
+
+#include<iostream>
+void main()
+{
+  std::cout<<"hello world";
+}
+
+write a Java program,to print "hello world"?
+
+import java.io.*;
+class Test
+{
+   public static void main(String[] args)
+   {
+     System.out.println("hello world");
+   }
+}
+
+write a Python Program,to print "hello world"?
+
+print("hello world")
+
+3).Dynamically typed language
+
+ex:
+---
+write a C-program(Static Typed),to perform the addition operation on two different type of numerical values?
+
+#include<stdio.h>
+void main()
+{
+  int x=10;
+  float y=2.3;
+  float z=x+y;
+  printf("%f",z);
+}
+
+
+write a python-program(Dynamically typed),to perform the addition operation on two different type of numerical values?
+
+x=10
+y=2.3
+z=x+y
+print(z)
+
+4).N-no.of Builtin Libraries are available
+
+
+Feature's of Python:
+---------------------
+1).Easy-To-Read
+2).Easy-To-Use
+3).Easy-To-Learn
+4).Easy-To-Maintain
+5).CrossPlatform/Portable i.e., it support all environments
+6).Scalable i.e., easily we can new features
+7).Secure
+8).Extandable i.e, easily extending to other programming languages
+9).Flexible
+10).Platform Independent i.e., write once run anywhere
+11).Strongly Typed Language
+12).Free and OpenSource
+13).it support all types of database connections
+14).Interepreted
+
+note:
+------
+python is completely free and opensource project,it is maintained by PSF(Python Software Foundation) Team.
+
+	www.python.org
+
+
+Applications of Python or where we are using Python or 
+why we are learning Python?
+-----------------------------------------------------
+1).Robotic Process Automation(RPA)
+	Artificial Intelligence(AI)
+
+2).Data Science
+	Machine Learning(ML)
+	Deep Learning(DL)
+	Natural Language Processing(NLP)
+	Data Mining(DM)
+	Computer Vision(CV)
+	Image Processing(IP)
+	Stastical Analysis
+	Clinical Analysis
+	Sentimental Analysis
+	Stock Market Analysis
+	.....
+	.....
+
+3).BigData-Hadoop
+
+4).Web Application Development
+
+5).DevOps
+
+6).Cloud Computing
+
+7).Quantom Computing
+
+8).IOT(Internet Of Things)
+
+9).Embedded Systems
+
+10).Networking Applications
+
+11).Scientific Applications
+
+12).Animations
+
+13).Games Development
+
+14).Mobile App's
+
+15).GUI(Graphical User Interface)/Desktop Applications
+
+16).Automation Testing(Selenium)
+
+17).GIS(Geographical Information System's)
+
+18).Admin Activities(DBA,Sys Admin,N/W Admin,OS Admin)
+
+19).Ethical Hacking(Cyber Security)
+
+20).BlockChain
+
+21).ETL(Extraction Transformation and Loading)
+
+22).BI(Business Intelligence)
+
+23).ERP(Enterprise Resource Planning)
+
+24).Web Scrapping
+
+25).Medical Coding
+
+	.....
+	.....,etc.,
+
+
+who should Learn Python?
+-------------------------
+1).Beginer's and Kid's
+2).Developer
+3).Data Scientist
+4).ML Engineer
+5).DL Engineer
+6).Data Engineer
+7).Data Analyst/Business Analyst
+8).DevOps Engineer
+9).Cloud Engineer
+10).IOT Engineer
+11).Automation Test Engineer/QA engineer
+12).Database Administrator(DBA)
+13).ETL Developer,ETL Tester and ETL admin
+14).Ethical Hacker
+15).Blockchain Engineer
+16).Masters in Computer Science,AI,Cyber Security,Datascience
+
+Implementations of Python  or  Distributions of Python:
+------------------------       -----------------------
+	the python runtime environment is implemented by using C-programming, is known as a "Cpython".
+
+	the "Cpython" is a standard,builtin and most widely used python implementation.
+
+	the python runtime environemnt is implemented by using Java programming, is known as a "Jython".
+
+	the python runtime environment is implemented by using .Net languages, is known as a "IronPython".
+
+	the python runtime environemnt is implemented by using Rust programming, is known as a "RustPython"
+
+	the python runtime environment is implemented based embedded systems, is known as a "MicroPython/EmbeddedPython".
+
+	the python runtime environment is implemented by Anaconda Corporation, is known as a "AnacondaPython".
+
+	the python runtime environment is implemented by itself without using other programming stack,is known as a "StacklessPython/Stackless".
+
+	whenever we are adding the "JIT"(Just In Time) compiler to Cpython for fatser execution,is known as a "PyPy".
+
+
+what is Comment?
+----------------
+a comment is a unexecuted statement in our source code.
+
+if you dont want to execute some statements,in that case we can represent that statements into a comment section.
+
+in our source code,if we want to write the user-friendly messages related to the source code for easily understanding to codevelopers,in that case we are using comment section.
+
+the comments can be categorized into 2-types, they are
+
+	1).Single Line Comment
+		C-programming		Python programming
+		-------------		------------------
+		// comment_line		# comment_line
+
+	2).Multi Line Comment
+		C-programming		Python programming
+		-------------		--------------------
+		/* comment_line_1	''' comment_line_1
+		   comment_line_2	    comment_line_2
+			.....			.....
+			.....			.....
+		   comment_line_n */	    comment_line_n '''
+
+
+Python Environment Setup:
+-------------------------
+the Python Environment Setup Can be Categorized into 3-parts,they are
+
+	1).Downloading Python Software
+
+	2).Installation of Python Software
+
+	3).Python Path Setup
+
+
+How to Downloading Python Software?
+------------------------------------
+	System Requirements:
+		OS	--> Windows(8,10,11),Linux,Mac os
+
+		RAM	--> Min 4GB
+
+		storage	--> Min 500GB HDD  OR 256 SSD
+
+Versions of python:
+	initially, the python released into the market in the year of 1991.
+
+	python1.0 --> 1994 --> dont support Garbage collector concept
+	
+	python2.0 --> 2000 --> support Garbage Collector concept
+
+	python3.0 --> 2008
+
+	python3.x	--> 3.0,3.1,3.2,3.3,....,3.11.4
+
+note:
+----
+the PSF(Python Software Foundation) team completely to stop the python2.x versions.
+
+	python2.7.18 is the last release of python2.x
+
+
+before downloading python software first we need to identify which bit operating system we are using because the python interpreter is changeing from one bit operating system to another bit operating system.
+
+	goto ThisPc --> right click on ThisPc --> goto properties
+
+
+after identify our operating system bit number,next we are going to python official website www.python.org
+	               |
+		 goto Downloads
+	               |
+		 select our operating system
+		     (windows)
+		       |
+to download any one file of that particular operating system bit number
+	(download windows installer(64 bit) file)
+
+
+How to Install Python Software?
+--------------------------------
+	goto downloads
+	     	|
+	double click on python3.x versions downloaded file
+		|
+	to select any one option(install now/customize installation)
+		|
+	to enable all the optional features and click on next
+		|
+	to select the installation location and click on install
+		|
+	click on yes
+
+
+what is Path?
+--------------
+a path is a system variable under the environment variables.
+
+it is completely related to the operating system.
+
+
+why we need to set the python path?
+-----------------------------------
+	after installation of python software,by default we can access the python interpreter only on that particular installation location.
+
+
+C:\Users\Lenovo>python
+	"python" is not recognized
+
+C:\Users\Lenovo>cd ..
+
+C:\Users>cd ..
+
+C:\>cd Python311
+
+C:\Python311>python
+Python 3.11.4 
+>>> print("hello")
+hello
+>>> x=10
+>>> y=20
+>>> print(x+y)
+30
+>>> print(x-y)
+-10
+>>> ^Z #ctrl+z
+
+C:\Python311>d:
+
+D:\>python
+	"python" is not recognized
+D:\>
+
+
+if we want to access the python interpreter on top of any location in our computer,in that case we need to set the python path.
+
+how to set the python path?
+---------------------------
+we can set the python path,in two ways
+
+	1).Temporary purpose
+
+	2).Permanent purpose
+
+Temporary purpose:
+-------------------
+if we want to set the python path temporarly,in that case we are using following command,
+
+	set path="python installation location"
+
+ex:
+----
+C:\Users\Lenovo>set path="C:\Python311"
+
+
+Permanent purpose:
+-------------------
+if we want to set the python path permanently,in that case we are following bellow steps,
+
+	goto ThisPc
+	     |
+	right click on ThisPc
+	     |
+	goto properties
+	     |
+	goto advanced system settings
+	     |
+	goto environment variables
+	     |
+	goto system variables
+	     |
+	select path variables and click on edit
+(windows8,10,11 versions again click on edittext and click on ok)
+	     |
+	to put ; and add our python installation location
+	     |
+	click on ok
+	     |
+	click on ok
+	     |
+	click on ok
+
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+

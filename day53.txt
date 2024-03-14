@@ -1,0 +1,527 @@
+Arbitrary arguments:
+--------------------
+the Arbitrary arguments takes 0 or more values.
+
+by default, the arbitrary argument type is tuple.
+
+	syntax
+	------
+	def function_name(*parameter):
+		--------
+		--------
+		--------
+
+ex1:
+----
+def f1(*x):
+    print(x,type(x))
+f1()
+
+output:
+------
+() <class 'tuple'>
+
+ex2:
+----
+def f1(*x):
+    print(x,type(x))
+f1(5)
+
+output:
+------
+(5,) <class 'tuple'>
+
+ex3:
+----
+def f1(*x):
+    print(x,type(x))
+f1(5,2.3,4j,False,"siva",[5,4])
+
+output:
+-------
+(5, 2.3, 4j, False, 'siva', [5, 4]) <class 'tuple'>
+
+
+mixing of both normal and arbitrary arguments:
+----------------------------------------------
+ex1:
+----
+def f1(x,*y):
+    print(x,type(x))
+    print(y,type(y))
+f1()
+
+output:
+------
+TypeError: f1() missing 1 required positional argument: 'x'
+
+ex2:
+----
+def f1(x,*y):
+    print(x,type(x))
+    print(y,type(y))
+f1(4)
+
+output:
+-------
+4 <class 'int'>
+() <class 'tuple'>
+
+ex3:
+----
+def f1(x=2.3,*y):
+    print(x,type(x))
+    print(y,type(y))
+f1()
+
+output:
+------
+2.3 <class 'float'>
+() <class 'tuple'>
+
+ex4:
+----
+def f1(x,*y):
+    print(x,type(x))
+    print(y,type(y))
+f1(4j,False,2.3,9)
+
+output:
+------
+4j <class 'complex'>
+(False, 2.3, 9) <class 'tuple'>
+
+mixing of both arbitrary and normal arguments:
+----------------------------------------------
+ex1:
+----
+def f1(*x,y):
+    print(x,type(x))
+    print(y,type(y))
+f1()
+
+output:
+------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex2:
+----
+def f1(*x,y):
+    print(x,type(x))
+    print(y,type(y))
+f1(4)
+
+output:
+-------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex3:
+----
+def f1(*x,y):
+    print(x,type(x))
+    print(y,type(y))
+f1(4,2.3,4j,False)
+
+output:
+------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex4:
+----
+def f1(*x,y):
+    print(x,type(x))
+    print(y,type(y))
+f1(4,2.3,4j,y=False)
+
+output:
+-------
+(4, 2.3, 4j) <class 'tuple'>
+False <class 'bool'>
+
+ex5:
+----
+def f1(*x,y):
+    print(x,type(x))
+    print(y,type(y))
+f1(y=False)
+
+output:
+-------
+() <class 'tuple'>
+False <class 'bool'>
+
+ex6:
+----
+def f1(*x,y=9):
+    print(x,type(x))
+    print(y,type(y))
+f1()
+
+output:
+-------
+() <class 'tuple'>
+9 <class 'int'>
+
+
+
+Kw args (variable keyword arguments)
+-------------------------------------
+the kw args takes 0 or more keyword arguments.
+
+by default,the kw args type is dictionary.
+
+	syntax
+	-------
+	def function_name(**parameter):
+		-------
+		-------
+		-------
+
+
+ex1:
+----
+def f1(**x):
+    print(x,type(x))
+f1()
+
+output:
+------
+{} <class 'dict'>
+
+ex2:
+----
+def f1(**x):
+    print(x,type(x))
+f1(name="siva")
+
+output:
+-------
+{'name': 'siva'} <class 'dict'>
+
+ex3:
+---
+def f1(**x):
+    print(x,type(x))
+f1(name="siva",sal=300.0,dno=10)
+
+output:
+------
+{'name': 'siva', 'sal': 300.0, 'dno': 10} <class 'dict'>
+
+
+mixing of both normal,arbitrary and kw args:
+---------------------------------------------
+ex1:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1()
+
+output:
+-------
+TypeError: f1() missing 1 required positional argument: 'x'
+
+ex2:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(5)
+
+output:
+------
+5 <class 'int'>
+() <class 'tuple'>
+{} <class 'dict'>
+
+ex3:
+----
+def f1(x=2.3,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1()
+
+output:
+-------
+2.3 <class 'float'>
+() <class 'tuple'>
+{} <class 'dict'>
+
+ex4:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(4j,False,9,2.3,name="siva",sal=300.0,dno=10)
+
+output:
+------
+4j <class 'complex'>
+(False, 9, 2.3) <class 'tuple'>
+{'name': 'siva', 'sal': 300.0, 'dno': 10} <class 'dict'>
+
+
+mixing of both arbitrary,normal and kw args:
+---------------------------------------------
+ex1:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1()
+
+output:
+-------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex2:
+----
+def f1(*x,y=5,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1()
+
+output:
+-------
+() <class 'tuple'>
+5 <class 'int'>
+{} <class 'dict'>
+
+ex3:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,9)
+
+output:
+-------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex4:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,9,name="siva",sal=3000.0,dno=10)
+
+output:
+------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex5:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(y=2.3,4j,False,9,name="siva",sal=3000.0,dno=10)
+
+SyntaxError: positional arguments follows keyword arguments
+
+ex6:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,y=9,name="siva",sal=3000.0,dno=10)
+
+output:
+-------
+(2.3, 4j, False) <class 'tuple'>
+9 <class 'int'>
+{'name': 'siva', 'sal': 3000.0, 'dno': 10} <class 'dict'>
+
+
+mixing of both kw args,arbitrary and normal arguments:
+------------------------------------------------------
+ex:
+---
+def f1(**x,*y,z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(z=5)
+
+SyntaxError: arguments(normal and arbitrary) can't follow the variable keyword arguments
+
+
+mixing of both kw args,normal and arbitrary arguments:
+------------------------------------------------------
+ex:
+---
+def f1(**x,y,*z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(y=5)
+
+SyntaxError: arguments(normal and arbitrary) can't follow the variable keyword arguments
+
+
+note:
+
+	x,*y,**z	--> valid pattern
+	*x,y,**z	--> valid pattern
+
+	**x,*y,z	--> invalid pattern
+	**x,y,*z	--> invalid pattern
+
+
+working with "return" statement:
+-------------------------------
+	the "return" statement is a keyword in python, which is used to returneing a value.
+
+ex1:
+---
+def add(x,y):
+    z=x+y
+    print(z)
+add(4,5)
+
+output:
+------
+9
+
+ex2:
+----
+def add(x,y):
+    z=x+y
+    return z
+add(4,5)
+
+output:
+------
+no-output i.e., here we can't handle the return statement
+
+how to handle the return statement?
+-----------------------------------
+we can handle the return statement in two ways,they are
+
+	scenario-1
+	----------
+def add(x,y):
+    z=x+y
+    return z
+print(add(4,5))
+
+output:
+------
+9
+
+
+	scenario-2
+	----------
+def add(x,y):
+    z=x+y
+    return z
+a=add(4,5)
+print(a)
+
+output:
+------
+9
+
+ex:
+---
+def add(x,y):
+    z=x+y
+    return z
+a=add(4,5)
+print(a)
+def sub(b):
+    c=a-b
+    print(c)
+sub(4)
+
+output:
+-------
+9
+5
+
+note:
+----
+in python we can return multiple values also possible with single return statement and by default these values will be return in the form of tuple.
+
+ex:
+---
+def cal(x,y):
+    return x+y,x-y,x*y,x/y
+print(cal(4,5))
+
+output:
+------
+(9, -1, 20, 0.8)
+
+
+in python, by default return value is None.
+
+ex:
+----
+def msg():
+    print("hai")
+    print("siva")
+    return
+print(msg())
+
+output:
+------
+hai
+siva
+None
+
+note:
+----
+once the control reach the return statement then immediately the control will goto outside the function body.
+
+ex:
+---
+def msg():
+    print("hai")
+    print("siva")
+    return
+    print("good afternoon")
+print(msg())
+print("bye")
+
+output:
+-------
+hai
+siva
+None
+bye
+
+ex:
+----
+def msg():
+    print("hai")
+    print("siva")
+    return "krishna"
+    return "good afternoon"
+    
+print(msg())
+print("bye")
+
+output:
+-------
+hai
+siva
+krishna
+bye
+
+
+
+
+
+
+
